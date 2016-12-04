@@ -52,7 +52,7 @@
         </a>
 
         <!-- 头栏通知 -->
-        <nav class="nav notify-row" id="top_menu">
+        <nav class="nav notify-row dis-none" id="top_menu">
 
             <ul class="nav top-menu">
 
@@ -356,7 +356,7 @@
                     </a>
                     <ul class="sub">
                         <li>
-                            <a href="{:U('Home/WeChat/setWeChatMenu')}" >
+                            <a href="{:U('Home/WeChat/setWeChatMenu')}">
                                 公众号菜单设置
                             </a>
                         </li>
@@ -370,7 +370,7 @@
                                 用户消息回复设置
                             </a>
                         </li>
-                        <li>
+                        <li class="dis-none">
                             <a href="" target="_blank">
                                 用户标签管理
                             </a>
@@ -387,41 +387,21 @@
                               用户管理
                             </span>
                             <span class="label label-info span-sidebar">
-                              7
+                              3
                             </span>
                     </a>
                     <ul class="sub">
                         <li>
+                            <a href="{:U('Home/UserManage/userManage')}">
+                                用户信息管理
+                            </a>
+                        </li>
+                        <li class="dis-none">
                             <a href="">
                                 子菜单
                             </a>
                         </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
+                        <li class="dis-none">
                             <a href="">
                                 子菜单
                             </a>
@@ -438,32 +418,27 @@
                               课程管理
                             </span>
                             <span class="label label-primary span-sidebar">
-                              5
+                              4
                             </span>
                     </a>
 
                     <ul class="sub">
                         <li>
-                            <a href="">
-                                子菜单
+                            <a href="{:U('Home/CourseManage/courseManage')}">
+                                课程信息管理
                             </a>
                         </li>
                         <li>
-                            <a href="">
-                                子菜单
+                            <a href="{:U('Home/CourseManage/surveyManage')}">
+                                课程评价问卷管理
                             </a>
                         </li>
                         <li>
-                            <a href="">
-                                子菜单
+                            <a href="{:U('Home/CourseManage/surveyPublish')}">
+                                课程评价问卷发布
                             </a>
                         </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
+                        <li class="dis-none">
                             <a href="">
                                 子菜单
                             </a>
@@ -480,44 +455,39 @@
                               数据管理
                             </span>
                             <span class="label label-info span-sidebar">
-                              7
+                              4
                             </span>
                     </a>
 
                     <ul class="sub">
                         <li>
+                            <a href="{:U('Home/DataManage/userCourse')}">
+                                用户课程维护
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{:U('Home/DataManage/sysCourse')}">
+                                系统课程维护
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{:U('Home/DataManage/userInfo')}">
+                                用户信息维护
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{:U('Home/DataManage/surveyCount')}">
+                                问卷评价结果统计
+                            </a>
+                        </li>
+                        <li class="dis-none">
                             <a href="">
                                 子菜单
                             </a>
                         </li>
-                        <li>
+                        <li class="dis-none">
                             <a href="">
                                 子菜单
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
-                            <a href="file_upload.html">
-                                Multiple File Upload
                             </a>
                         </li>
                     </ul>
@@ -729,8 +699,11 @@
     <!-- 尾 -->
 
     <p id="weChatMatch" style="display:none">{$weChatMatch}</p>
+
     <p id="weChatSub" style="display:none">{$weChatSub}</p>
+
     <p id="weChatNum" style="display:none">{$weChatNum}</p>
+
     <p id="weCESNum" style="display:none">{$weCESNum}</p>
 </section>
 <!-- SECTION -->
@@ -760,11 +733,11 @@
     //    设置起始界面数据统计显示
     showCount();
 
-//    传入近期天数据的数组
-//    var value1 = $('#weChatMatch').text();
-//    var value2 = $('#weWeChatSub').text();
-//    var value3 = $('#weChatNum').text();
-//    var value4 = $('#weCESNum').text();
+    //    传入近期天数据的数组
+    //    var value1 = $('#weChatMatch').text();
+    //    var value2 = $('#weWeChatSub').text();
+    //    var value3 = $('#weChatNum').text();
+    //    var value4 = $('#weCESNum').text();
     var value = [2250, 132, 123, 123, 123, 321, 12, -330, 392, 392, 392, 392, 392, 390, 392];
 
     $(document).ready(tableWeiXinMatch('weixin-num', key, value));

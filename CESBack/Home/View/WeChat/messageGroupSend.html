@@ -53,7 +53,7 @@
         </a>
 
         <!-- 头栏通知 -->
-        <nav class="nav notify-row" id="top_menu">
+        <nav class="nav notify-row dis-none" id="top_menu">
 
             <ul class="nav top-menu">
 
@@ -371,8 +371,8 @@
                                 用户消息回复设置
                             </a>
                         </li>
-                        <li>
-                            <a href="javascript:;">
+                        <li class="dis-none">
+                            <a href="" target="_blank">
                                 用户标签管理
                             </a>
                         </li>
@@ -388,41 +388,21 @@
                               用户管理
                             </span>
                             <span class="label label-info span-sidebar">
-                              7
+                              3
                             </span>
                     </a>
                     <ul class="sub">
                         <li>
+                            <a href="{:U('Home/UserManage/userManage')}">
+                                用户信息管理
+                            </a>
+                        </li>
+                        <li class="dis-none">
                             <a href="">
                                 子菜单
                             </a>
                         </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
+                        <li class="dis-none">
                             <a href="">
                                 子菜单
                             </a>
@@ -439,32 +419,27 @@
                               课程管理
                             </span>
                             <span class="label label-primary span-sidebar">
-                              5
+                              4
                             </span>
                     </a>
 
                     <ul class="sub">
                         <li>
-                            <a href="">
-                                子菜单
+                            <a href="{:U('Home/CourseManage/courseManage')}">
+                                课程信息管理
                             </a>
                         </li>
                         <li>
-                            <a href="">
-                                子菜单
+                            <a href="{:U('Home/CourseManage/surveyManage')}">
+                                课程评价问卷管理
                             </a>
                         </li>
                         <li>
-                            <a href="">
-                                子菜单
+                            <a href="{:U('Home/CourseManage/surveyPublish')}">
+                                课程评价问卷发布
                             </a>
                         </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
+                        <li class="dis-none">
                             <a href="">
                                 子菜单
                             </a>
@@ -481,44 +456,39 @@
                               数据管理
                             </span>
                             <span class="label label-info span-sidebar">
-                              7
+                              4
                             </span>
                     </a>
 
                     <ul class="sub">
                         <li>
+                            <a href="{:U('Home/DataManage/userCourse')}">
+                                用户课程维护
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{:U('Home/DataManage/sysCourse')}">
+                                系统课程维护
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{:U('Home/DataManage/userInfo')}">
+                                用户信息维护
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{:U('Home/DataManage/surveyCount')}">
+                                问卷评价结果统计
+                            </a>
+                        </li>
+                        <li class="dis-none">
                             <a href="">
                                 子菜单
                             </a>
                         </li>
-                        <li>
+                        <li class="dis-none">
                             <a href="">
                                 子菜单
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
-                            <a href="file_upload.html">
-                                Multiple File Upload
                             </a>
                         </li>
                     </ul>
@@ -545,6 +515,7 @@
         <!-- 主容器  -->
         <section class="wrapper">
 
+
             <!--微信群发消息注意事项-->
             <div class="panel panel-danger">
                 <div class="panel-heading">
@@ -566,77 +537,89 @@
                 </div>
             </div>
 
-            <div class="panel-body" style="padding-bottom:0px;">
-                <div class="panel panel-default">
-                    <div class="panel-heading">查询条件</div>
-                    <div class="panel-body">
-                        <form id="formSearch" class="form-horizontal">
-                            <div class="form-group" style="margin-top:15px">
+            <div class="row">
+                <div class="panel-body">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading color-hui">查询条件</div>
+                        <div class="panel-body">
+                            <form id="formSearch" class="form-horizontal">
+                                <div class="form-group" style="margin-top:15px">
 
-                                <label class="control-label col-sm-1" for="txt_search_graclass">年级</label>
+                                    <label class="control-label col-sm-1 mar-left-10"
+                                           for="txt_search_graclass">年级</label>
 
-                                <div class="col-sm-2">
-                                    <input type="text" class="form-control" id="txt_search_graclass">
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control" id="txt_search_graclass">
+                                    </div>
+
+                                    <label class="control-label col-sm-1" for="txt_search_pro">专业</label>
+
+                                    <select class="dd3-content-et m-bot15 order-select col-lg-3" id="txt_search_pro"
+                                            style="margin-top:3px">
+                                        <option value="">无</option>
+                                        <option value="1">计算机科学与技术</option>
+                                        <option value="2">信息安全</option>
+                                        <option value="3">信息与计算科学</option>
+                                        <option value="4">计算机科学与技术（中加方向）</option>
+                                        <option value="5">网络工程</option>
+                                        <option value="6">物联网工程</option>
+                                        <option value="7">通信工程</option>
+                                    </select>
+
+                                    <label class="control-label col-sm-1 mar-left-10" for="txt_search_class">班级</label>
+
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control" id="txt_search_class">
+                                    </div>
+
+                                    <div class="col-sm-1" style="text-align:left;">
+                                        <button type="button" style="margin-left:20px" onclick="show();" id="btn_query"
+                                                class="btn btn-primary">查询
+                                        </button>
+                                    </div>
                                 </div>
-
-                                <label class="control-label col-sm-1" for="txt_search_pro">专业</label>
-
-                                <div class="col-sm-2">
-                                    <input type="text" class="form-control" id="txt_search_pro">
-                                </div>
-
-                                <label class="control-label col-sm-1" for="txt_search_class">班级</label>
-
-                                <div class="col-sm-2">
-                                    <input type="text" class="form-control" id="txt_search_class">
-                                </div>
-
-                                <div class="col-sm-3" style="text-align:left;">
-                                    <button type="button" style="margin-left:50px" onclick="show();" id="btn_query"
-                                            class="btn btn-primary">查询
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
-                <div>
-                    <div id="toolbar" class="btn-group">
-                        <button id="btn_add" type="button" class="btn btn-primary">
-                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>增添发送
-                        </button>
-                    </div>
-                    <table class="panel" id="tablelist" data-page-list="[10, 25, 50, 100, ALL]"></table>
-                </div>
-
-                <div class="panel panel-danger">
-                    <div class="panel-heading">
-                        <h1 class="panel-title-red">
-                            请输入向信用户发送的文本：（输入前请阅读上方注意事项）
-                        </h1>
-                    </div>
-                    <textarea id="wechat_input" rows="10" class="form-control" style="visibility:visible"></textarea>
-                </div>
-
-                <div>
-                    <div id="toolbarsend" class="btn-group">
-                        <div>
-                            <button id="btn_send" type="button" class="btn btn-primary">
-                                发送
-                            </button>
-                            <button id="btn_delete" type="button" class="btn btn-primary" style="margin-left: 2px">
-                                删除
-                            </button>
-                            <button id="btn_preview" type="button" class="btn btn-primary" style="margin-left: 2px">
-                                发送预览
-                            </button>
+                            </form>
                         </div>
                     </div>
-                    <table class="panel panel-danger" id="tablelistsend"
-                           data-page-list="[10, 25, 50, 100, ALL]"></table>
+
+                    <div>
+                        <div id="toolbar" class="btn-group">
+                            <button id="btn_add" type="button" class="btn btn-primary">
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>增添发送
+                            </button>
+                        </div>
+                        <table class="panel" id="tablelist" data-page-list="[10, 25, 50, 100, ALL]"></table>
+                    </div>
+
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            <h1 class="panel-title-red">
+                                请输入向信用户发送的文本：（输入前请阅读上方注意事项）
+                            </h1>
+                        </div>
+                        <textarea id="wechat_input" rows="10" class="form-control"
+                                  style="visibility:visible"></textarea>
+                    </div>
+
+                    <div>
+                        <div id="toolbarsend" class="btn-group">
+                            <div>
+                                <button id="btn_send" type="button" class="btn btn-primary">
+                                    发送
+                                </button>
+                                <button id="btn_delete" type="button" class="btn btn-danger" style="margin-left: 2px">
+                                    删除
+                                </button>
+                                <button id="btn_preview" type="button" class="btn btn-success" style="margin-left: 2px">
+                                    发送预览
+                                </button>
+                            </div>
+                        </div>
+                        <table class="panel panel-danger" id="tablelistsend"
+                               data-page-list="[10, 25, 50, 100, ALL]"></table>
+                    </div>
                 </div>
-            </div>
+            </div>ßßß
 
             <!--测试用文本框-->
             <textarea id="nestable_list_1_output" rows="3" class="form-control" style="visibility:visible"></textarea>

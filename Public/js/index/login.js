@@ -14,6 +14,7 @@ function login() {
         $.ajax({
             type: "POST", //用POST方式传输
             url: "http://localhost/CESBack/index.php/Home/Index/login", //目标地址.
+            //url: "{:U('login')}", //目标地址.
             dataType: "JSON", //数据格式:JSON
             data: {user: userName, pass: userPass},
             success: function (result) {

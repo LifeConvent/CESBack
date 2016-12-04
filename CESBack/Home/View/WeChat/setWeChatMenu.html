@@ -52,7 +52,7 @@
         </a>
 
         <!-- 头栏通知 -->
-        <nav class="nav notify-row" id="top_menu">
+        <nav class="nav notify-row dis-none" id="top_menu">
 
             <ul class="nav top-menu">
 
@@ -370,8 +370,8 @@
                                 用户消息回复设置
                             </a>
                         </li>
-                        <li>
-                            <a href="javascript:;">
+                        <li class="dis-none">
+                            <a href="" target="_blank">
                                 用户标签管理
                             </a>
                         </li>
@@ -387,41 +387,21 @@
                               用户管理
                             </span>
                             <span class="label label-info span-sidebar">
-                              7
+                              3
                             </span>
                     </a>
                     <ul class="sub">
                         <li>
+                            <a href="{:U('Home/UserManage/userManage')}">
+                                用户信息管理
+                            </a>
+                        </li>
+                        <li class="dis-none">
                             <a href="">
                                 子菜单
                             </a>
                         </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
+                        <li class="dis-none">
                             <a href="">
                                 子菜单
                             </a>
@@ -438,32 +418,27 @@
                               课程管理
                             </span>
                             <span class="label label-primary span-sidebar">
-                              5
+                              4
                             </span>
                     </a>
 
                     <ul class="sub">
                         <li>
-                            <a href="">
-                                子菜单
+                            <a href="{:U('Home/CourseManage/courseManage')}">
+                                课程信息管理
                             </a>
                         </li>
                         <li>
-                            <a href="">
-                                子菜单
+                            <a href="{:U('Home/CourseManage/surveyManage')}">
+                                课程评价问卷管理
                             </a>
                         </li>
                         <li>
-                            <a href="">
-                                子菜单
+                            <a href="{:U('Home/CourseManage/surveyPublish')}">
+                                课程评价问卷发布
                             </a>
                         </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
+                        <li class="dis-none">
                             <a href="">
                                 子菜单
                             </a>
@@ -480,44 +455,39 @@
                               数据管理
                             </span>
                             <span class="label label-info span-sidebar">
-                              7
+                              4
                             </span>
                     </a>
 
                     <ul class="sub">
                         <li>
+                            <a href="{:U('Home/DataManage/userCourse')}">
+                                用户课程维护
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{:U('Home/DataManage/sysCourse')}">
+                                系统课程维护
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{:U('Home/DataManage/userInfo')}">
+                                用户信息维护
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{:U('Home/DataManage/surveyCount')}">
+                                问卷评价结果统计
+                            </a>
+                        </li>
+                        <li class="dis-none">
                             <a href="">
                                 子菜单
                             </a>
                         </li>
-                        <li>
+                        <li class="dis-none">
                             <a href="">
                                 子菜单
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                子菜单
-                            </a>
-                        </li>
-                        <li>
-                            <a href="file_upload.html">
-                                Multiple File Upload
                             </a>
                         </li>
                     </ul>

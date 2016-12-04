@@ -7,6 +7,7 @@ var TableInit = function () {
     oTableInit.Init = function () {
         $('#tablelist').bootstrapTable({
             url: "http://localhost/CESBack/index.php/Home/WeChat/getInfo",   //请求后台的URL（*）
+            //url: "{:U('WeChat/getInfo')}", //目标地址.
             method: 'get',      //请求方式（*）
             toolbar: '#toolbar',    //工具按钮用哪个容器
             striped: true,      //是否显示行间隔色
@@ -14,7 +15,7 @@ var TableInit = function () {
             pagination: true,     //是否显示分页（*）
             sortable: false,      //是否启用排序
             sortName: 'stu_num', // 设置默认排序为 name
-            sortOrder: 'desc', // 设置排序为正序 asc
+            sortOrder: 'asc', // 设置排序为正序 asc
             queryParams: oTableInit.queryParams,//传递参数（*）
 //                sidePagination: "server",   //分页方式：client客户端分页，server服务端分页（*）
             pageNumber: 1,      //初始化加载第一页，默认第一页
@@ -87,7 +88,7 @@ var TableInit = function () {
             pagination: true,     //是否显示分页（*）
             sortable: false,      //是否启用排序
             sortName: 'stu_num', // 设置默认排序为 name
-            sortOrder: 'desc', // 设置排序为正序 asc
+            sortOrder: 'asc', // 设置排序为正序 asc
             queryParams: oTableInit.queryParams,//传递参数（*）
 //                sidePagination: "server",   //分页方式：client客户端分页，server服务端分页（*）
             pageNumber: 1,      //初始化加载第一页，默认第一页
@@ -251,7 +252,7 @@ $('#btn_send').click(function () {
 //        取得返回结果
     var selects = $('#tablelistsend').bootstrapTable('getAllSelections');
     var newSelects = JSON.stringify(selects);
-//        alert(newSelects);
+        //alert(newSelects);
 
     var wechat_send = $('#wechat_input').val();
     //ajax提交发送请求

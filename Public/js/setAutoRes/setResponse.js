@@ -27,7 +27,7 @@ var TableInit = function () {
             pagination: true,     //是否显示分页（*）
             sortable: false,      //是否启用排序
             sortName: 'stu_num', // 设置默认排序为 name
-            sortOrder: 'desc', // 设置排序为正序 asc
+            sortOrder: 'asc', // 设置排序为正序 asc
             queryParams: oTableInit.queryParams,//传递参数（*）
 //                sidePagination: "server",   //分页方式：client客户端分页，server服务端分页（*）
             pageNumber: 1,      //初始化加载第一页，默认第一页
