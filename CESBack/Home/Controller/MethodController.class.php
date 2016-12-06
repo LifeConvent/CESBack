@@ -125,7 +125,7 @@ class MethodController extends Controller
     public function getSurvey()
     {
         $survey = M('survey');
-        $result = $survey->field('g.group_name,name,level,owner')
+        $result = $survey->field('g.group_name,name,survey_id,level,owner')
             ->query("SELECT %FIELD% FROM tb_survey AS s,tb_survey_group AS g  WHERE g.group_id=s.survey_group", true);
 //        dump($result);
         for ($i = 0; $i < sizeof($result); $i++) {

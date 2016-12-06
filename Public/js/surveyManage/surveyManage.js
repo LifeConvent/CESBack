@@ -26,7 +26,7 @@ var TableInit = function () {
             cache: false,      //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
             pagination: true,     //是否显示分页（*）
             sortable: false,      //是否启用排序
-            sortName: 'survey_group', // 设置默认排序为 name
+            sortName: 'group_name', // 设置默认排序为 name
             sortOrder: 'asc', // 设置排序为正序 asc
             queryParams: oTableInit.queryParams,//传递参数（*）
 //                sidePagination: "server",   //分页方式：client客户端分页，server服务端分页（*）

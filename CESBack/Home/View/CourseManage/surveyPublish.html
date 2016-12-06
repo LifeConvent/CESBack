@@ -517,104 +517,127 @@
         <!-- 主容器  -->
         <section class="wrapper">
 
-            <!--微信菜单设置注意事项-->
-            <div class="panel panel-danger">
+            <!--问卷发布流程步骤-->
+            <div class="panel panel-warning">
                 <div class="panel-heading">
                     <h1 class="panel-title-red">
-                        微信消息自动回复设置注意事项：
+                        问卷发布流程步骤：
                     </h1>
                 </div>
-                <div class="panel-body" rows="8">
-                    1、消息自动回复是指用户在公众平台输入文本后获取的自动复。<br>
-                    2、消息自动回复可选择类型为文本、链接、图文消息转URL链接跳转等。<br>
-                    3、消息自动回复一经存储成功发布即可使用，建议确定客户端回复样式内容后完成配置。<br>
-                    4、消息自动回复默认类型为文本类型，暂不可用类型请等待开发。<br>
-                    5、消息自动回复类型：text／文本类型、text-url／文本链接类型、new／单图文消息类型、news／多图文消息类型。<br>
-                    <br><br><br>
+                <div class="panel-body mar-left-20" rows="8">
+                    <div class="row">
+                        <div class="order-left-10">
+                            <label class="order-label">1</label>
+                        </div>
+                        <span class="mar-left-20" style="line-height:25px;vertical-align:text-bottom;">
+                             在问卷数据列表中通过查询条件搜索出指定问卷，选择要发布的问卷。
+                        </span>
+                    </div>
+                    <div class="row mar-top-10">
+                        <div class="order-left-10">
+                            <label class="order-label">2</label>
+                        </div>
+                        <span class="mar-left-20" style="line-height:25px;vertical-align:text-bottom;">
+                             在用户数据列表中通过查询条件搜索出特定用户，选择要发布问卷的用户。
+                        </span>
+                    </div>
+                    <div class="row mar-top-10">
+                        <div class="order-left-10">
+                            <label class="order-label">3</label>
+                        </div>
+                        <span class="mar-left-20" style="line-height:25px;vertical-align:text-bottom;">
+                             提交问卷和用户信息，确认发布。可选择自动推送问卷填写消息或不发送。
+                        </span>
+                    </div>
                 </div>
             </div>
 
-            <!--微信菜单设置-->
+            <!--评价问卷管理-->
             <div class="row">
-                <div class="col-lg-12">
-                    <section class="panel">
-                        <header class="panel-heading">
-                            添加微信消息自动回复
-
-                            <span class="tools pull-right">
-
-                                <div class="data-action-div" style="margin-right:-100px;">
-                                    <a href="javascript:;" class="data-action-a" onclick="setRes();">
-                                        提交设置
-                                    </a>
-                                </div>
-                                <div class="right">
-                                    <a href="javascript:;" onclick="refreshRequset();"
-                                       class="fa fa-rotate-right data-action-refresh">
-                                    </a>
-                                </div>
-
-                            </span>
-                        </header>
-                        <div class="col-lg-12 set_auto_list">
-                            <div class="order-left-10">
-                                <label class="order-label">1</label>
-                            </div>
-                            <p class="sar-label-p">
-                                请选择消息类型：</p>
-                            <select class="dd3-content-et m-bot15 order-select col-lg-3" id="response_type"
-                                    style="float:left;">
-                                <option value="text">纯文本</option>
-                                <option value="text_url">文本（含链接）</option>
-                                <option value="new">单图文消息跳转链接--暂不可用</option>
-                                <option value="news">多图文消息跳转多链接--暂不可用</option>
-                            </select>
-                        </div>
-                        <div class="panel-body" style="margin-top:60px;">
-
-                            <div class="col-lg-6">
-                                <section class="panel">
-                                    <div class="order-left-10">
-                                        <label class="order-label">2</label>
-                                    </div>
-                                    <p class="sar-label-p">
-                                        微信用户输入消息内容:</p>
-                                    <textarea rows="8" id="user_input" class="form-control"
-                                              style="margin-top:10px;"></textarea>
-                                </section>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <section class="panel">
-                                    <div class="order-left-10">
-                                        <label class="order-label">3</label>
-                                    </div>
-                                    <p class="sar-label-p">系统回复消息内容:</p>
-                                    <textarea rows="8" id="sys_response" class="form-control"
-                                              style="margin-top:10px;"></textarea>
-                                </section>
-                            </div>
-                        </div>
-
-
-                    </section>
-                </div>
                 <div class="panel-body" style="padding-bottom:0px;">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">查询条件</div>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading color-hui"> 问卷列表查询条件</div>
+                        <div class="panel-body">
+                            <form id="formSearch_surbey" class="form-horizontal">
+                                <div class="form-group" style="margin-top:15px">
+
+                                    <label class="control-label col-sm-3" for="txt_search_user_input_survey"
+                                           style="margin-left:30px;width:100px">问卷名称：</label>
+
+                                    <div class="col-sm-7">
+                                        <input type="text" class="form-control" id="txt_search_user_input_survey">
+                                    </div>
+
+                                    <div class="col-sm-3" style="text-align:left;">
+                                        <button type="button" style="margin-left:10px" onclick="show_survey();"
+                                                id="btn_query_survey"
+                                                class="btn btn-primary">查询
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div id="toolbar_survey" class="btn-group">
+                            <div>
+                                <button id="btn_add_survey" type="button" class="btn btn-primary">
+                                    <span class="glyphicon" aria-hidden="true"></span>单击问卷选择
+                                </button>
+                            </div>
+                        </div>
+                        <table class="panel" id="table_survey" data-page-list="[10, 25, 50, 100, ALL]"></table>
+                    </div>
+                </div>
+            </div>
+
+            <!--用户信息管理-->
+            <div class="row">
+                <div class="panel-body">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading color-hui">用户信息查询条件</div>
                         <div class="panel-body">
                             <form id="formSearch" class="form-horizontal">
                                 <div class="form-group" style="margin-top:15px">
 
-                                    <label class="control-label col-sm-3" for="txt_search_user_input"
-                                           style="margin-left:30px;">用户输入的文本信息：</label>
+                                    <label class="control-label mar-left-10 left-f"
+                                           for="txt_search_graclass">年级：</label>
 
-                                    <div class="col-sm-5">
-                                        <input type="text" class="form-control" id="txt_search_user_input">
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control" id="txt_search_graclass">
                                     </div>
 
-                                    <div class="col-sm-3" style="text-align:left;">
-                                        <button type="button" style="margin-left:10px" onclick="show();"
+                                    <label class="control-label left-f" for="txt_search_pro">专业：</label>
+
+                                    <select class="dd3-content-et m-bot15 order-select col-lg-2" id="txt_search_pro"
+                                            style="margin-top:3px">
+                                        <option value="">无</option>
+                                        <option value="1">计算机科学与技术</option>
+                                        <option value="2">信息安全</option>
+                                        <option value="3">信息与计算科学</option>
+                                        <option value="4">计算机科学与技术（中加方向）</option>
+                                        <option value="5">网络工程</option>
+                                        <option value="6">物联网工程</option>
+                                        <option value="7">通信工程</option>
+                                    </select>
+
+                                    <label class="control-label mar-left-10 left-f"
+                                           for="txt_search_class">班级：</label>
+
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control" id="txt_search_class">
+                                    </div>
+
+                                    <label class="control-label mar-left-10 left-f"
+                                           for="txt_search_class">姓名：</label>
+
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control" id="txt_search_name">
+                                    </div>
+
+                                    <div class="col-sm-1" style="text-align:left;">
+                                        <button type="button" style="margin-left:20px" onclick="show_user();"
                                                 id="btn_query"
                                                 class="btn btn-primary">查询
                                         </button>
@@ -625,15 +648,18 @@
                     </div>
 
                     <div>
-                        <div id="toolbar" class="btn-group">
-                            <button id="btn_delete" type="button" class="btn btn-primary">
-                                <span class="glyphicon" aria-hidden="true"></span>全部删除
+                        <div id="toolbar_user" class="btn-group">
+                            <button id="btn_add_user" type="button" class="btn btn-primary">
+                                <span class="glyphicon" aria-hidden="true"></span>单击用户选择
                             </button>
                         </div>
-                        <table class="panel" id="tablelist" data-page-list="[10, 25, 50, 100, ALL]"></table>
+                        <table class="panel" id="table_user" data-page-list="[10, 25, 50, 100, ALL]"></table>
                     </div>
                 </div>
+            </div>
 
+            <div class="row"  style="margin-left:10%;">
+                <input type="button" class="btn btn-success col-lg-10" value="发布问卷" onclick="surveyPublish();">
             </div>
 
             <!--测试用文本框-->
@@ -756,7 +782,7 @@
 <script src="__PUBLIC__/js/sco.message.js" type="text/javascript"></script>
 <script src="__PUBLIC__/js/bootstrap-table.min.js"></script>
 <script src="__PUBLIC__/js/bootstrap-table-zh-CN.min.js"></script>
-<script src="__PUBLIC__/js/setAutoRes/setResponse.js" type="text/javascript"></script>
+<script src="__PUBLIC__/js/courseManage/surveyPublish.js" type="text/javascript"></script>
 
 
 <script>

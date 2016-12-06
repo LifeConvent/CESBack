@@ -140,7 +140,7 @@ function submitAnswer() {
         }
     }
     result += "]";
-    alert(result);
+    //alert(result);
     var openid = $('#S_openid').val();
     $.ajax({
         type: "POST", //用POST方式传输

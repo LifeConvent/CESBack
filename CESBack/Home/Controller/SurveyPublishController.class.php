@@ -18,8 +18,8 @@ class SurveyPublishController extends Controller
         $open_id = I('get.oi');
 
 //        测试用数据
-        $survey_id = '1480748407';
-        $open_id = 'ocoIvxLTumwc3gpi6SPvKWrzYlt0';
+//        $survey_id = '1480748407';
+//        $open_id = 'ocoIvxLTumwc3gpi6SPvKWrzYlt0';
 
         $condition['survey_id'] = $survey_id;
         $survey = M();

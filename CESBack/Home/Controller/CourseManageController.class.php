@@ -164,7 +164,8 @@ class CourseManageController extends Controller
         exit(json_encode($result));
     }
 
-    public function addNewSurvey(){
+    public function addNewSurvey()
+    {
 //        必填项
         $count = I('post.count');
         $name = I('post.name');
@@ -197,6 +198,38 @@ class CourseManageController extends Controller
             $result['message'] = '数据库读写失败';
         }
         exit(json_encode($result));
+    }
 
+    public function surveyMatch()
+    {
+        $survey = I('post.s');
+        $user = I('post.u');
+        $survey = htmlspecialchars_decode($survey);
+        $user = htmlspecialchars_decode($user);
+
+        $survey = json_decode($survey);
+        $user = json_decode($user);
+
+        $errorinfo = json_last_error();
+
+        for ($i = 0; $i < sizeof($survey); $i++) {
+            $survey_id = $survey[$i];
+            for ($j = 0; $j < sizeof($user); $j++) {
+                $openid = $user[$j];
+                $temp['survey_id'] = $survey_id;
+                $temp['openid'] = $openid;
+                $condition[] = $temp;
+            }
+        }
+        $survey_plan = M('survey_plan');
+//        dump($condition);
+        $res = $survey_plan->addAll($condition);
+        if ($res) {
+            $result['status'] = 'success';
+        } else {
+            $result['status'] = 'failed';
+            $result['message'] = '数据库读写失败'.$errorinfo;
+        }
+        exit(json_encode($result));
     }
 }
