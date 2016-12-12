@@ -19,7 +19,7 @@ var TableInit = function () {
     //初始化Table
     oTableInit.Init = function () {
         $('#table_survey').bootstrapTable({
-            url: "http://localhost/CESBack/index.php/Home/Method/getSurvey",   //请求后台的URL（*）
+            url: HOST + "CESBack/index.php/Home/Method/getSurvey",   //请求后台的URL（*）
             method: 'get',      //请求方式（*）
             toolbar: '#toolbar_survey',    //工具按钮用哪个容器
             striped: true,      //是否显示行间隔色
@@ -34,7 +34,7 @@ var TableInit = function () {
             pageSize: 10,      //每页的记录行数（*）
 //                pageList: [10, 25, 50, 100, ALL],  //可供选择的每页的行数（*）
             search: true,      //是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大
-            strictSearch: true,
+            strictSearch: false,
             showColumns: true,     //是否显示所有的列
             showRefresh: true,     //是否显示刷新按钮
             minimumCountColumns: 2,    //最少允许的列数
@@ -77,7 +77,7 @@ var TableInit = function () {
         });
 
         $('#table_user').bootstrapTable({
-            url: "http://localhost/CESBack/index.php/Home/WeChat/getInfo",   //请求后台的URL（*）
+            url: HOST + "CESBack/index.php/Home/WeChat/getInfo",   //请求后台的URL（*）
             //url: "{:U('WeChat/getInfo')}", //目标地址.
             method: 'get',      //请求方式（*）
             toolbar: '#toolbar',    //工具按钮用哪个容器
@@ -93,7 +93,7 @@ var TableInit = function () {
             pageSize: 10,      //每页的记录行数（*）
 //                pageList: [10, 25, 50, 100, ALL],  //可供选择的每页的行数（*）
             search: true,      //是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大
-            strictSearch: true,
+            strictSearch: false,
             showColumns: true,     //是否显示所有的列
             showRefresh: true,     //是否显示刷新按钮
             minimumCountColumns: 2,    //最少允许的列数
@@ -212,7 +212,7 @@ function show_user() {
     if (url == '?') {
         $.scojs_message('查询内容不能为空！', $.scojs_message.TYPE_ERROR);
     }
-    $('#table_user').bootstrapTable('refresh', {url: "http://localhost/CESBack/index.php/Home/WeChat/searchInfo" + url});
+    $('#table_user').bootstrapTable('refresh', {url: HOST + "CESBack/index.php/Home/WeChat/searchInfo" + url});
 }
 
 function show_survey() {
@@ -224,7 +224,7 @@ function show_survey() {
     if (url == '?') {
         $.scojs_message('查询内容不能为空！', $.scojs_message.TYPE_ERROR);
     }
-    $('#table_survey').bootstrapTable('refresh', {url: "http://localhost/CESBack/index.php/Home/Method/searchSurvey" + url});
+    $('#table_survey').bootstrapTable('refresh', {url: HOST + "CESBack/index.php/Home/Method/searchSurvey" + url});
 }
 
 function surveyPublish() {
@@ -244,23 +244,25 @@ function surveyPublish() {
     }
     surveyArray = JSON.stringify(surveyIDArray);
     var userIDArray = new Array();
+    var userOpenIDArray = new Array();
     var count = 0;
     for (var i = 0; i < userArray.length; i++) {
-        if(userArray[i]['is_match']=='是'){
-            userIDArray.push(userArray[i]['openid']);
+        userOpenIDArray.push(userArray[i]['openid']);
+        userIDArray.push(userArray[i]['stu_num']);
+        if (userArray[i]['is_match'] == '是') {
             count++;
         }
     }
-    if(count==0){
-        $.scojs_message('所选用户中不包含有效匹配用户，不能进行问卷发布！', $.scojs_message.TYPE_ERROR);
-        return;
+    if (count != userArray.length) {
+        $.scojs_message('所选用户中包含未匹配用户，未匹配用户需要在匹配之后才能评价问卷！', $.scojs_message.TYPE_ERROR);
     }
-    userArray = JSON.stringify(userIDArray);
+    var open = JSON.stringify(userOpenIDArray);
+    var id = JSON.stringify(userIDArray);
     $.ajax({
         type: "POST", //用POST方式传输
-        url: "http://localhost/CESBack/index.php/Home/CourseManage/surveyMatch", //目标地址.
+        url: HOST + "CESBack/index.php/Home/CourseManage/surveyMatch", //目标地址.
         dataType: "json", //数据格式:JSON
-        data: {s: surveyArray, u: userArray},
+        data: {s: surveyArray, u: id, o: open},
         success: function (result) {
             if (result.status == 'success') {
                 $.scojs_message('发布成功，请在结束后查询结果！', $.scojs_message.TYPE_OK);

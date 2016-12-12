@@ -39,55 +39,19 @@
         <div class="row">
             <div class="panel-body">
                 <div class="panel panel-primary">
-                    <div class="panel-heading color-hui" style="text-align:center;"><span id="s_name">1</span></div>
+                    <div class="panel-heading color-hui" style="text-align:center;"><span id="s_name">问卷信息列表</span>
+                    </div>
                     <div class="panel-body">
-                        <div>
-                            <ul class="list-group" id="QuestionList">
-                            </ul>
+                        <div id="SurveyList">
                         </div>
-
-                        <!--提交-->
-                        <div class="form-group">
-                            <div class="col-sm-offset-2">
-                                <button type="button" class="btn btn-success" style="width:100%"
-                                        onclick="submitAnswer();">提交
-                                </button>
-                            </div>
-                        </div>
-                        <!--提交-->
                     </div>
                 </div>
             </div>
         </div>
 
         <!--测试用文本框-->
-        <textarea rows="8" id="QList" class="form-control" style="display:none">{$QList}</textarea>
-        <textarea rows="8" id="SList" class="form-control" style="display:none">{$SList}</textarea>
-        <textarea rows="8" id="S_openid" class="form-control" style="display:none">{$openid}</textarea>
-        <input type="text" id="q_count" class="form-control" style="display:none" value="0">
-        <input type="text" id="survey_id" class="form-control" style="display:none" value="0">
-
-
-        <!--删除提示模态-->
-        <div class="modal fade" id="myModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">删除问卷提示</h4>
-                    </div>
-                    <div class="modal-body text-center">
-                        <span class="left-30 red size-16">删除后将无法恢复！确认要删除吗？</span>
-                    </div>
-                    <div class="modal-footer">
-                        <button data-dismiss="modal" class="btn btn-default" type="button">取消</button>
-                        <button class="btn btn-warning" type="button" onclick="">确认</button>
-                    </div>
-                </div>
-            </div>
-            <span style="display:none" id="myModalHide"></span>
-        </div>
-        <!--删除提示模态-->
+        <textarea rows="14" id="SList" class="form-control" style="visibility: hidden">{$SList}</textarea>
+        <textarea id="openid" class="form-control" style="visibility: hidden">{$openid}</textarea>
 
     </section>
     <!-- 主窗体 -->
@@ -114,5 +78,5 @@
 <script src="__PUBLIC__/js/jquery-3.1.1.min.js" type="text/javascript"></script>
 <script src="__PUBLIC__/js/bootstrap.min.js"></script><!-- BOOTSTRAP JS -->
 <script src="__PUBLIC__/js/sco.message.js" type="text/javascript"></script>
-<script src="__PUBLIC__/js/surveyManage/surveyPublish.js" type="text/javascript"></script>
+<script src="__PUBLIC__/js/surveyManage/surveyPreview.js" type="text/javascript"></script>
 </html>

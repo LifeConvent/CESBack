@@ -57,7 +57,7 @@ class CourseManageController extends Controller
     public function getCourse()
     {
         $course = M('course_list');
-        $result = $course->field('course_id,name,teacher_name,semester,take_num')->select();
+        $result = $course->field('course_id,name,teacher_name,semester,take_num,type,is_must')->select();
         if ($result) {
             exit(json_encode($result));
         } else {
@@ -204,20 +204,24 @@ class CourseManageController extends Controller
     {
         $survey = I('post.s');
         $user = I('post.u');
+        $openid = I('post.o');
+
         $survey = htmlspecialchars_decode($survey);
         $user = htmlspecialchars_decode($user);
+        $openid = htmlspecialchars_decode($openid);
 
         $survey = json_decode($survey);
         $user = json_decode($user);
+        $openid = json_decode($openid);
 
         $errorinfo = json_last_error();
 
         for ($i = 0; $i < sizeof($survey); $i++) {
             $survey_id = $survey[$i];
             for ($j = 0; $j < sizeof($user); $j++) {
-                $openid = $user[$j];
                 $temp['survey_id'] = $survey_id;
-                $temp['openid'] = $openid;
+                $temp['stu_num'] = $user[$j];
+                $temp['openid'] = $openid[$j];
                 $condition[] = $temp;
             }
         }
@@ -228,7 +232,73 @@ class CourseManageController extends Controller
             $result['status'] = 'success';
         } else {
             $result['status'] = 'failed';
-            $result['message'] = '数据库读写失败'.$errorinfo;
+            $result['message'] = '数据库读写失败' . $errorinfo;
+        }
+        exit(json_encode($result));
+    }
+
+    public function deleteCourse()
+    {
+        $id = I('post.id');
+        $condition['course_id'] = "$id";
+        $sysResponse = M('course_list');
+        $res = $sysResponse->where($condition)->delete();
+        if ($res) {
+            $result['status'] = 'success';
+            $result['message'] = '删除成功！';
+        } else {
+            $result['status'] = 'failed';
+            $result['message'] = '删除失败！';
+        }
+        exit(json_encode($result));
+    }
+
+    public function modifyCourse()
+    {
+        $id = I('post.c_i');
+        $name = I('post.c_n');
+        $t_name = I('post.t_n');
+        $se = I('post.c_s');
+        $condition['course_id'] = "$id";
+        $temp['name'] = "$name";
+        $temp['teacher_name'] = "$t_name";
+        $temp['semester'] = "$se";
+        $sysResponse = M('course_list');
+        $res = $sysResponse->where($condition)->save($temp);
+        if ($res) {
+            $result['status'] = 'success';
+            $result['message'] = '修改成功！';
+        } else {
+            $result['status'] = 'failed';
+            $result['message'] = '修改失败！';
+        }
+        exit(json_encode($result));
+    }
+
+    public function delQuestion()
+    {
+        $q_id = I('post.q_id');
+        $survey_q = M('survey_question');
+        $condition['question_id'] = "$q_id";
+        $res = $survey_q->where($condition)->delete();
+        if ($res) {
+            $result['status'] = 'success';
+        } else {
+            $result['status'] = 'failed';
+        }
+        exit(json_encode($result));
+    }
+
+    public function delSurvey()
+    {
+        $s_id = I('post.s_id');
+        $survey = M('survey');
+        $condition['survey_id'] = "$s_id";
+        $res = $survey->where($condition)->delete();
+        if ($res) {
+            $result['status'] = 'success';
+        } else {
+            $result['status'] = 'failed';
         }
         exit(json_encode($result));
     }

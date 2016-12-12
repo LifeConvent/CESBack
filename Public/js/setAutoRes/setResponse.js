@@ -19,7 +19,7 @@ var TableInit = function () {
     //初始化Table
     oTableInit.Init = function () {
         $('#tablelist').bootstrapTable({
-            url: "http://localhost/CESBack/index.php/Home/Method/getSysResponse",   //请求后台的URL（*）
+            url: HOST + "CESBack/index.php/Home/Method/getSysResponse",   //请求后台的URL（*）
             method: 'get',      //请求方式（*）
             toolbar: '#toolbar',    //工具按钮用哪个容器
             striped: true,      //是否显示行间隔色
@@ -34,7 +34,7 @@ var TableInit = function () {
             pageSize: 10,      //每页的记录行数（*）
 //                pageList: [10, 25, 50, 100, ALL],  //可供选择的每页的行数（*）
             search: true,      //是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大
-            strictSearch: true,
+            strictSearch: false,
             showColumns: true,     //是否显示所有的列
             showRefresh: true,     //是否显示刷新按钮
             minimumCountColumns: 2,    //最少允许的列数
@@ -138,7 +138,7 @@ function setRes() {
         //alert($user_input + '---' + $sys_response);
         $.ajax({
             type: "POST", //用POST方式传输
-            url: "http://localhost/CES/index.php/Home/SetAutoRes/setRes", //目标地址.
+            url: HOST + "CES/index.php/Home/SetAutoRes/setRes", //目标地址.
             dataType: "json", //数据格式:JSON
             data: {user_input: $user_input, sys_response: $sys_response, type: $type},
             success: function (result) {
@@ -161,7 +161,7 @@ function deleteSub() {
     var id = $('#list_output').val();
     $.ajax({
         type: "POST", //用POST方式传输
-        url: "http://localhost/CESBack/index.php/Home/Method/deleteRes", //目标地址.
+        url: HOST + "CESBack/index.php/Home/Method/deleteRes", //目标地址.
         dataType: "JSON", //数据格式:JSON
         data: {id: id},
         success: function (result) {
@@ -190,12 +190,12 @@ function modifySub() {
     if (u_i == u_i1 && s_r == s_r1 && s_r_t == s_r_t1) {
         $('#modifyResponse').modal('hide');
         $.scojs_message('您并未发生任何修改，已自动退出！', $.scojs_message.TYPE_ERROR);
-    }else{
+    } else {
         $.ajax({
             type: "POST", //用POST方式传输
-            url: "http://localhost/CESBack/index.php/Home/Method/modifyRes", //目标地址.
+            url: HOST + "CESBack/index.php/Home/Method/modifyRes", //目标地址.
             dataType: "JSON", //数据格式:JSON
-            data: {id: id,user_input:u_i1,sys_response:s_r1,sys_response_type:s_r_t1},
+            data: {id: id, user_input: u_i1, sys_response: s_r1, sys_response_type: s_r_t1},
             success: function (result) {
                 if (result.status == 'success') {
                     $.scojs_message(result.message, $.scojs_message.TYPE_OK);
@@ -222,7 +222,7 @@ function show() {
     if (url == '?') {
         $.scojs_message('查询内容不能为空！', $.scojs_message.TYPE_ERROR);
     }
-    $('#tablelist').bootstrapTable('refresh', {url: "http://localhost/CESBack/index.php/Home/Method/searchUserInput" + url});
+    $('#tablelist').bootstrapTable('refresh', {url: HOST + "CESBack/index.php/Home/Method/searchUserInput" + url});
 }
 
 $('#btn_delete').click(function () {

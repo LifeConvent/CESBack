@@ -13,14 +13,14 @@ function login() {
         userPass = hex_md5(userPass);
         $.ajax({
             type: "POST", //用POST方式传输
-            url: "http://localhost/CESBack/index.php/Home/Index/login", //目标地址.
+            url: HOST + "CESBack/index.php/Home/Index/login", //目标地址.
             //url: "{:U('login')}", //目标地址.
             dataType: "JSON", //数据格式:JSON
             data: {user: userName, pass: userPass},
             success: function (result) {
                 if (result.status == 'success') {
                     $.scojs_message(result.hint, $.scojs_message.TYPE_OK);
-                    window.location.href="http://localhost/CESBack/index.php/Home/Home/home";
+                    window.location.href = HOST + "CESBack/index.php/Home/Home/home";
                 } else {
                     $.scojs_message(result.hint, $.scojs_message.TYPE_ERROR);
                 }

@@ -19,7 +19,7 @@ var TableInit = function () {
     //初始化Table
     oTableInit.Init = function () {
         $('#table_survey').bootstrapTable({
-            url: "http://localhost/CESBack/index.php/Home/Method/getSurvey",   //请求后台的URL（*）
+            url: HOST + "CESBack/index.php/Home/Method/getSurvey",   //请求后台的URL（*）
             method: 'get',      //请求方式（*）
             toolbar: '#toolbar',    //工具按钮用哪个容器
             striped: true,      //是否显示行间隔色
@@ -32,9 +32,8 @@ var TableInit = function () {
 //                sidePagination: "server",   //分页方式：client客户端分页，server服务端分页（*）
             pageNumber: 1,      //初始化加载第一页，默认第一页
             pageSize: 10,      //每页的记录行数（*）
-//                pageList: [10, 25, 50, 100, ALL],  //可供选择的每页的行数（*）
             search: true,      //是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大
-            strictSearch: true,
+            strictSearch: false,
             showColumns: true,     //是否显示所有的列
             showRefresh: true,     //是否显示刷新按钮
             minimumCountColumns: 2,    //最少允许的列数
@@ -75,6 +74,46 @@ var TableInit = function () {
                 clickToSelect: false
             }]
         });
+        $('#table_survey_demo').bootstrapTable({
+            url: HOST + "CESBack/index.php/Home/Method/getSurvey",   //请求后台的URL（*）
+            method: 'get',      //请求方式（*）
+            toolbar: '#toolbar_demo',    //工具按钮用哪个容器
+            striped: true,      //是否显示行间隔色
+            cache: false,      //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
+            pagination: true,     //是否显示分页（*）
+            sortable: false,      //是否启用排序
+            sortName: 'group_name', // 设置默认排序为 name
+            sortOrder: 'asc', // 设置排序为正序 asc
+            queryParams: oTableInit.queryParams,//传递参数（*）
+//                sidePagination: "server",   //分页方式：client客户端分页，server服务端分页（*）
+            pageNumber: 1,      //初始化加载第一页，默认第一页
+            pageSize: 5,      //每页的记录行数（*）
+//                pageList: [10, 25, 50, 100, ALL],  //可供选择的每页的行数（*）
+            search: true,      //是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大
+            strictSearch: false,
+            showColumns: false,     //是否显示所有的列
+            showRefresh: true,     //是否显示刷新按钮
+            minimumCountColumns: 2,    //最少允许的列数
+            clickToSelect: true,    //是否启用点击选中行
+            height: 500,      //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
+            uniqueId: "ID",      //每一行的唯一标识，一般为主键列
+            showToggle: false,     //是否显示详细视图和列表视图的切换按钮
+            cardView: false,     //是否显示详细视图
+            detailView: false,     //是否显示父子表
+            columns: [{
+                checkbox: true
+            }, {
+                field: 'group_name',
+                sortable: true,
+                align: 'center',
+                title: '组别'
+            }, {
+                field: 'name',
+                sortable: true,
+                align: 'center',
+                title: '问卷名称'
+            }]
+        });
     };
 
     //得到查询的参数
@@ -103,7 +142,7 @@ var ButtonInit = function () {
 
 window.actionEvents = {
     'click .delete': function (e, value, row, index) {
-        $('#list_output').text(row.id);
+        $('#list_output').text(row.survey_id);
         //删除操作
         $('#myModal').modal('show');
     },
@@ -127,7 +166,7 @@ function show() {
     if (url == '?') {
         $.scojs_message('查询内容不能为空！', $.scojs_message.TYPE_ERROR);
     }
-    $('#table_survey').bootstrapTable('refresh', {url: "http://localhost/CESBack/index.php/Home/Method/searchSurvey" + url});
+    $('#table_survey').bootstrapTable('refresh', {url: HOST + "CESBack/index.php/Home/Method/searchSurvey" + url});
 }
 
 $('#btn_delete').click(function () {
@@ -165,14 +204,33 @@ function delQuestion(obj) {
     var res = $(obj).attr("value");
     var arr = res.split('-');
     $('#' + arr[1]).hide();
-    //arr[0]  数据库中删除
+    var id = arr[0];
+    //arr[0]  数据库中删除,避免过大缓存
+    $.ajax({
+        type: "POST", //用POST方式传输
+        url: HOST + "CESBack/index.php/Home/CourseManage/delQuestion", //目标地址.
+        dataType: "json", //数据格式:JSON
+        data: {
+            q_id: id
+        },
+        success: function (result) {
+            if (result.status == 'success') {
+                $.scojs_message('删除成功！', $.scojs_message.TYPE_OK);
+            } else if (result.status == 'failed') {
+                $.scojs_message('删除失败，但不影响您的问卷，请继续操作！', $.scojs_message.TYPE_ERROR);
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            $.scojs_message('网络连接发生未知错误，请稍后再试！' + errorThrown, $.scojs_message.TYPE_ERROR);
+        }
+    });
 }
 
 function delOption(obj) {
     alert($(obj).attr("value"));
     var id = 'div_option' + $(obj).attr("value");
     $('#' + id).hide();
-    //最后提交的时候要获取选项的内容 Qlistorder即为选项的个数，通过判断display来获取选项具体内容进而保存
+    //最后提交的时候要获取选项的内容 Qlistorder即为选项的个数，通过判断display来获取选项具体内容进而保存,不影响数据库
     //alert($('#' + id).attr('style'));
 }
 
@@ -250,7 +308,7 @@ function submitQuestion() {
     //未删除时保存它的问题序列号至数据库中问卷列表下
     $.ajax({
         type: "POST", //用POST方式传输
-        url: "http://localhost/CESBack/index.php/Home/CourseManage/addNewQuestion", //目标地址.
+        url: HOST + "CESBack/index.php/Home/CourseManage/addNewQuestion", //目标地址.
         dataType: "json", //数据格式:JSON
         data: {
             q_level: q_level,
@@ -301,14 +359,14 @@ function submitSurvey() {
         }
     }
 
-    if(name==''||group==''||level==''||result==''){
+    if (name == '' || group == '' || level == '' || result == '') {
         $.scojs_message("必填项不能为空！", $.scojs_message.TYPE_ERROR);
         return;
     }
     //alert(result +'=='+ name +'=='+ group+'=='+ level+'=='+ detail);
     $.ajax({
         type: "POST", //用POST方式传输
-        url: "http://localhost/CESBack/index.php/Home/CourseManage/addNewSurvey", //目标地址.
+        url: HOST + "CESBack/index.php/Home/CourseManage/addNewSurvey", //目标地址.
         dataType: "json", //数据格式:JSON
         data: {
             count: num,
@@ -333,4 +391,36 @@ function submitSurvey() {
             $.scojs_message('网络连接发生未知错误，请稍后再试！' + errorThrown, $.scojs_message.TYPE_ERROR);
         }
     });
+}
+
+function delSurvey() {
+    var survey_id = $('#list_output').text();
+    $.ajax({
+        type: "POST", //用POST方式传输
+        url: HOST + "CESBack/index.php/Home/CourseManage/delSurvey", //目标地址.
+        dataType: "json", //数据格式:JSON
+        data: {
+            s_id: survey_id
+        },
+        success: function (result) {
+            if (result.status == 'success') {
+                $('#myModal').modal('hide');
+                $.scojs_message('删除成功！', $.scojs_message.TYPE_OK);
+                $('#table_survey').bootstrapTable('refresh');
+            } else if (result.status == 'failed') {
+                $.scojs_message('删除失败，但不影响您的问卷，请继续操作！', $.scojs_message.TYPE_ERROR);
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            $.scojs_message('网络连接发生未知错误，请稍后再试！' + errorThrown, $.scojs_message.TYPE_ERROR);
+        }
+    });
+}
+
+function selectSurveyDemo() {
+    $('#selectSurveyDemo').modal('show');
+}
+
+function submitDemo() {
+    $('#selectSurveyDemo').modal('hide');
 }

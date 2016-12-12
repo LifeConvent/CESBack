@@ -67,7 +67,7 @@ function checkNestable() {
             key = 'url';
             if (type == 'click') {
                 key = 'key';
-                keyID = randomString(5) + String(Date.parse(new Date())) ;//不能是中文，keyID需要为数字编号,时间戳来生成 content为回复内容，记录进入数据库
+                keyID = randomString(5) + String(Date.parse(new Date()));//不能是中文，keyID需要为数字编号,时间戳来生成 content为回复内容，记录进入数据库
                 data.push('{"key":"' + keyID + '","content":"' + content + '"}');
             } else {
                 keyID = content;
@@ -107,7 +107,7 @@ function checkNestable() {
             key = 'url';
             if (type == 'click') {
                 key = 'key';
-                keyID = randomString(5) + String(Date.parse(new Date())) ;//不能是中文，keyID需要为数字编号,时间戳来生成 content为回复内容，记录进入数据库
+                keyID = randomString(5) + String(Date.parse(new Date()));//不能是中文，keyID需要为数字编号,时间戳来生成 content为回复内容，记录进入数据库
                 data.push('{"key":"' + keyID + '","content":"' + content + '"}');
             } else {
                 keyID = content;
@@ -135,7 +135,7 @@ function checkNestable() {
             key = 'url';
             if (type == 'click') {
                 key = 'key';
-                keyID = randomString(5) + String(Date.parse(new Date())) ;//不能是中文，keyID需要为数字编号,时间戳来生成 content为回复内容，记录进入数据库
+                keyID = randomString(5) + String(Date.parse(new Date()));//不能是中文，keyID需要为数字编号,时间戳来生成 content为回复内容，记录进入数据库
                 data.push('{"key":"' + keyID + '","content":"' + content + '"}');
             } else {
                 keyID = content;
@@ -201,7 +201,7 @@ function checkNestable() {
             key = 'url';
             if (type == 'click') {
                 key = 'key';
-                keyID = randomString(5) + String(Date.parse(new Date())) ;//不能是中文，keyID需要为数字编号,时间戳来生成 content为回复内容，记录进入数据库
+                keyID = randomString(5) + String(Date.parse(new Date()));//不能是中文，keyID需要为数字编号,时间戳来生成 content为回复内容，记录进入数据库
                 data.push('{"key":"' + keyID + '","content":"' + content + '"}');
             } else {
                 keyID = content;
@@ -226,7 +226,7 @@ function checkNestable() {
 
     $.ajax({
         type: "POST", //用POST方式传输
-        url: "http://localhost/CES/index.php/Home/Menu/upMenuList", //目标地址.
+        url: HOST + "CES/index.php/Home/Menu/upMenuList", //目标地址.
         dataType: "json", //数据格式:JSON
         data: {menu: menu, data: data},
         success: function (result) {

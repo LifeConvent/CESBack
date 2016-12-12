@@ -144,12 +144,15 @@ function submitAnswer() {
     var openid = $('#S_openid').val();
     $.ajax({
         type: "POST", //用POST方式传输
-        url: "http://localhost/CESBack/index.php/Home/SurveyPublish/surveyAnswer", //目标地址.
+        url: HOST + "CESBack/index.php/Home/SurveyPublish/surveyAnswer", //目标地址.
         dataType: "json", //数据格式:JSON
         data: {ans: result, openid: openid},
         success: function (result) {
             if (result.status == 'success') {
                 $.scojs_message('提交成功，感谢您问卷调查！', $.scojs_message.TYPE_OK);
+                //window.location.href = HOST + 'CESBack/index.php/Home/Show/show?oi=' + openid;
+                window.history.go(-1);
+                window.location.reload();
             } else if (result.status == 'failed') {
                 $.scojs_message('提交失败，请稍后再试！' + result.message, $.scojs_message.TYPE_ERROR);
             }

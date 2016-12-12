@@ -12,6 +12,43 @@ use Think\Controller;
 
 class SurveyPublishController extends Controller
 {
+    public function surPubBef()
+    {
+        $open_id = I('get.oi');
+        if($open_id==null||$open_id==''){
+            return;
+        }
+//        $open_id = 'ocoIvxLTumwc3gpi6SPvKWrzYlt0';
+        $survey = $this->searchSurvey($open_id);
+        if(!$survey){
+            $show = new ShowController();
+            $user = M('user');
+            $conditi['openid'] = $open_id;
+            $name = $user->field('stu_name')
+                ->where($conditi)
+                ->select();
+            $show->assign('stu_name', $name[0]['stu_name']);
+            $show->display('Show/show');
+            return;
+        }
+        $this->assign('SList', json_encode($survey));
+        $this->display();
+    }
+
+    public function searchSurvey($openid = null)
+    {
+        $survey_plan = M();
+//        $openid = 'ocoIvxLTumwc3gpi6SPvKWrzYlt0';
+        $condition['openid'] = "$openid";
+        $condition['is_finish'] = '0';
+        $result = $survey_plan->table('tb_survey_plan')->field('s.survey_id,s.name,p.stu_num,p.openid,p.is_finish')->where($condition)->query('SELECT %FIELD% FROM %TABLE% AS p,tb_survey AS s %WHERE% AND p.survey_id=s.survey_id', true);
+        if ($result) {
+            return $result;
+        } else {
+            return '';
+        }
+    }
+
     public function surveyPublish()
     {
         $survey_id = I('get.si');
@@ -20,6 +57,23 @@ class SurveyPublishController extends Controller
 //        测试用数据
 //        $survey_id = '1480748407';
 //        $open_id = 'ocoIvxLTumwc3gpi6SPvKWrzYlt0';
+
+        //查询问卷是否完成
+        $condi['survey_id'] = $survey_id;
+        $condi['openid'] = $open_id;
+        $sur_plan = M('survey_plan');
+        $sur_res = $sur_plan->field('is_finish')->where($condi)->select();
+        if ($sur_res[0]['is_finish'] == '1') {
+            $show = new ShowController();
+            $user = M('user');
+            $conditi['openid'] = $open_id;
+            $name = $user->field('stu_name')
+                ->where($conditi)
+                ->select();
+            $show->assign('stu_name', $name[0]['stu_name']);
+            $show->display('Show/show');
+            return;
+        }
 
         $condition['survey_id'] = $survey_id;
         $survey = M();
@@ -78,14 +132,21 @@ class SurveyPublishController extends Controller
         $survey_ans = M('survey_answer');
         $res = $survey_ans->addAll($condtion);
         if ($res) {
-            $result['status'] = 'success';
+            $condi['survey_id'] = $survey_id;
+            $condi['openid'] = $openid;
+            $other['is_finish'] = '1';
+            $survey_plan = M('survey_plan');
+            $res = $survey_plan->where($condi)->save($other);
+            if ($res)
+                $result['status'] = 'success';
         } else {
             $result['status'] = 'failed';
-            $result['message'] = $survey_id.'-----'.$errorinfo;
+            $result['message'] = $survey_id . '-----' . $ans;
         }
 //        dump($condtion);
 //        dump($result);
         exit(json_encode($result));
 
     }
+
 }

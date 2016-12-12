@@ -19,7 +19,7 @@ var TableInit = function () {
     //初始化Table
     oTableInit.Init = function () {
         $('#table_user').bootstrapTable({
-            url: "http://localhost/CESBack/index.php/Home/UserManage/getUser",   //请求后台的URL（*）
+            url: HOST + "CESBack/index.php/Home/UserManage/getUser",   //请求后台的URL（*）
             method: 'get',      //请求方式（*）
             toolbar: '#toolbar',    //工具按钮用哪个容器
             striped: true,      //是否显示行间隔色
@@ -34,7 +34,7 @@ var TableInit = function () {
             pageSize: 10,      //每页的记录行数（*）
 //                pageList: [10, 25, 50, 100, ALL],  //可供选择的每页的行数（*）
             search: true,      //是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大
-            strictSearch: true,
+            strictSearch: false,
             showColumns: true,     //是否显示所有的列
             showRefresh: true,     //是否显示刷新按钮
             minimumCountColumns: 2,    //最少允许的列数
@@ -172,8 +172,6 @@ window.actionEvents = {
         $('#modify_stu_sex').val(row.stu_sex);
         $('#modify_stu_qq').val(row.stu_qq);
         $('#modifyUser').modal('show');
-    },
-    'click .mod': function (e, value, row, index) {
     }
 };
 
@@ -198,12 +196,12 @@ function modifyUser() {
     if (a == a1 && b == b1 && c == c1 && d == d1 && e == e1 && f == f1 && g == g1 && h == h1) {
         $('#modifyUser').modal('hide');
         $.scojs_message('您并未发生任何修改，已自动退出！', $.scojs_message.TYPE_ERROR);
-    } else if (b1==''||c1==''||d1==''||e1==''||g1=='') {
+    } else if (b1 == '' || c1 == '' || d1 == '' || e1 == '' || g1 == '') {
         $.scojs_message('除手机号和QQ号外，其他信息不能为空！', $.scojs_message.TYPE_ERROR);
     } else {
         $.ajax({
             type: "POST", //用POST方式传输
-            url: "http://localhost/CESBack/index.php/Home/UserManage/modifyUser", //目标地址.
+            url: HOST + "/CESBack/index.php/Home/UserManage/modifyUser", //目标地址.
             dataType: "JSON", //数据格式:JSON
             data: {num: a1, name: b1, gra: c1, pro: d1, class: e1, phone: f1, sex: g1, qq: h1},
             success: function (result) {
@@ -233,7 +231,7 @@ function deleteUser() {
     var num = $('#list_output').val();
     $.ajax({
         type: "POST", //用POST方式传输
-        url: "http://localhost/CESBack/index.php/Home/UserManage/deleteUser", //目标地址.
+        url: HOST + "CESBack/index.php/Home/UserManage/deleteUser", //目标地址.
         dataType: "JSON", //数据格式:JSON
         data: {num: num},
         success: function (result) {
@@ -271,7 +269,7 @@ function show() {
     if (url == '?') {
         $.scojs_message('查询内容不能为空！', $.scojs_message.TYPE_ERROR);
     }
-    $('#table_user').bootstrapTable('refresh', {url: "http://localhost/CESBack/index.php/Home/UserManage/searchUser" + url});
+    $('#table_user').bootstrapTable('refresh', {url: HOST + "CESBack/index.php/Home/UserManage/searchUser" + url});
 }
 
 $('#btn_delete').click(function () {

@@ -6,7 +6,7 @@ var TableInit = function () {
     //初始化Table
     oTableInit.Init = function () {
         $('#tablelist').bootstrapTable({
-            url: "http://localhost/CESBack/index.php/Home/WeChat/getInfo",   //请求后台的URL（*）
+            url: HOST + "CESBack/index.php/Home/WeChat/getInfo",   //请求后台的URL（*）
             //url: "{:U('WeChat/getInfo')}", //目标地址.
             method: 'get',      //请求方式（*）
             toolbar: '#toolbar',    //工具按钮用哪个容器
@@ -22,7 +22,7 @@ var TableInit = function () {
             pageSize: 10,      //每页的记录行数（*）
 //                pageList: [10, 25, 50, 100, ALL],  //可供选择的每页的行数（*）
             search: true,      //是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大
-            strictSearch: true,
+            strictSearch: false,
             showColumns: true,     //是否显示所有的列
             showRefresh: true,     //是否显示刷新按钮
             minimumCountColumns: 2,    //最少允许的列数
@@ -190,6 +190,8 @@ $(function () {
     var oButtonInit = new ButtonInit();
     oButtonInit.Init();
 
+    $('#wechat_input').text("CES-课程评价系统通知:\n\n   您有新的课程评价问卷已经发布成功，请在规定时间内完成课程评价。\n\n   在公众平台中直接输入'课程评价'即可获取评价问卷进行评价。\n");
+
 });
 
 
@@ -252,9 +254,10 @@ $('#btn_send').click(function () {
 //        取得返回结果
     var selects = $('#tablelistsend').bootstrapTable('getAllSelections');
     var newSelects = JSON.stringify(selects);
-        //alert(newSelects);
+    //alert(newSelects);
 
-    var wechat_send = $('#wechat_input').val();
+    var wechat_send = $('#wechat_input').text();
+    //alert(wechat_send);
     //ajax提交发送请求
 
     var notMatch = 0, match = 0;
@@ -284,7 +287,7 @@ $('#btn_send').click(function () {
     } else {
         $.ajax({
             type: "POST", //用POST方式传输
-            url: "http://localhost/CES/index.php/Home/GroupSend/allSendNews", //目标地址.
+            url: HOST + "CES/index.php/Home/GroupSend/allSendNews", //目标地址.
             dataType: "json", //数据格式:JSON
             data: {content: wechat_send, openid: OpenIDArray, type: 'text'},
             success: function (result) {
@@ -354,9 +357,9 @@ $('#btn_preview').click(function () {
     } else {
         $.ajax({
             type: "POST", //用POST方式传输sendTextPreview
-            url: "http://localhost/CES/index.php/Home/GroupSend/allSendNews", //目标地址.
+            url: HOST + "CES/index.php/Home/GroupSend/allSendNews", //目标地址.
             dataType: "json", //数据格式:JSON
-            data: {content: wechat_send, openid: OpenIDArray,type:'text'},
+            data: {content: wechat_send, openid: OpenIDArray, type: 'text'},
             success: function (result) {
                 if (result.status == 'success') {
                     $.scojs_message('消息发送成功！请在微信公众平台客户端进行查看', $.scojs_message.TYPE_OK);
@@ -394,7 +397,7 @@ function sendSubmit() {
     }
     $.ajax({
         type: "POST", //用POST方式传输
-        url: "http://localhost/CES/index.php/Home/GroupSend/allSendNews", //目标地址.
+        url: HOST + "CES/index.php/Home/GroupSend/allSendNews", //目标地址.
         dataType: "json", //数据格式:JSON
         data: {content: wechat_send, openid: OpenIDArray, type: 'text'},
         success: function (result) {
@@ -427,5 +430,5 @@ function show() {
     if (url == '?') {
         $.scojs_message('查询内容不能为空！', $.scojs_message.TYPE_ERROR);
     }
-    $('#tablelist').bootstrapTable('refresh', {url: "http://localhost/CESBack/index.php/Home/WeChat/searchInfo" + url});
+    $('#tablelist').bootstrapTable('refresh', {url: HOST + "CESBack/index.php/Home/WeChat/searchInfo" + url});
 }
