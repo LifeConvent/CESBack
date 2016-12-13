@@ -9,29 +9,30 @@
 namespace Home\Controller;
 
 use Think\Controller;
+use Think\Think;
 
 class SurveyPublishController extends Controller
 {
     public function surPubBef()
     {
         $open_id = I('get.oi');
-        if($open_id==null||$open_id==''){
+        if ($open_id == null || $open_id == '') {
             return;
         }
 //        $open_id = 'ocoIvxLTumwc3gpi6SPvKWrzYlt0';
         $survey = $this->searchSurvey($open_id);
-        if(!$survey){
+        if (!$survey) {
             $show = new ShowController();
             $user = M('user');
             $conditi['openid'] = $open_id;
             $name = $user->field('stu_name')
                 ->where($conditi)
                 ->select();
-            $show->assign('stu_name', $name[0]['stu_name']);
+            $show->assign('stu_name', htmlspecialchars($name[0]['stu_name']));
             $show->display('Show/show');
             return;
         }
-        $this->assign('SList', json_encode($survey));
+        $this->assign('SList', htmlspecialchars(json_encode($survey)));
         $this->display();
     }
 
@@ -53,7 +54,15 @@ class SurveyPublishController extends Controller
     {
         $survey_id = I('get.si');
         $open_id = I('get.oi');
+        $show = new ShowController();
 
+        if ($survey_id == null || $open_id == null) {
+            $show->assign('title', '错误提示');
+            $show->assign('head', '用户不具有回答此问卷的权限');
+            $show->assign('body', '请按照正常流程从微信端获取问卷');
+            $show->display('Show/showError');
+            return;
+        }
 //        测试用数据
 //        $survey_id = '1480748407';
 //        $open_id = 'ocoIvxLTumwc3gpi6SPvKWrzYlt0';
@@ -63,14 +72,19 @@ class SurveyPublishController extends Controller
         $condi['openid'] = $open_id;
         $sur_plan = M('survey_plan');
         $sur_res = $sur_plan->field('is_finish')->where($condi)->select();
-        if ($sur_res[0]['is_finish'] == '1') {
-            $show = new ShowController();
+        if (!$sur_res) {
+            $show->assign('title', '错误提示');
+            $show->assign('head', '用户不具有回答此问卷的权限');
+            $show->assign('body', '请按照正常流程从微信端获取问卷');
+            $show->display('Show/showError');
+            return;
+        } else if ($sur_res[0]['is_finish'] == '1') {
             $user = M('user');
             $conditi['openid'] = $open_id;
             $name = $user->field('stu_name')
                 ->where($conditi)
                 ->select();
-            $show->assign('stu_name', $name[0]['stu_name']);
+            $show->assign('stu_name', htmlspecialchars($name[0]['stu_name']));
             $show->display('Show/show');
             return;
         }
@@ -102,16 +116,23 @@ class SurveyPublishController extends Controller
             $questionList[$i] = $question[0];
         }
 //        dump($questionList);
-        $this->assign('QList', json_encode($questionList));
-        $this->assign('SList', json_encode($surveyList));
-        $this->assign('openid', $open_id);
+        $this->assign('QList', htmlspecialchars(json_encode($questionList)));
+        $this->assign('SList', htmlspecialchars(json_encode($surveyList)));
+        $this->assign('openid', htmlspecialchars($open_id));
         $this->display();
     }
 
     public function surveyAnswer()
     {
+        $temp = $_POST['ans'];
         $ans = I('post.ans');
         $openid = I('post.openid');
+        $id = I('post.id');
+        if (md5($temp . KEY) != $id) {
+            $result['status'] = 'failed';
+            $result['message'] = '非法提交！数据已被第三方修改！';
+            exit(json_encode($result));
+        }
 //        $ans = '[{"survey_id":"1480748407"},{"question_id":"1480748343","question_ans":"1,2,3"},{"question_id":"1480748356","question_ans":"1,2,3,4"},{"question_id":"1480748364","question_ans":"1,2,4"},{"question_id":"1480748372","question_ans":"3"},{"question_id":"1480748377","question_ans":"1,2,3"},{"question_id":"1480748382","question_ans":"1,3"},{"question_id":"1480748400","question_ans":"1"}]';
 //        $openid = 'ocoIvxLTumwc3gpi6SPvKWrzYlt0';
         $ans = htmlspecialchars_decode($ans);

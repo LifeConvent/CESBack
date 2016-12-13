@@ -23,7 +23,7 @@ class ShowController extends Controller
         $name = $user->field('stu_name')
             ->where($condition)
             ->select();
-        $this->assign('stu_name', $name[0]['stu_name']);
+        $this->assign('stu_name', htmlspecialchars($name[0]['stu_name']));
         $this->display();
     }
 }

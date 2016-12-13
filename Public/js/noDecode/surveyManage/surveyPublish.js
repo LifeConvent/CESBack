@@ -142,12 +142,11 @@ function submitAnswer() {
     result += "]";
     //alert(result);
     var openid = $('#S_openid').val();
-    var id = hex_md5(result + KEY);
     $.ajax({
         type: "POST", //用POST方式传输
         url: HOST + "CESBack/index.php/Home/SurveyPublish/surveyAnswer", //目标地址.
         dataType: "json", //数据格式:JSON
-        data: {ans: result, openid: openid, id: id},
+        data: {ans: result, openid: openid},
         success: function (result) {
             if (result.status == 'success') {
                 $.scojs_message('提交成功，感谢您问卷调查！', $.scojs_message.TYPE_OK);

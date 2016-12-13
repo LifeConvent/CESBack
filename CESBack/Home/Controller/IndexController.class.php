@@ -12,8 +12,8 @@ class IndexController extends Controller
 
     public function login()
     {
-        $user = $_POST['user'];
-        $pass = $_POST['pass'];
+        $user = I('post.user');
+        $pass = I('post.pass');
         if($user==null||$pass==null){
             $result['status'] = 'failed';
             $result['hint'] = '登录失败！';

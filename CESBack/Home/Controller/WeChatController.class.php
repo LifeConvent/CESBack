@@ -64,9 +64,9 @@ class WeChatController extends Controller
     public function searchInfo()
     {
         $user = M();
-        $class = $_GET['class'];
-        $pro = $_GET['pro'];
-        $gra = $_GET['gra'];
+        $class = I('get.class');
+        $pro = I('get.pro');
+        $gra = I('get.gra');
         $condition = null;
         if ($class != null) {
             $condition['stu_class'] = "$class";

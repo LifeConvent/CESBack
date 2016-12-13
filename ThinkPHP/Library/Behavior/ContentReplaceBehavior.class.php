@@ -36,6 +36,7 @@ class ContentReplaceBehavior {
             '__CONTROLLER__'=>  __CONTROLLER__,
             '__URL__'       =>  __CONTROLLER__,
             '__PUBLIC__'    =>  __ROOT__.'/Public',// 站点公共目录
+            '__KEY__'    =>  'Ia0CtpywryfU5VGNAlk23s8ctM-99v7we2HZmkVuh_szDz3dinL9aQ9gqslBTZk2',
             '__HOST__'      => 'http://zefsu.free.natapp.cc/',
 //            '__HOST__'      => 'http://localhost/',
         );
