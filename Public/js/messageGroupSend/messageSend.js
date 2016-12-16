@@ -27,7 +27,7 @@ var TableInit = function () {
             showRefresh: true,     //是否显示刷新按钮
             minimumCountColumns: 2,    //最少允许的列数
             clickToSelect: true,    //是否启用点击选中行
-            height: 500,      //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
+            //height: 500,      //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
             uniqueId: "ID",      //每一行的唯一标识，一般为主键列
             showToggle: true,     //是否显示详细视图和列表视图的切换按钮
             cardView: false,     //是否显示详细视图
@@ -198,16 +198,6 @@ $(function () {
 $tableUp = $('#tablelistsend');
 $tableDown = $('#tablelist');
 window.actionEvents2 = {
-//        'click .mod': function (e, value, row, index) {
-//            //修改操作
-//            alert('修改');
-//            $('#tablelist').bootstrapTable('updateRow', {
-//                index: index,
-//                row: {
-//                    Pallets: "要修改的内容"
-//                }
-//            });
-//        },
     'click .delete': function (e, value, row, index) {
         //删除操作
         $tableDown.bootstrapTable("append", row);
@@ -221,16 +211,6 @@ window.actionEvents2 = {
 
 //表格  - 操作 - 事件
 window.actionEvents = {
-//        'click .mod': function (e, value, row, index) {
-//            //修改操作
-//            alert('修改');
-//            $('#tablelist').bootstrapTable('updateRow', {
-//                index: index,
-//                row: {
-//                    Pallets: "要修改的内容"
-//                }
-//            });
-//        },
     'click .delete': function (e, value, row, index) {
         //删除操作
         var num = new Array(row.stu_num);
@@ -280,9 +260,6 @@ $('#btn_send').click(function () {
     } else if (notMatch > 0) {
         //1. 含有未匹配用户，获取ajax发送结果，提示发送结果和含有为匹配用户
         //2. 含有未匹配用户，数组存入session，确认继续发送即发送并获取ajax发送结果，提示发送结，取消则不做发送操作仅关闭模态
-//            $.session.set('openid_array', JSON.stringify(OpenIDArray));  json格式传送，需要解析格式，文本内容课直接获取
-        sessionStorage.obj = JSON.stringify(OpenIDArray);
-        //dialog显示myModal
         $('#myModal').modal('show');
     } else {
         $.ajax({

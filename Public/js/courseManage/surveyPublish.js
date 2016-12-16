@@ -39,7 +39,7 @@ var TableInit = function () {
             showRefresh: true,     //是否显示刷新按钮
             minimumCountColumns: 2,    //最少允许的列数
             clickToSelect: true,    //是否启用点击选中行
-            height: 500,      //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
+            //height: 500,      //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
             uniqueId: "ID",      //每一行的唯一标识，一般为主键列
             showToggle: true,     //是否显示详细视图和列表视图的切换按钮
             cardView: false,     //是否显示详细视图
@@ -80,7 +80,7 @@ var TableInit = function () {
             url: HOST + "CESBack/index.php/Home/WeChat/getInfo",   //请求后台的URL（*）
             //url: "{:U('WeChat/getInfo')}", //目标地址.
             method: 'get',      //请求方式（*）
-            toolbar: '#toolbar',    //工具按钮用哪个容器
+            toolbar: '#toolbar_user',    //工具按钮用哪个容器
             striped: true,      //是否显示行间隔色
             cache: false,      //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
             pagination: true,     //是否显示分页（*）
@@ -98,7 +98,7 @@ var TableInit = function () {
             showRefresh: true,     //是否显示刷新按钮
             minimumCountColumns: 2,    //最少允许的列数
             clickToSelect: true,    //是否启用点击选中行
-            height: 500,      //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
+            //height: 500,      //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
             uniqueId: "ID",      //每一行的唯一标识，一般为主键列
             showToggle: true,     //是否显示详细视图和列表视图的切换按钮
             cardView: false,     //是否显示详细视图
@@ -215,18 +215,6 @@ function show_user() {
     $('#table_user').bootstrapTable('refresh', {url: HOST + "CESBack/index.php/Home/WeChat/searchInfo" + url});
 }
 
-function show_survey() {
-    var survey_name = $('#txt_search_user_input_survey').val();
-    var url = '?';
-    if (survey_name != '') {
-        url += ('name=' + survey_name);
-    }
-    if (url == '?') {
-        $.scojs_message('查询内容不能为空！', $.scojs_message.TYPE_ERROR);
-    }
-    $('#table_survey').bootstrapTable('refresh', {url: HOST + "CESBack/index.php/Home/Method/searchSurvey" + url});
-}
-
 function surveyPublish() {
     var surveyArray = $('#table_survey').bootstrapTable('getAllSelections');
     var userArray = $('#table_user').bootstrapTable('getAllSelections');
@@ -279,4 +267,25 @@ function surveyPublish() {
 
 function isArray(obj) {
     return Object.prototype.toString.call(obj) === '[object Array]';
+}
+
+function searchSurvey() {
+    var level = $('#survey_search_level').val();
+    var group = $('#survey_search_group').val();
+    var condition = $('#txt_search_condition_input').val();
+    var url = '?';
+    if (level != '0') {
+        url += ('l=' + level + '&');
+    }
+    if (group != '0') {
+        url += ('g=' + group + '&');
+    }
+    if (condition != '' && condition != null) {
+        url += ('c=' + condition + '&');
+    }
+    //alert(url);
+    if (url == '?') {
+        $.scojs_message('查询内容不能为空！', $.scojs_message.TYPE_ERROR);
+    }
+    $('#table_survey').bootstrapTable('refresh', {url: HOST + "CESBack/index.php/Home/CourseManage/searchSurvey" + url});
 }

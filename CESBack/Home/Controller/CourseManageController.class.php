@@ -33,6 +33,13 @@ class CourseManageController extends Controller
         $result = $method->checkIn($username);
         if ($result) {
             $this->assign('username', $username);
+            $group = M('survey_group');
+            $select = $group->select();
+            $content = '<option value="0">|---- 无</option>';
+            for ($i = 0; $i < sizeof($select); $i++) {
+                $content .= '<option value="' . $select[$i]['group_id'] . '">' . '|----' . $select[$i]['group_name'] . '</option>';
+            }
+            $this->assign('groupSelectList', $content);
             $this->display();
         } else {
 //            $this->error('登录已过期，请登录后再操作','Home/Index/index',3);
@@ -47,6 +54,35 @@ class CourseManageController extends Controller
         $result = $method->checkIn($username);
         if ($result) {
             $this->assign('username', $username);
+            $group = M('survey_group');
+            $select = $group->select();
+            $content = '<option value="0">|---- 无</option>';
+            for ($i = 0; $i < sizeof($select); $i++) {
+                $content .= '<option value="' . $select[$i]['group_id'] . '">' . '|----' . $select[$i]['group_name'] . '</option>';
+            }
+            $this->assign('groupSelectList', $content);
+            $this->display();
+            $this->display();
+        } else {
+//            $this->error('登录已过期，请登录后再操作','Home/Index/index',3);
+            $this->redirect('Index/index');
+        }
+    }
+
+    public function surveyCondition()
+    {
+        $username = '';
+        $method = new MethodController();
+        $result = $method->checkIn($username);
+        if ($result) {
+            $this->assign('username', $username);
+            $group = M('survey_group');
+            $select = $group->select();
+            $content = '<option value="-1">|---- 无</option>';
+            for ($i = 0; $i < sizeof($select); $i++) {
+                $content .= '<option value="' . $select[$i]['group_id'] . '">' . '|----' . $select[$i]['group_name'] . '</option>';
+            }
+            $this->assign('groupSelectList', $content);
             $this->display();
         } else {
 //            $this->error('登录已过期，请登录后再操作','Home/Index/index',3);
@@ -101,7 +137,9 @@ class CourseManageController extends Controller
         $course = M();
         //模糊查询
         $result = $course->field('course_id,name,teacher_name,semester,take_num')
-            ->query("SELECT %FIELD% FROM tb_course_list WHERE " . $sql, true);
+            ->table('tb_course_list')
+            ->where($sql)
+            ->query("SELECT %FIELD% FROM %TABLE% %WHERE% ", true);
         if ($result) {
             exit(json_encode($result));
         } else {
@@ -301,5 +339,256 @@ class CourseManageController extends Controller
             $result['status'] = 'failed';
         }
         exit(json_encode($result));
+    }
+
+    public function getSurveyGroup()
+    {
+        $group = M('survey_group');
+        $res = $group->select();
+        if ($res) {
+            exit(json_encode($res));
+        } else {
+            exit(json_encode(''));
+        }
+    }
+
+    public function addNewGroup()
+    {
+        $name = I('post.name');
+        $group = M('survey_group');
+        $condition['group_name'] = "$name";
+        $res = $group->add($condition);
+        if ($res) {
+            $result['status'] = 'success';
+        } else {
+            $result['status'] = 'failed';
+            $result['message'] = '添加失败！';
+        }
+        exit(json_encode($result));
+    }
+
+    public function delGroup()
+    {
+        $id = I('post.id');
+        $group = M('survey_group');
+        $condition['group_id'] = "$id";
+        $res = $group->where($condition)->delete();
+        if ($res) {
+            $result['status'] = 'success';
+        } else {
+            $result['status'] = 'failed';
+        }
+        exit(json_encode($result));
+    }
+
+    public function modifyGroup()
+    {
+        $id = I('post.id');
+        $name = I('post.name');
+        $group = M('survey_group');
+        $condition['group_id'] = "$id";
+        $temp['group_name'] = "$name";
+        $res = $group->where($condition)->save($temp);
+        if ($res) {
+            $result['status'] = 'success';
+        } else {
+            $result['status'] = 'failed';
+        }
+        exit(json_encode($result));
+    }
+
+    public function getSurveyPlan()
+    {
+        $plan = M();
+        $result = $plan->field('p.id,p.survey_id,p.stu_num,p.openid,p.is_finish,s.name')
+            ->table('tb_survey_plan')
+            ->where('s.survey_id=p.survey_id')
+            ->query('SELECT %FIELD% FROM %TABLE% AS p,tb_survey AS s %WHERE%', true);
+        if ($result) {
+            for ($i = 0; $i < sizeof($result); $i++) {
+                if ($result[$i]['is_finish'] == '1') {
+                    $result[$i]['is_finish'] = '是';
+                } else {
+                    $result[$i]['is_finish'] = '否';
+                }
+
+                if ($result[$i]['openid'] != '' && $result[$i]['openid'] != null) {
+                    $result[$i]['is_match'] = '是';
+                } else {
+                    $result[$i]['is_match'] = '否';
+                }
+            }
+            echo json_encode($result);
+        } else {
+            echo '';
+        }
+    }
+
+    public function searchSurveyDemo()
+    {
+        $id = I('post.id');
+        $condition['survey_id'] = "$id";
+        $plan = M('survey');
+        $s_result = $plan->field('survey_id,name,level,description,survey_group,count,question')
+            ->where($condition)->select();
+        if ($s_result) {
+            $q_list = $s_result[0]['question'];
+            $q_list = explode(',', $q_list);
+            $q = M('survey_question');
+            foreach ($q_list AS $k => $v) {
+                $con['question_id'] = "$v";
+                $ques = $q->where($con)->select();
+                if ($ques) {
+                    $question[$k]['question_id'] = $ques[0]['question_id'];
+                    $question[$k]['name'] = $ques[0]['name'];
+                } else {
+                    $question[$k]['name'] = 'NULL';
+                    $question[$k]['question_id'] = 'NULL';
+                }
+            }
+            $s_result[0]['question'] = $question;
+            $result['status'] = 'success';
+            $result['data'] = json_encode($s_result);
+        } else {
+            $result['status'] = 'failed';
+            $result['message'] = '问卷模版不存在，请重新选择！';
+        }
+        exit(json_encode($result));
+    }
+
+    public function modifySurveyCondition()
+    {
+        $stu_num = I('post.s_n');
+        $is_finish = I('post.i_f');
+        $id = I('post.id');
+        $condition['id'] = "$id";
+        $temp['stu_num'] = "$stu_num";
+        $temp['is_finish'] = "$is_finish";
+        $plan = M('survey_plan');
+        $res = $plan->where($condition)->save($temp);
+        if ($res) {
+            $result['status'] = 'success';
+        } else {
+            $result['status'] = 'failed';
+        }
+        exit(json_encode($result));
+    }
+
+    public function delCondition()
+    {
+        $id = I('post.id');
+        $condition['id'] = "$id";
+        $plan = M('survey_plan');
+        $res = $plan->where($condition)->delete();
+        if ($res) {
+            $result['status'] = 'success';
+        } else {
+            $result['status'] = 'failed';
+        }
+        exit(json_encode($result));
+    }
+
+    public function searchCondition()
+    {
+        $group = I('get.g');
+        $name = I('get.s_name');
+        $num = I('get.s_num');
+        $count = 0;
+        $sql = '';
+        if ($group != '-1' && $group != null) {
+            if ($count == 0) {
+                $sql .= " s.survey_group =" . $group;
+                $count++;
+            } else {
+                $sql .= "AND s.survey_group =" . $group;
+                $count++;
+            }
+        }
+        if ($name != null) {
+            if ($count == 0) {
+                $sql .= " name LIKE '" . $name . "%' ";
+                $count++;
+            } else {
+                $sql .= " AND name LIKE '" . $name . "%' ";
+                $count++;
+            }
+        }
+        if ($num != null) {
+            if ($count == 0) {
+                $sql .= " stu_num LIKE '" . $num . "%' ";
+                $count++;
+            } else {
+                $sql .= " AND stu_num LIKE '" . $num . "%' ";
+                $count++;
+            }
+        }
+        $course = M();
+        //模糊查询
+        $result = $course->field('p.id,p.survey_id,p.stu_num,p.openid,p.is_finish,s.name')
+            ->table('tb_survey')
+            ->where('s.survey_id=p.survey_id AND' . $sql)
+            ->query("SELECT %FIELD% FROM %TABLE% AS s,tb_survey_plan AS p %WHERE% ", true);
+        if ($result) {
+            for ($i = 0; $i < sizeof($result); $i++) {
+                if ($result[$i]['is_finish'] == '1') {
+                    $result[$i]['is_finish'] = '是';
+                } else {
+                    $result[$i]['is_finish'] = '否';
+                }
+
+                if ($result[$i]['openid'] != '' && $result[$i]['openid'] != null) {
+                    $result[$i]['is_match'] = '是';
+                } else {
+                    $result[$i]['is_match'] = '否';
+                }
+            }
+            exit(json_encode($result));
+        } else {
+            exit(json_encode(''));
+        }
+    }
+
+    public function searchSurvey()
+    {
+        $level = I('get.l');
+        $group = I('get.g');
+        $condi = I('get.c');
+        $count = 0;
+        $sql = '';
+        if ($level != null) {
+            if ($count == 0) {
+                $sql .= " level LIKE '" . $level . "%' ";
+                $count++;
+            }
+        }
+        if ($group != null) {
+            if ($count == 0) {
+                $sql .= " survey_group LIKE '" . $group . "%' ";
+                $count++;
+            } else {
+                $sql .= " AND survey_group LIKE '" . $group . "%' ";
+                $count++;
+            }
+        }
+        if ($condi != null) {
+            if ($count == 0) {
+                $sql .= " name LIKE '" . $condi . "%' ";
+                $count++;
+            } else {
+                $sql .= " AND name LIKE '" . $condi . "%' ";
+                $count++;
+            }
+        }
+        $course = M();
+        //模糊查询
+        $result = $course->field('g.group_name,name,survey_id,level,owner')
+            ->table('tb_survey')
+            ->where($sql . 'AND g.group_id=s.survey_group')
+            ->query("SELECT %FIELD% FROM %TABLE% AS s, tb_survey_group AS g %WHERE%", true);
+        if ($result) {
+            exit(json_encode($result));
+        } else {
+            exit(json_encode(''));
+        }
     }
 }
