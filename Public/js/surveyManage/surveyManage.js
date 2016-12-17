@@ -566,6 +566,13 @@ function submitSurvey() {
         }
     }
 
+    /**
+     * 当最后一个字符为，时删除，以免产生空问题
+     * */
+    if (result.charAt(result.length - 1) == ',') {
+        result = result.substring(0, result.length - 1);
+    }
+
     if (name == '' || group == '' || level == '' || result == '') {
         $.scojs_message("必填项不能为空！", $.scojs_message.TYPE_ERROR);
         return;
@@ -620,6 +627,13 @@ function submitModifySurvey() {
             else
                 result += (ele.attr('value'));
         }
+    }
+
+    /**
+     * 当最后一个字符为，时删除，以免产生空问题
+     * */
+    if (result.charAt(result.length - 1) == ',') {
+        result = result.substring(0, result.length - 1);
     }
 
     if (name == '' || group == '' || level == '' || result == '') {
