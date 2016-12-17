@@ -204,11 +204,18 @@ window.actionEvents = {
                 if (result.status == 'success') {
                     $('#wrapper1').hide();
                     $('#wrapper2').show();
+                    /**
+                     * 隐藏新增按钮
+                     * 显示修改按钮
+                     * */
+                    $('#submit_new').hide();
+                    $('#submit_modify').show();
                     //成功查找后调用的函数
                     var SQlist = result.data;
                     dealSurveyDemo(SQlist);
+                    $('#survey_id_hide').val(id);
                 } else if (result.status == 'failed') {
-                    $.scojs_message('问卷添加失败，请稍后再试！' + result.message, $.scojs_message.TYPE_ERROR);
+                    $.scojs_message('问卷修改失败，请稍后再试！' + result.message, $.scojs_message.TYPE_ERROR);
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
@@ -296,6 +303,8 @@ $('#btn_add').click(function () {
     $("#QuestionList").empty();
     $('#wrapper1').hide();
     $('#wrapper2').show();
+    $('#submit_modify').hide();
+    $('#submit_new').show();
 });
 
 $('#btn_add_group').click(function () {
@@ -591,6 +600,63 @@ function submitSurvey() {
     });
 }
 
+
+function submitModifySurvey() {
+    var num = $('#q_count').val();//问卷当中的问题总数
+
+    var name = $('#new_survey_name').val();
+    var group = $('#survey_sub_group').val();
+    var level = $('#survey_level input[name="survey_type"]:checked ').val();
+    var detail = $('#new_survey_detail').val();//简介
+    var id = $('#survey_id_hide').val();
+
+    //问卷的问题列表
+    var result = '';
+    for (var i = 1; i <= num; i++) {
+        var ele = $('#sur_ques_li' + i);
+        if (ele.attr('style') == 'display: block') {
+            if (i != num)
+                result += (ele.attr('value') + ',');
+            else
+                result += (ele.attr('value'));
+        }
+    }
+
+    if (name == '' || group == '' || level == '' || result == '') {
+        $.scojs_message("必填项不能为空！", $.scojs_message.TYPE_ERROR);
+        return;
+    }
+    //alert(result +'=='+ name +'=='+ group+'=='+ level+'=='+ detail);
+    $.ajax({
+        type: "POST", //用POST方式传输
+        url: HOST + "CESBack/index.php/Home/CourseManage/modifySurvey", //目标地址.
+        dataType: "json", //数据格式:JSON
+        data: {
+            id: id,
+            count: num,
+            name: name,
+            group: group,
+            level: level,
+            detail: detail,
+            question: result
+        },
+        success: function (result) {
+            if (result.status == 'success') {
+                $('#wrapper1').show();
+                $('#wrapper2').hide();
+                $.scojs_message('问卷修改成功！', $.scojs_message.TYPE_OK);
+                $('#table_survey').bootstrapTable('refresh');
+
+            } else if (result.status == 'failed') {
+                $.scojs_message(result.message, $.scojs_message.TYPE_ERROR);
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            $.scojs_message('网络连接发生未知错误，请稍后再试！' + errorThrown, $.scojs_message.TYPE_ERROR);
+        }
+    });
+}
+
 function delSurvey() {
     var survey_id = $('#list_output').text();
     $.ajax({
@@ -616,6 +682,7 @@ function delSurvey() {
 }
 
 function selectSurveyDemo() {
+    $('#table_survey_demo').bootstrapTable('refresh');
     $('#selectSurveyDemo').modal('show');
 }
 

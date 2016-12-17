@@ -576,7 +576,8 @@
                                                for="txt_search_condition_input">问卷名称：</label>
 
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="txt_search_condition_input" placeholder="请输入问卷名称">
+                                            <input type="text" class="form-control" id="txt_search_condition_input"
+                                                   placeholder="请输入问卷名称">
                                         </div>
                                     </div>
 
@@ -755,12 +756,23 @@
                                             <!--隐藏排序及数量-->
 
                                             <!--提交-->
-                                            <div class="form-group">
+                                            <div class="form-group" id="submit_new">
                                                 <div class="col-sm-offset-2 col-sm-10">
                                                     <button type="button" class="btn btn-success col-sm-10"
                                                             onclick="submitSurvey();">提交
                                                     </button>
                                                 </div>
+                                            </div>
+                                            <!--提交-->
+
+                                            <!--提交-->
+                                            <div class="form-group" style="display: none" id="submit_modify">
+                                                <div class="col-sm-offset-2 col-sm-10">
+                                                    <button type="button" class="btn btn-success col-sm-10"
+                                                            onclick="submitModifySurvey();">提交
+                                                    </button>
+                                                </div>
+                                                <textarea style="display: none" id="survey_id_hide"></textarea>
                                             </div>
                                             <!--提交-->
 

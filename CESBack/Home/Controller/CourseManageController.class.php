@@ -237,6 +237,46 @@ class CourseManageController extends Controller
         exit(json_encode($result));
     }
 
+    public function modifySurvey()
+    {
+//        必填项
+        $count = I('post.count');
+        $name = I('post.name');
+        $survey_group = I('post.group');
+        $level = I('post.level');
+        $question = I('post.question');
+        $survey_id = I('post.id');
+
+//        选填项
+        $description = I('post.detail');
+
+        $method = new MethodController();
+        $method->checkIn($username);
+
+
+
+        $temp['survey_id'] = $survey_id;
+
+        $condition['level'] = $level;
+        $condition['count'] = $count;
+        $condition['question'] = $question;
+        $condition['description'] = $description;
+        $condition['name'] = $name;
+        $condition['survey_group'] = $survey_group;
+        $condition['owner'] = $username;
+
+        $survey = M('survey');
+        $res = $survey->where($temp)->save($condition);
+        if ($res) {
+            $result['status'] = 'success';
+        } else {
+            $result['status'] = 'failed';
+            $result['message'] = '问卷修改失败！'.$survey_id;
+        }
+        exit(json_encode($result));
+    }
+
+
     public function surveyMatch()
     {
         $survey = I('post.s');
