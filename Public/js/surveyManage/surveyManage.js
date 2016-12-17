@@ -396,26 +396,32 @@ function delQuestion(obj) {
     var res = $(obj).attr("value");
     var arr = res.split('-');
     $('#' + arr[1]).hide();
-    var id = arr[0];
+
+    /**
+     *
+     *  在编辑界面删除问题时会影响其他问卷的输出操作，需要独立设置问题维护界面，放置在问卷中进行
+     *
+     * */
+    //var id = arr[0];
     //arr[0]  数据库中删除,避免过大缓存
-    $.ajax({
-        type: "POST", //用POST方式传输
-        url: HOST + "CESBack/index.php/Home/CourseManage/delQuestion", //目标地址.
-        dataType: "json", //数据格式:JSON
-        data: {
-            q_id: id
-        },
-        success: function (result) {
-            if (result.status == 'success') {
-                $.scojs_message('删除成功！', $.scojs_message.TYPE_OK);
-            } else if (result.status == 'failed') {
-                $.scojs_message('删除失败，但不影响您的问卷，请继续操作！', $.scojs_message.TYPE_ERROR);
-            }
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-            $.scojs_message('网络连接发生未知错误，请稍后再试！' + errorThrown, $.scojs_message.TYPE_ERROR);
-        }
-    });
+    //$.ajax({
+    //    type: "POST", //用POST方式传输
+    //    url: HOST + "CESBack/index.php/Home/CourseManage/delQuestion", //目标地址.
+    //    dataType: "json", //数据格式:JSON
+    //    data: {
+    //        q_id: id
+    //    },
+    //    success: function (result) {
+    //        if (result.status == 'success') {
+    //            $.scojs_message('删除成功！', $.scojs_message.TYPE_OK);
+    //        } else if (result.status == 'failed') {
+    //            $.scojs_message('删除失败，但不影响您的问卷，请继续操作！', $.scojs_message.TYPE_ERROR);
+    //        }
+    //    },
+    //    error: function (jqXHR, textStatus, errorThrown) {
+    //        $.scojs_message('网络连接发生未知错误，请稍后再试！' + errorThrown, $.scojs_message.TYPE_ERROR);
+    //    }
+    //});
 }
 
 function delOption(obj) {
