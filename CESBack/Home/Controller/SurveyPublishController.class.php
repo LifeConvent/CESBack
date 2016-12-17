@@ -127,7 +127,8 @@ class SurveyPublishController extends Controller
         $temp = $_POST['ans'];
         $ans = I('post.ans');
         $openid = I('post.openid');
-        $id = I('post.id');
+//        $id = I('post.id');
+        $id = $_POST['id'];
         if (md5($temp . KEY) != $id) {
             $result['status'] = 'failed';
             $result['message'] = '非法提交！数据已被第三方修改！';
