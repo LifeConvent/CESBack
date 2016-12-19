@@ -607,7 +607,6 @@ function submitSurvey() {
     });
 }
 
-
 function submitModifySurvey() {
     var num = $('#q_count').val();//问卷当中的问题总数
 
@@ -736,9 +735,7 @@ function submitSurveyDemo() {
 function dealSurveyDemo(SQlist) {
     $("#QuestionList").empty();
     var SQlist = JSON.parse(SQlist);
-    var temp = SQlist[0].survey_group;
     $("input[name='survey_type'][value=" + SQlist[0].level + "]").attr("checked", true);
-    //$('#survey_level').val();
     $('#survey_sub_group').val(SQlist[0].survey_group);
     $('#new_survey_name').val(SQlist[0].name);
     $('#new_survey_detail').text(SQlist[0].description);

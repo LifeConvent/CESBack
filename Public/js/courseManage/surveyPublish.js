@@ -145,7 +145,7 @@ var TableInit = function () {
                 title: '操作',
                 align: 'center',
                 formatter: "actionFormatter",
-                events: "actionEvents",
+                events: "actionEvents_user",
                 clickToSelect: false
             }]
         });
@@ -177,15 +177,93 @@ var ButtonInit = function () {
 
 window.actionEvents_user = {
     'click .look': function (e, value, row, index) {
-        alert(row.stu_name);
+        var pro = '';
+        switch (row.stu_pro) {
+            case '计算机科学与技术':
+                pro = '1';
+                break;
+            case '信息安全':
+                pro = '2';
+                break;
+            case '信息与计算科学':
+                pro = '3';
+                break;
+            case '计算机科学与技术（中加方向）':
+                pro = '4';
+                break;
+            case '网络工程':
+                pro = '5';
+                break;
+            case '物联网工程':
+                pro = '6';
+                break;
+            case '通信工程':
+                pro = '7';
+                break;
+        }
+
+        $('#modify_stu_num').val(row.stu_num);
+        $('#modify_stu_name').val(row.stu_name);
+        $('#modify_stu_graclass').val(row.stu_graclass);
+        $('#modify_stu_pro').val(pro);
+        $('#modify_stu_class').val(row.stu_class);
+        $('#modify_is_match').val(row.is_match);
+        $('#modify_stu_sex').val(row.stu_sex);
+        $('#modifyUser').modal('show');
     }
 };
 
 window.actionEvents_survey = {
     'click .look': function (e, value, row, index) {
-        alert(row.name);
+        var id = row.survey_id;
+        $.ajax({
+            type: "POST", //用POST方式传输
+            url: HOST + "CESBack/index.php/Home/CourseManage/searchSurveyDemo", //目标地址.
+            dataType: "json", //数据格式:JSON
+            data: {
+                id: id
+            },
+            success: function (result) {
+                if (result.status == 'success') {
+                    $('#wrapper1').hide();
+                    $('#wrapper2').show();
+                    //成功查找后调用的函数
+                    var SQlist = result.data;
+                    dealSurveyDemo(SQlist);
+                } else if (result.status == 'failed') {
+                    $.scojs_message('问卷修改失败，请稍后再试！' + result.message, $.scojs_message.TYPE_ERROR);
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                $.scojs_message('网络连接发生未知错误，请稍后再试！' + errorThrown, $.scojs_message.TYPE_ERROR);
+            }
+        });
     }
 };
+
+function dealSurveyDemo(SQlist) {
+    $("#QuestionList").empty();
+    SQlist = JSON.parse(SQlist);
+    $("input[name='survey_type'][value=" + SQlist[0].level + "]").attr("checked", true);
+    $('#survey_sub_group').val(SQlist[0].survey_group);
+    $('#new_survey_name').val(SQlist[0].name);
+    $('#new_survey_detail').text(SQlist[0].description);
+    var question = SQlist[0].question;
+    for (var i = 0; i < question.length; i++) {
+        var id = question[i].question_id;
+        var name = question[i].name;
+        addLi(id, name);
+    }
+}
+
+function addLi(question_id, content) {
+    var id = $('#q_count').val();
+    id++;
+    var id_name = 'sur_ques_li' + id;
+    $li = $("<li class='list-group-item mar_top' value='" + question_id + "' id='" + id_name + "' class='height-40' style='display: block'><span>" + content + "</span><button type='button' value='" + question_id + '-' + id_name + "' onclick='delQuestion(this);' class='btn btn-danger' style='float:right;margin-right:-4px;height:25px;width:40px;line-height:0;margin-top:-3px;'><span style='margin-left:-7px;'>删除</span></button></li>");
+    $("#QuestionList").append($li);
+    var id = $('#q_count').val(id);
+}
 
 function actionFormatter(value, row, index) {
     return '<a class="look" style="margin: 0">查看</a> ';
@@ -305,4 +383,9 @@ function chooseNoUser() {
     }
     survey_list = JSON.stringify(survey_list);
     $('#table_user').bootstrapTable('refresh', {url: HOST + 'CESBack/index.php/Home/CourseManage/chooseNoUser?s_l=' + survey_list});
+}
+
+function goBack() {
+    $('#wrapper1').show();
+    $('#wrapper2').hide();
 }

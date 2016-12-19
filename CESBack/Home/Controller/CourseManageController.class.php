@@ -60,10 +60,13 @@ class CourseManageController extends Controller
             $group = M('survey_group');
             $select = $group->select();
             $content = '<option value="0">|---- 无</option>';
+            $content_search = '';
             for ($i = 0; $i < sizeof($select); $i++) {
                 $content .= '<option value="' . $select[$i]['group_id'] . '">' . '|----' . $select[$i]['group_name'] . '</option>';
+                $content_search .= '<option value="' . $select[$i]['group_id'] . '">' . '|----' . $select[$i]['group_name'] . '</option>';
             }
             $this->assign('groupSelectList', $content);
+            $this->assign('groupSelectList_search', $content_search);
             $this->display();
         } else {
 //            $this->error('登录已过期，请登录后再操作','Home/Index/index',3);

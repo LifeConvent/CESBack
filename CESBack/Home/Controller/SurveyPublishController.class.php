@@ -165,8 +165,6 @@ class SurveyPublishController extends Controller
             $result['status'] = 'failed';
             $result['message'] = $survey_id . '-----' . $ans;
         }
-//        dump($condtion);
-//        dump($result);
         exit(json_encode($result));
 
     }
