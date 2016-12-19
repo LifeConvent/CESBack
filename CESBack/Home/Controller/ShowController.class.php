@@ -17,7 +17,6 @@ class ShowController extends Controller
         if ($openid == null) {
             $openid = I('get.oi');
         }
-//        $openid = 'ocoIvxLTumwc3gpi6SPvKWrzYlt0';
         $user = M('user');
         $condition['openid'] = $openid;
         $name = $user->field('stu_name')

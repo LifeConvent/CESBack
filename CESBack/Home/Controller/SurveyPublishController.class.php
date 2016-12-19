@@ -19,7 +19,6 @@ class SurveyPublishController extends Controller
         if ($open_id == null || $open_id == '') {
             return;
         }
-//        $open_id = 'ocoIvxLTumwc3gpi6SPvKWrzYlt0';
         $survey = $this->searchSurvey($open_id);
         if (!$survey) {
             $show = new ShowController();
@@ -39,7 +38,6 @@ class SurveyPublishController extends Controller
     public function searchSurvey($openid = null)
     {
         $survey_plan = M();
-//        $openid = 'ocoIvxLTumwc3gpi6SPvKWrzYlt0';
         $condition['openid'] = "$openid";
         $condition['is_finish'] = '0';
         $result = $survey_plan->table('tb_survey_plan')->field('s.survey_id,s.name,p.stu_num,p.openid,p.is_finish')->where($condition)->query('SELECT %FIELD% FROM %TABLE% AS p,tb_survey AS s %WHERE% AND p.survey_id=s.survey_id', true);
@@ -63,9 +61,6 @@ class SurveyPublishController extends Controller
             $show->display('Show/showError');
             return;
         }
-//        测试用数据
-//        $survey_id = '1480748407';
-//        $open_id = 'ocoIvxLTumwc3gpi6SPvKWrzYlt0';
 
         //查询问卷是否完成
         $condi['survey_id'] = $survey_id;
@@ -94,7 +89,6 @@ class SurveyPublishController extends Controller
         $res = $survey->field('name,description,question,count')
             ->where($condition)
             ->query(' SELECT %FIELD% FROM tb_survey %WHERE% ', true);
-//        dump($res);
 
         $count = (int)$res[0]['count'];
         $question = $res[0]['question'];
@@ -115,7 +109,6 @@ class SurveyPublishController extends Controller
                 ->select();
             $questionList[$i] = $question[0];
         }
-//        dump($questionList);
         $this->assign('QList', htmlspecialchars(json_encode($questionList)));
         $this->assign('SList', htmlspecialchars(json_encode($surveyList)));
         $this->assign('openid', htmlspecialchars($open_id));
@@ -134,8 +127,6 @@ class SurveyPublishController extends Controller
             $result['message'] = '非法提交！数据已被第三方修改！';
             exit(json_encode($result));
         }
-//        $ans = '[{"survey_id":"1480748407"},{"question_id":"1480748343","question_ans":"1,2,3"},{"question_id":"1480748356","question_ans":"1,2,3,4"},{"question_id":"1480748364","question_ans":"1,2,4"},{"question_id":"1480748372","question_ans":"3"},{"question_id":"1480748377","question_ans":"1,2,3"},{"question_id":"1480748382","question_ans":"1,3"},{"question_id":"1480748400","question_ans":"1"}]';
-//        $openid = 'ocoIvxLTumwc3gpi6SPvKWrzYlt0';
         $ans = htmlspecialchars_decode($ans);
         $s_a = json_decode($ans);
         $errorinfo = json_last_error();

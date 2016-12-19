@@ -21,7 +21,6 @@ class CourseManageController extends Controller
             $this->assign('username', $username);
             $this->display();
         } else {
-//            $this->error('登录已过期，请登录后再操作','Home/Index/index',3);
             $this->redirect('Index/index');
         }
     }
@@ -45,7 +44,6 @@ class CourseManageController extends Controller
             $this->assign('groupSelectList_search', $content_search);
             $this->display();
         } else {
-//            $this->error('登录已过期，请登录后再操作','Home/Index/index',3);
             $this->redirect('Index/index');
         }
     }
@@ -69,7 +67,6 @@ class CourseManageController extends Controller
             $this->assign('groupSelectList_search', $content_search);
             $this->display();
         } else {
-//            $this->error('登录已过期，请登录后再操作','Home/Index/index',3);
             $this->redirect('Index/index');
         }
     }
@@ -90,7 +87,6 @@ class CourseManageController extends Controller
             $this->assign('groupSelectList', $content);
             $this->display();
         } else {
-//            $this->error('登录已过期，请登录后再操作','Home/Index/index',3);
             $this->redirect('Index/index');
         }
     }
@@ -106,7 +102,6 @@ class CourseManageController extends Controller
         }
     }
 
-//    课程信息的模糊查询，数据库没有信息，未测试通过
     public function searchCourse()
     {
         $course_num = I('get.c_n');
@@ -138,9 +133,7 @@ class CourseManageController extends Controller
                 $count++;
             }
         }
-//        dump($sql);
         $course = M();
-        //模糊查询
         $result = $course->field('course_id,name,teacher_name,semester,take_num')
             ->table('tb_course_list')
             ->where($sql)
@@ -281,7 +274,6 @@ class CourseManageController extends Controller
         exit(json_encode($result));
     }
 
-
     public function surveyMatch()
     {
         $survey = I('post.s');
@@ -308,7 +300,6 @@ class CourseManageController extends Controller
             }
         }
         $survey_plan = M('survey_plan');
-//        dump($condition);
         $res = $survey_plan->addAll($condition);
         if ($res) {
             $result['status'] = 'success';
@@ -567,7 +558,6 @@ class CourseManageController extends Controller
             }
         }
         $course = M();
-        //模糊查询
         $result = $course->field('p.id,p.survey_id,p.stu_num,p.openid,p.is_finish,s.name')
             ->table('tb_survey')
             ->where('s.survey_id=p.survey_id AND' . $sql)
@@ -624,7 +614,6 @@ class CourseManageController extends Controller
             }
         }
         $course = M();
-        //模糊查询
         $result = $course->field('g.group_name,name,survey_id,level,owner')
             ->table('tb_survey')
             ->where($sql . 'AND g.group_id=s.survey_group')

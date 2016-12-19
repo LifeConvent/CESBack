@@ -68,7 +68,6 @@ class MethodController extends Controller
     {
         $sysResponse = M('auto_response');
         $result = $sysResponse->select();
-//        echo (json_encode($result));
         exit(json_encode($result));
     }
 
@@ -76,7 +75,9 @@ class MethodController extends Controller
     {
         $user_input = I('get.u_i');
         $sysResponse = M();
-        $result = $sysResponse->query('SELECT * FROM tb_auto_response WHERE user_input LIKE \'' . $user_input . '%\'', true);
+        $result = $sysResponse->where('user_input LIKE \'' . $user_input . '%\'')
+            ->table('tb_auto_response')
+            ->query('SELECT * FROM %TABLE% %WHERE%', true);
         if ($result) {
             exit(json_encode($result));
         } else {
@@ -129,7 +130,6 @@ class MethodController extends Controller
             ->table('tb_survey_group')
             ->where('g.group_id=s.survey_group')
             ->query("SELECT %FIELD% FROM tb_survey AS s, %TABLE% AS g %WHERE% ", true);
-//        dump($result);
         for ($i = 0; $i < sizeof($result); $i++) {
             switch ($result[$i]['level']) {
                 case '1':
@@ -156,7 +156,9 @@ class MethodController extends Controller
         $survey = M();
         //模糊查询
         $result = $survey->field('g.group_name,name,level,owner')
-            ->query("SELECT %FIELD% FROM tb_survey AS s,tb_survey_group AS g  WHERE name LIKE '" . $name . "%' AND g.group_id=s.survey_group", true);
+            ->where("name LIKE '" . $name . "%' AND g.group_id=s.survey_group")
+            ->table('tb_survey')
+            ->query("SELECT %FIELD% FROM %TABLE% AS s,tb_survey_group AS g %WHERE%", true);
         if ($result) {
             for ($i = 0; $i < sizeof($result); $i++) {
                 switch ($result[$i]['level']) {
@@ -188,7 +190,7 @@ class MethodController extends Controller
         $cellNum = count($expCellName);
         $dataNum = count($expTableData);
 
-        vendor("PHPExcel.PHPExcel");
+        vendor("PHPExcel . PHPExcel");
 //        $objPHPExcel = new PHPExcel();//ThinkPHP3.1的写法
 
         $objPHPExcel = new  \PHPExcel();//ThinkPHP3.2的写法，有命名空间的概念
@@ -208,8 +210,8 @@ class MethodController extends Controller
 
 
         header('pragma:public');
-        header('Content-type:application/vnd.ms-excel;charset=utf-8;name="' . $xlsTitle . '.xls"');
-        header("Content-Disposition:attachment;filename=$fileName.xls");//attachment新窗口打印inline本窗口打印
+        header('Content-type:application/vnd.ms-excel;charset=utf-8;name="' . $xlsTitle . ' . xls"');
+        header("Content - Disposition:attachment;filename = $fileName . xls");//attachment新窗口打印inline本窗口打印
 //        $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');//ThinkPHP3.1的写法
 
         $objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');//ThinkPHP3.2的写法，有命名空间的概念
@@ -431,10 +433,10 @@ class MethodController extends Controller
 
     public function replace($content)
     {
-        $content = str_replace("&gt;", ">", $content);
-        $content = str_replace("&lt;", "<", $content);
-        $content = str_replace("&nbsp;", " ", $content);
-        $content = str_replace("&quot;", "\"", $content);
+        $content = str_replace(" & gt;", " > ", $content);
+        $content = str_replace(" & lt;", " < ", $content);
+        $content = str_replace(" & nbsp;", " ", $content);
+        $content = str_replace(" & quot;", "\"", $content);
         $content = str_replace("&#39;", "'", $content);
         $content = str_replace("\\\\", "\\", $content);
         $content = str_replace("\\n", "\n", $content);
@@ -456,12 +458,4 @@ class MethodController extends Controller
         return $result;
     }
 
-    public function test()
-    {
-//        $data = I('post.content');
-//        $data = htmlspecialchars_decode($data);
-//        $this->write('data', $data);
-//        $result['status'] = 'success';
-//        exit(json_encode($result));
-    }
 }

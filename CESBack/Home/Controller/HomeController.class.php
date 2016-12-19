@@ -28,8 +28,6 @@ class HomeController extends Controller
             $this->assign('username', $username);
             $this->display();
         } else {
-            //避免url直接跳转进入主页
-//            $this->error('登录已过期，请登录后再操作','/Index/index',3);
             $this->redirect('Index/index');
         }
     }

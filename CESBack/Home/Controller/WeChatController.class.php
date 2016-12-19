@@ -21,7 +21,6 @@ class WeChatController extends Controller
             $this->assign('username', $username);
             $this->display();
         } else {
-//            $this->error('登录已过期，请登录后再操作','Home/Index/index',3);
             $this->redirect('Index/index');
         }
     }
@@ -35,7 +34,6 @@ class WeChatController extends Controller
             $this->assign('username', $username);
             $this->display();
         } else {
-//            $this->error('登录已过期，请登录后再操作','Home/Index/index',3);
             $this->redirect('Index/index');
         }
     }
@@ -49,7 +47,6 @@ class WeChatController extends Controller
             $this->assign('username', $username);
             $this->display();
         } else {
-//            $this->error('登录已过期，请登录后再操作','Home/Index/index',3);
             $this->redirect('Index/index');
         }
     }
