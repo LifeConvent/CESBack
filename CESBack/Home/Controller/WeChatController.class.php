@@ -100,6 +100,19 @@ class WeChatController extends Controller
         if ($gra != null) {
             $condition['stu_graclass'] = "$gra";
         }
+
+        $survey_list = I('get.s_l');
+        $survey_list = htmlspecialchars_decode($survey_list);
+        $survey_list = json_decode($survey_list);
+        $sql = '';
+        for ($i = 0; $i < sizeof($survey_list); $i++) {
+            $survey_id = $survey_list[$i]->survey_id;
+            if ($i == sizeof($survey_list) - 1)
+                $sql .= ('survey_id = ' . $survey_id . ')');
+            else
+                $sql .= ('survey_id = ' . $survey_id . ' OR ');
+        }
+        $condition['_string'] = ' a.stu_num NOT IN (SELECT stu_num FROM tb_survey_plan WHERE ' . $sql;
         $result = $user->where($condition)
             ->query('SELECT * FROM (SELECT u.stu_name,u.stu_num,u.stu_class,openid,stu_graclass,stu_sex,is_match,p.stu_pro FROM tb_user AS u,tb_proclass_list AS p WHERE p.pro_id=u.stu_pro) AS a %WHERE%', true);
         echo json_encode($result);

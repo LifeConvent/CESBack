@@ -192,6 +192,12 @@ function actionFormatter(value, row, index) {
 }
 
 function show_user() {
+    var survey_list = $('#table_survey').bootstrapTable('getAllSelections');
+    if (survey_list == '' || survey_list == null) {
+        $.scojs_message('请先选择要发布的问卷之后再筛选要发布的用户，建议逐个问卷发布！');
+        return;
+    }
+    survey_list = JSON.stringify(survey_list);
     var stu_pro = $('#txt_search_pro').val();
     var stu_class = $('#txt_search_class').val();
     var stu_gra = $('#txt_search_graclass').val();
@@ -210,9 +216,10 @@ function show_user() {
         url += ('name=' + stu_name + '&');
     }
     if (url == '?') {
-        $.scojs_message('查询内容不能为空！', $.scojs_message.TYPE_ERROR);
+        $.scojs_message('查询内容不能为空！不需要筛选时可直接点击按问卷筛选用户按钮！', $.scojs_message.TYPE_ERROR);
+        return;
     }
-    $('#table_user').bootstrapTable('refresh', {url: HOST + "CESBack/index.php/Home/WeChat/searchInfo" + url});
+    $('#table_user').bootstrapTable('refresh', {url: HOST + "CESBack/index.php/Home/WeChat/searchInfo" + url + 's_l=' + survey_list});
 }
 
 function surveyPublish() {
@@ -288,4 +295,14 @@ function searchSurvey() {
         $.scojs_message('查询内容不能为空！', $.scojs_message.TYPE_ERROR);
     }
     $('#table_survey').bootstrapTable('refresh', {url: HOST + "CESBack/index.php/Home/CourseManage/searchSurvey" + url});
+}
+
+function chooseNoUser() {
+    var survey_list = $('#table_survey').bootstrapTable('getAllSelections');
+    if (survey_list == '' || survey_list == null) {
+        $.scojs_message('请先选择要发布的问卷之后再筛选要发布的用户，建议逐个问卷发布！');
+        return;
+    }
+    survey_list = JSON.stringify(survey_list);
+    $('#table_user').bootstrapTable('refresh', {url: HOST + 'CESBack/index.php/Home/CourseManage/chooseNoUser?s_l=' + survey_list});
 }

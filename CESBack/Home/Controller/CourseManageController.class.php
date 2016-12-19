@@ -632,4 +632,30 @@ class CourseManageController extends Controller
             exit(json_encode(''));
         }
     }
+
+    public function chooseNoUser()
+    {
+        $survey_list = I('get.s_l');
+        $survey_list = htmlspecialchars_decode($survey_list);
+        $survey_list = json_decode($survey_list);
+        $sql = '';
+        for ($i = 0; $i < sizeof($survey_list); $i++) {
+            $survey_id = $survey_list[$i]->survey_id;
+            if ($i == sizeof($survey_list) - 1)
+                $sql .= ('survey_id = ' . $survey_id . ')');
+            else
+                $sql .= ('survey_id = ' . $survey_id . ' OR ');
+        }
+        $table = M('');
+        $map['_string'] = 'p.pro_id=u.stu_pro AND u.stu_num NOT IN (SELECT stu_num FROM tb_survey_plan WHERE ' . $sql;
+        $result = $table->field('u.stu_name,u.stu_num,u.stu_class,stu_graclass,openid,stu_sex,is_match,p.stu_pro')
+            ->table('tb_user')
+            ->where($map)
+            ->query("SELECT %FIELD% FROM %TABLE% AS u,tb_proclass_list AS p %WHERE% ", true);
+        if ($result) {
+            exit(json_encode($result));
+        } else {
+            exit('');
+        }
+    }
 }

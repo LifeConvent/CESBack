@@ -541,7 +541,8 @@
                             <label class="order-label">2</label>
                         </div>
                         <span class="mar-left-20" style="line-height:25px;vertical-align:text-bottom;">
-                             在用户数据列表中通过查询条件搜索出特定用户，选择要发布问卷的用户。
+                             在用户数据列表中通过查询条件搜索出特定用户，选择要发布问卷的用户<span
+                                class="red">（在不需要条件筛选时务必点击按问卷筛选用户按钮，否则将无法正常发布,多问卷同时<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;匹配时，所筛选到的人员为多个问卷都未匹配的，即该用户在多问卷中有一个问卷已经匹配，则该用户会被过滤）</span>。
                         </span>
                     </div>
                     <div class="row mar-top-10">
@@ -690,6 +691,10 @@
                             <div>
                                 <button id="btn_add_user" type="button" class="btn btn-primary">
                                     <span class="glyphicon" aria-hidden="true"></span>单击用户选择
+                                </button>
+                                <button id="btn_select_user" onclick="chooseNoUser();" type="button"
+                                        class="btn btn-danger">
+                                    <span class="glyphicon" aria-hidden="true"></span>按问卷筛选用户
                                 </button>
                             </div>
                         </div>
