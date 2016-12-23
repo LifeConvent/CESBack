@@ -193,7 +193,7 @@ class MethodController extends Controller
         vendor("PHPExcel . PHPExcel");
 //        $objPHPExcel = new PHPExcel();//ThinkPHP3.1的写法
 
-        $objPHPExcel = new  \PHPExcel();//ThinkPHP3.2的写法，有命名空间的概念
+        $objPHPExcel = new \PHPExcel();//ThinkPHP3.2的写法，有命名空间的概念
         $cellName = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'AA', 'AB', 'AC', 'AD', 'AE', 'AF', 'AG', 'AH', 'AI', 'AJ', 'AK', 'AL', 'AM', 'AN', 'AO', 'AP', 'AQ', 'AR', 'AS', 'AT', 'AU', 'AV', 'AW', 'AX', 'AY', 'AZ');
         $objPHPExcel->getActiveSheet(0)->setTitle(iconv('utf-8', 'utf-8', $expName));
         $objPHPExcel->getActiveSheet(0)->mergeCells('A1:' . $cellName[$cellNum - 1] . '1');//合并单元格
