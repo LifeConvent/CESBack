@@ -190,7 +190,7 @@ class MethodController extends Controller
         $cellNum = count($expCellName);
         $dataNum = count($expTableData);
 
-        vendor("PHPExcel . PHPExcel");
+        vendor("PHPExcel.PHPExcel");
 //        $objPHPExcel = new PHPExcel();//ThinkPHP3.1的写法
 
         $objPHPExcel = new \PHPExcel();//ThinkPHP3.2的写法，有命名空间的概念
@@ -211,7 +211,7 @@ class MethodController extends Controller
 
         header('pragma:public');
         header('Content-type:application/vnd.ms-excel;charset=utf-8;name="' . $xlsTitle . ' . xls"');
-        header("Content - Disposition:attachment;filename = $fileName . xls");//attachment新窗口打印inline本窗口打印
+        header("Content-Disposition:attachment;filename=$fileName.xls");//attachment新窗口打印inline本窗口打印
 //        $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');//ThinkPHP3.1的写法
 
         $objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');//ThinkPHP3.2的写法，有命名空间的概念
