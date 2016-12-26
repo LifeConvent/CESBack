@@ -6,7 +6,7 @@ function countUp(count, countClass) {
         run_count = 1,
         int_speed = 24;
     var int = setInterval(function () {
-        if (run_count < div_by) {
+        if (run_count < count) {
             $display.text(speed * run_count);
             run_count++;
         } else if (parseInt($display.text()) < count) {
