@@ -73,4 +73,15 @@ class DataManageController extends Controller
             $this->redirect('Index/index');
         }
     }
+
+    /**
+     * 后台处理获取问卷图形显示数据
+     */
+    public function getSurveyImageCount()
+    {
+        $survey_id = I('post.s_i');
+        $survey = M('survey');
+        $condition_survey['survey_id'] = "$survey_id";
+        $result = $survey->where($condition_survey)->select();
+    }
 }

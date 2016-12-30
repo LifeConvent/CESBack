@@ -517,8 +517,8 @@
     <!-- 主窗体 -->
     <section id="main-content">
 
-        <!-- 主容器  -->
-        <section class="wrapper">
+        <!-- 主容器1  -->
+        <section class="wrapper" id="container_select">
 
             <!--问卷结果统计注意事项-->
             <div class="panel panel-danger">
@@ -598,7 +598,7 @@
                     <div>
                         <div id="toolbar" class="btn-group">
                             <div>
-                                <button id="btn_delete" type="button" class="btn btn-danger">
+                                <button onclick="changeContainer();" type="button" class="btn btn-danger">
                                     <span class="glyphicon" aria-hidden="true"></span>查看问卷统计结果
                                 </button>
                             </div>
@@ -612,7 +612,26 @@
             <textarea id="list_output" rows="3" class="form-control" style="visibility:hidden"></textarea>
 
         </section>
-        <!-- 主容器  -->
+        <!-- 主容器1  -->
+
+
+        <!-- 主容器2  -->
+        <section class="wrapper" id="container_data">
+
+            <!--问卷选择-->
+            <div class="row">
+                <div class="panel-body" style="padding-bottom:0px;">
+
+                    <!-- 所选问卷数据图表显示模块 -->
+                    <textarea rows="3" class="form-control"></textarea>
+                </div>
+            </div>
+
+            <!--测试用文本框-->
+            <textarea id="list_output2" rows="3" class="form-control" style="visibility:hidden"></textarea>
+
+        </section>
+        <!-- 主容器2  -->
 
         <div class="modal fade" id="myModal">
             <div class="modal-dialog">

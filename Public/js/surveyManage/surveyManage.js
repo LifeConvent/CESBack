@@ -25,7 +25,7 @@ var TableInit = function () {
             striped: true,      //是否显示行间隔色
             cache: false,      //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
             pagination: true,     //是否显示分页（*）
-            sortable: true,      //是否启用排序
+            sortable: false,      //是否启用排序
             sortName: 'group_name', // 设置默认排序为 name
             sortOrder: 'asc', // 设置排序为正序 asc
             queryParams: oTableInit.queryParams,//传递参数（*）
@@ -610,6 +610,11 @@ function submitSurvey() {
         result = result.substring(0, result.length - 1);
     }
 
+    /**
+     * 拆分question（result）获取问题真正的数量
+     * */
+    var count = result.split(',');
+
     if (name == '' || group == '' || level == '' || result == '') {
         $.scojs_message("必填项不能为空！", $.scojs_message.TYPE_ERROR);
         return;
@@ -620,7 +625,7 @@ function submitSurvey() {
         url: HOST + "CESBack/index.php/Home/CourseManage/addNewSurvey", //目标地址.
         dataType: "json", //数据格式:JSON
         data: {
-            count: num,
+            count: count.length,
             name: name,
             group: group,
             level: level,
@@ -672,6 +677,11 @@ function submitModifySurvey() {
         result = result.substring(0, result.length - 1);
     }
 
+    /**
+     * 拆分question（result）获取问题真正的数量
+     * */
+    var count = result.split(',');
+
     if (name == '' || group == '' || level == '' || result == '') {
         $.scojs_message("必填项不能为空！", $.scojs_message.TYPE_ERROR);
         return;
@@ -683,7 +693,7 @@ function submitModifySurvey() {
         dataType: "json", //数据格式:JSON
         data: {
             id: id,
-            count: num,
+            count: count.length,
             name: name,
             group: group,
             level: level,
