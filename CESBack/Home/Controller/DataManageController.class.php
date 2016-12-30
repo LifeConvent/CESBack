@@ -61,6 +61,13 @@ class DataManageController extends Controller
         $result = $method->checkIn($username);
         if ($result) {
             $this->assign('username', $username);
+            $group = M('survey_group');
+            $select = $group->select();
+            $content = '<option value="-1">|---- 无</option>';
+            for ($i = 0; $i < sizeof($select); $i++) {
+                $content .= '<option value="' . $select[$i]['group_id'] . '">' . '|----' . $select[$i]['group_name'] . '</option>';
+            }
+            $this->assign('groupSelectList', $content);
             $this->display();
         } else {
             $this->redirect('Index/index');

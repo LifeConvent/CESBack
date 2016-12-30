@@ -7,11 +7,6 @@ $(function () {
     //1.初始化Table
     var oTable = new TableInit();
     oTable.Init();
-//        $[sessionStorage] = oTable.queryParams;
-
-    //2.初始化Button的点击事件
-    var oButtonInit = new ButtonInit();
-    oButtonInit.Init();
 
 });
 
@@ -26,10 +21,10 @@ var TableInit = function () {
             striped: true,      //是否显示行间隔色
             cache: false,      //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
             pagination: true,     //是否显示分页（*）
-            sortable: false,      //是否启用排序
+            sortable: true,      //是否启用排序
             sortName: 'group_name', // 设置默认排序为 name
             sortOrder: 'asc', // 设置排序为正序 asc
-            queryParams: oTableInit.queryParams,//传递参数（*）
+            //queryParams: oTableInit.queryParams,//传递参数（*）
 //                sidePagination: "server",   //分页方式：client客户端分页，server服务端分页（*）
             pageNumber: 1,      //初始化加载第一页，默认第一页
             pageSize: 10,      //每页的记录行数（*）
@@ -44,6 +39,18 @@ var TableInit = function () {
             showToggle: true,     //是否显示详细视图和列表视图的切换按钮
             cardView: false,     //是否显示详细视图
             detailView: false,     //是否显示父子表
+
+            silent: true,  //刷新事件必须设置
+            formatLoadingMessage: function () {
+                return "请稍等，正在加载中...";
+            },
+            formatNoMatches: function () {  //没有匹配的结果
+                return '无符合条件的记录';
+            },
+            formatSearch: function () {
+                return '表内查询';
+            },
+
             columns: [{
                 checkbox: true
             }, {
@@ -70,16 +77,6 @@ var TableInit = function () {
         });
     };
 
-    //得到查询的参数
-    oTableInit.queryParams = function (params) {
-        var temp = { //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的
-            limit: params.limit, //页面大小
-            offset: params.offset, //页码
-            search: params.search
-        };
-        return temp;
-    };
-
     return oTableInit;
 };
 
@@ -101,5 +98,6 @@ function searchSurvey() {
     if (url == '?') {
         $.scojs_message('查询内容不能为空！', $.scojs_message.TYPE_ERROR);
     }
+    $('#table_survey_count').bootstrapTable('removeAll');
     $('#table_survey_count').bootstrapTable('refresh', {url: HOST + "CESBack/index.php/Home/CourseManage/searchSurvey" + url});
 }

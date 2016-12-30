@@ -7,10 +7,10 @@ $(function () {
     var oTable = new TableInit();
     oTable.Init();
 //        $[sessionStorage] = oTable.queryParams;
-
-    //2.初始化Button的点击事件
-    var oButtonInit = new ButtonInit();
-    oButtonInit.Init();
+//
+//    //2.初始化Button的点击事件
+//    var oButtonInit = new ButtonInit();
+//    oButtonInit.Init();
 
 });
 
@@ -25,7 +25,7 @@ var TableInit = function () {
             striped: true,      //是否显示行间隔色
             cache: false,      //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
             pagination: true,     //是否显示分页（*）
-            sortable: false,      //是否启用排序
+            sortable: true,      //是否启用排序
             sortName: 'group_name', // 设置默认排序为 name
             sortOrder: 'asc', // 设置排序为正序 asc
             queryParams: oTableInit.queryParams,//传递参数（*）
@@ -44,6 +44,18 @@ var TableInit = function () {
             showToggle: true,     //是否显示详细视图和列表视图的切换按钮
             cardView: false,     //是否显示详细视图
             detailView: false,     //是否显示父子表
+
+            silent: true,  //刷新事件必须设置
+            formatLoadingMessage: function () {
+                return "请稍等，正在加载中...";
+            },
+            formatNoMatches: function () {  //没有匹配的结果
+                return '无符合条件的记录';
+            },
+            formatSearch: function () {
+                return '表内查询';
+            },
+
             columns: [{
                 checkbox: true
             }, {
@@ -84,7 +96,7 @@ var TableInit = function () {
             striped: true,      //是否显示行间隔色
             cache: false,      //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
             pagination: true,     //是否显示分页（*）
-            sortable: false,      //是否启用排序
+            sortable: true,      //是否启用排序
             sortName: 'stu_num', // 设置默认排序为 name
             sortOrder: 'asc', // 设置排序为正序 asc
             queryParams: oTableInit.queryParams,//传递参数（*）
@@ -103,6 +115,18 @@ var TableInit = function () {
             showToggle: true,     //是否显示详细视图和列表视图的切换按钮
             cardView: false,     //是否显示详细视图
             detailView: false,     //是否显示父子表
+
+            silent: true,  //刷新事件必须设置
+            formatLoadingMessage: function () {
+                return "请稍等，正在加载中...";
+            },
+            formatNoMatches: function () {  //没有匹配的结果
+                return '无符合条件的记录';
+            },
+            formatSearch: function () {
+                return '表内查询';
+            },
+
             columns: [{
                 checkbox: true
             }, {
@@ -164,16 +188,16 @@ var TableInit = function () {
     return oTableInit;
 };
 
-var ButtonInit = function () {
-    var oInit = new Object();
-    var postdata = {};
-
-    oInit.Init = function () {
-        //初始化页面上面的按钮事件
-    };
-
-    return oInit;
-};
+//var ButtonInit = function () {
+//    var oInit = new Object();
+//    var postdata = {};
+//
+//    oInit.Init = function () {
+//        //初始化页面上面的按钮事件
+//    };
+//
+//    return oInit;
+//};
 
 window.actionEvents_user = {
     'click .look': function (e, value, row, index) {
@@ -297,6 +321,7 @@ function show_user() {
         $.scojs_message('查询内容不能为空！不需要筛选时可直接点击按问卷筛选用户按钮！', $.scojs_message.TYPE_ERROR);
         return;
     }
+    $('#table_user').bootstrapTable('removeAll');
     $('#table_user').bootstrapTable('refresh', {url: HOST + "CESBack/index.php/Home/WeChat/searchInfo" + url + 's_l=' + survey_list});
 }
 
@@ -372,6 +397,7 @@ function searchSurvey() {
     if (url == '?') {
         $.scojs_message('查询内容不能为空！', $.scojs_message.TYPE_ERROR);
     }
+    $('#table_survey').bootstrapTable('removeAll');
     $('#table_survey').bootstrapTable('refresh', {url: HOST + "CESBack/index.php/Home/CourseManage/searchSurvey" + url});
 }
 
@@ -382,6 +408,7 @@ function chooseNoUser() {
         return;
     }
     survey_list = JSON.stringify(survey_list);
+    $('#table_user').bootstrapTable('removeAll');
     $('#table_user').bootstrapTable('refresh', {url: HOST + 'CESBack/index.php/Home/CourseManage/chooseNoUser?s_l=' + survey_list});
 }
 
