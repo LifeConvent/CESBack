@@ -541,19 +541,19 @@ class CourseManageController extends Controller
         }
         if ($name != null) {
             if ($count == 0) {
-                $sql .= " name LIKE '" . $name . "%' ";
+                $sql .= " s.name LIKE '" . $name . "%' ";
                 $count++;
             } else {
-                $sql .= " AND name LIKE '" . $name . "%' ";
+                $sql .= " AND s.name LIKE '" . $name . "%' ";
                 $count++;
             }
         }
         if ($num != null) {
             if ($count == 0) {
-                $sql .= " stu_num LIKE '" . $num . "%' ";
+                $sql .= " p.stu_num LIKE '" . $num . "%' ";
                 $count++;
             } else {
-                $sql .= " AND stu_num LIKE '" . $num . "%' ";
+                $sql .= " AND p.stu_num LIKE '" . $num . "%' ";
                 $count++;
             }
         }

@@ -253,7 +253,7 @@ function searchCondition(){
     if (stu_num != '' && stu_num != null) {
         url += ('s_num=' + stu_num + '&');
     }
-    alert(url);
+    //alert(url);
     if (url == '?') {
         $.scojs_message('查询内容不能为空！', $.scojs_message.TYPE_ERROR);
     }

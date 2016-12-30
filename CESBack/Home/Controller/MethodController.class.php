@@ -427,8 +427,130 @@ class MethodController extends Controller
                 // 读取单元格
                 $data[$j][] = $objPHPExcel->getActiveSheet()->getCell("$k$j")->getValue();
             }
+            //读取完美一行数据即可进行该行数据的插入
         }
         return $data;
+    }
+
+    public function importExecl($file)
+    {
+        if (!file_exists($file)) {
+            return array("error" => 0, 'message' => 'file not found!');
+        }
+        Vendor("PHPExcel.PHPExcel.IOFactory");
+        Vendor("PHPExcel.PHPExcel");
+        $objReader = \PHPExcel_IOFactory::createReader('Excel5');
+        try {
+            $PHPReader = $objReader->load($file);
+        } catch (\Exception $e) {
+        }
+        if (!isset($PHPReader)) return array("error" => 0, 'message' => 'read error!');
+        $allWorksheets = $PHPReader->getAllSheets();
+        $i = 0;
+        foreach ($allWorksheets as $objWorksheet) {
+            $sheetname = $objWorksheet->getTitle();
+            $allRow = $objWorksheet->getHighestRow();//how many rows
+            $highestColumn = $objWorksheet->getHighestColumn();//how many columns
+            $allColumn = \PHPExcel_Cell::columnIndexFromString($highestColumn);
+            $array[$i]["Title"] = $sheetname;
+            $array[$i]["Cols"] = $allColumn;
+            $array[$i]["Rows"] = $allRow;
+            $arr = array();
+            $isMergeCell = array();
+            foreach ($objWorksheet->getMergeCells() as $cells) {//merge cells
+                foreach (\PHPExcel_Cell::extractAllCellReferencesInRange($cells) as $cellReference) {
+                    $isMergeCell[$cellReference] = true;
+                }
+            }
+            for ($currentRow = 1; $currentRow <= $allRow; $currentRow++) {
+                $row = array();
+                for ($currentColumn = 0; $currentColumn < $allColumn; $currentColumn++) {
+                    ;
+                    $cell = $objWorksheet->getCellByColumnAndRow($currentColumn, $currentRow);
+                    $afCol = \PHPExcel_Cell::stringFromColumnIndex($currentColumn + 1);
+                    $bfCol = \PHPExcel_Cell::stringFromColumnIndex($currentColumn - 1);
+                    $col = \PHPExcel_Cell::stringFromColumnIndex($currentColumn);
+                    $address = $col . $currentRow;
+                    $value = $objWorksheet->getCell($address)->getValue();
+                    if (substr($value, 0, 1) == '=') {
+                        return array("error" => 0, 'message' => 'can not use the formula!');
+                        exit;
+                    }
+                    if ($cell->getDataType() == \PHPExcel_Cell_DataType::TYPE_NUMERIC) {
+                        $cellstyleformat = $cell->getParent()->getStyle($cell->getCoordinate())->getNumberFormat();
+                        $formatcode = $cellstyleformat->getFormatCode();
+                        if (preg_match('/^([$[A-Z]*-[0-9A-F]*])*[hmsdy]/i', $formatcode)) {
+                            $value = gmdate("Y-m-d", \PHPExcel_Shared_Date::ExcelToPHP($value));
+                        } else {
+                            $value = \PHPExcel_Style_NumberFormat::toFormattedString($value, $formatcode);
+                        }
+                    }
+                    if ($isMergeCell[$col . $currentRow] && $isMergeCell[$afCol . $currentRow] && !empty($value)) {
+                        $temp = $value;
+                    } elseif ($isMergeCell[$col . $currentRow] && $isMergeCell[$col . ($currentRow - 1)] && empty($value)) {
+                        $value = $arr[$currentRow - 1][$currentColumn];
+                    } elseif ($isMergeCell[$col . $currentRow] && $isMergeCell[$bfCol . $currentRow] && empty($value)) {
+//                        $value = $temp;
+                    }
+                    $row[$currentColumn] = $value;
+                }
+                $arr[$currentRow] = $row;
+            }
+            $array[$i]["Content"] = $arr;
+            $i++;
+        }
+        spl_autoload_register(array('Think', 'autoload'));//must, resolve ThinkPHP and PHPExcel conflicts
+        unset($objWorksheet);
+        unset($PHPReader);
+        unset($PHPExcel);
+        unlink($file);
+        return array("error" => 1, "data" => $array);
+    }
+
+    //导入excel内容转换成数组
+    public function import($filePath){
+        $this->__construct();
+        Vendor("PHPExcel.PHPExcel");
+        $PHPExcel = new \PHPExcel();
+        /**默认用excel2007读取excel，若格式不对，则用之前的版本进行读取*/
+        $PHPReader = new \PHPExcel_Reader_Excel2007();
+        if(!$PHPReader->canRead($filePath)){
+            $PHPReader = new \PHPExcel_Reader_Excel5();
+            if(!$PHPReader->canRead($filePath)){
+                echo 'no Excel';
+                return;
+            }
+        }
+
+        $PHPExcel = $PHPReader->load($filePath);
+        $currentSheet = $PHPExcel->getSheet(0);  //读取excel文件中的第一个工作表
+        $allColumn = $currentSheet->getHighestColumn(); //取得最大的列号
+        $allRow = $currentSheet->getHighestRow(); //取得一共有多少行
+        $erp_orders_id = array();  //声明数组
+
+        /**从第二行开始输出，因为excel表中第一行为列名*/
+        for($currentRow = 1;$currentRow <= $allRow;$currentRow++){
+
+            /**从第A列开始输出*/
+            for($currentColumn= 'A';$currentColumn<= $allColumn; $currentColumn++){
+
+                $val = $currentSheet->getCellByColumnAndRow(ord($currentColumn) - 65,$currentRow)->getValue();/**ord()将字符转为十进制数*/
+                if($val!=''){
+                    $erp_orders_id[] = $val;
+                }
+                /**如果输出汉字有乱码，则需将输出内容用iconv函数进行编码转换，如下将gb2312编码转为utf-8编码输出*/
+                //echo iconv('utf-8','gb2312', $val)."\t";
+
+            }
+        }
+        return $erp_orders_id;
+    }
+
+
+    public function importTest()
+    {
+        $data = $this->import_excel('Public/file/admin1.xls');
+        dump($data);
     }
 
     public function replace($content)
