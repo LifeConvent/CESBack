@@ -111,25 +111,25 @@ class CourseManageController extends Controller
         $sql = '';
         if ($course_num != null) {
             if ($count == 0) {
-                $sql .= " course_id LIKE '" . $course_num . "%' ";
+                $sql .= " course_id LIKE '%" . $course_num . "%' ";
                 $count++;
             }
         }
         if ($course_name != null) {
             if ($count == 0) {
-                $sql .= " name LIKE '" . $course_name . "%' ";
+                $sql .= " name LIKE '%" . $course_name . "%' ";
                 $count++;
             } else {
-                $sql .= " AND name LIKE '" . $course_name . "%' ";
+                $sql .= " AND name LIKE '%" . $course_name . "%' ";
                 $count++;
             }
         }
         if ($teacher_name != null) {
             if ($count == 0) {
-                $sql .= " teacher_name LIKE '" . $teacher_name . "%' ";
+                $sql .= " teacher_name LIKE '%" . $teacher_name . "%' ";
                 $count++;
             } else {
-                $sql .= " AND teacher_name LIKE '" . $teacher_name . "%' ";
+                $sql .= " AND teacher_name LIKE '%" . $teacher_name . "%' ";
                 $count++;
             }
         }
@@ -541,19 +541,19 @@ class CourseManageController extends Controller
         }
         if ($name != null) {
             if ($count == 0) {
-                $sql .= " s.name LIKE '" . $name . "%' ";
+                $sql .= " s.name LIKE '%" . $name . "%' ";
                 $count++;
             } else {
-                $sql .= " AND s.name LIKE '" . $name . "%' ";
+                $sql .= " AND s.name LIKE '%" . $name . "%' ";
                 $count++;
             }
         }
         if ($num != null) {
             if ($count == 0) {
-                $sql .= " p.stu_num LIKE '" . $num . "%' ";
+                $sql .= " p.stu_num LIKE '%" . $num . "%' ";
                 $count++;
             } else {
-                $sql .= " AND p.stu_num LIKE '" . $num . "%' ";
+                $sql .= " AND p.stu_num LIKE '%" . $num . "%' ";
                 $count++;
             }
         }
@@ -586,30 +586,33 @@ class CourseManageController extends Controller
     {
         $level = I('get.l');
         $group = I('get.g');
-        $condi = I('get.c');
+        $condi = I('get.s_n');
+//        $condi = '2015-2016学年课程评价调查问卷';
+        $method = new MethodController();
+        $method->write('data', $group.'---'.$condi.'为什么为空');
         $count = 0;
         $sql = '';
         if ($level != null) {
             if ($count == 0) {
-                $sql .= " level LIKE '" . $level . "%' ";
+                $sql .= " level LIKE '%" . $level . "%' ";
                 $count++;
             }
         }
         if ($group != null) {
             if ($count == 0) {
-                $sql .= " survey_group LIKE '" . $group . "%' ";
+                $sql .= " survey_group LIKE '%" . $group . "%' ";
                 $count++;
             } else {
-                $sql .= " AND survey_group LIKE '" . $group . "%' ";
+                $sql .= " AND survey_group LIKE '%" . $group . "%' ";
                 $count++;
             }
         }
         if ($condi != null) {
             if ($count == 0) {
-                $sql .= " name LIKE '" . $condi . "%' ";
+                $sql .= " s.name LIKE '%" . "$condi" . "%' ";
                 $count++;
             } else {
-                $sql .= " AND name LIKE '" . $condi . "%' ";
+                $sql .= " AND s.name LIKE '%" . "$condi" . "%' ";
                 $count++;
             }
         }
@@ -618,7 +621,24 @@ class CourseManageController extends Controller
             ->table('tb_survey')
             ->where($sql . 'AND g.group_id=s.survey_group')
             ->query("SELECT %FIELD% FROM %TABLE% AS s, tb_survey_group AS g %WHERE%", true);
+
         if ($result) {
+            /**
+             * 对问卷等级进行中文解析
+             */
+            for ($i = 0; $i < sizeof($result); $i++) {
+                switch ($result[$i]['level']) {
+                    case '1':
+                        $result[$i]['level'] = '系级';
+                        break;
+                    case '2':
+                        $result[$i]['level'] = '院级';
+                        break;
+                    case '3':
+                        $result[$i]['level'] = '校级';
+                        break;
+                }
+            }
             exit(json_encode($result));
         } else {
             exit(json_encode(''));

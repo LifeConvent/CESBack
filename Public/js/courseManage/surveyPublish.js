@@ -362,11 +362,11 @@ function searchSurvey() {
     if (level != '0') {
         url += ('l=' + level + '&');
     }
+    if (condition != '' && condition != null) {
+        url += ('s_n=' + condition + '&');
+    }
     if (group != '0') {
         url += ('g=' + group + '&');
-    }
-    if (condition != '' && condition != null) {
-        url += ('c=' + condition + '&');
     }
     //alert(url);
     if (url == '?') {

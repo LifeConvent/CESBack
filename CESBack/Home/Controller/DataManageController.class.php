@@ -51,6 +51,9 @@ class DataManageController extends Controller
         }
     }
 
+    /**
+     * 问卷结果统计
+     */
     public function surveyCount()
     {
         $username = '';
