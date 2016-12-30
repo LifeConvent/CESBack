@@ -100,11 +100,16 @@ class DataManageController extends Controller
         $answer = M('');
         //二维解析结果坐标
         $one = $two = 0;
+
         for ($i = 0; $i < sizeof($result_question); $i++) {
+
             $condition_answer = null;
             $question_id = $result_question[$i]['question_id'];
             $condition_answer['survey_id'] = "$survey_id";
             $condition_answer['question_id'] = "$question_id";
+            /**
+             * result_answer查询结束后，应当补充不包含的选项比例调节为零
+             */
             $result_answer = $answer->table('tb_survey_answer')
                 ->field('content,COUNT(*) AS total')
                 ->where($condition_answer)
@@ -125,13 +130,18 @@ class DataManageController extends Controller
                 $output[$one]['id'] = $result_question[$i]['question_id'];
                 $content = $result_question[$i]['content'];
                 //解析content转换为数组
+                $content = str_replace('[', '', $content);
+                $content = str_replace(']', '', $content);
+                $content = str_replace('"', '', $content);
+                $content = explode(',', $content);
+//                dump($content);
 
                 $question_list = null;
                 $question_list = $content;
-                //问题数量的多少不一定与答案查询结果中group的多少相匹配
+                //问题数量的多少不一定与答案查询结果中group的多少相匹配,目前为按顺序匹配比率，应比对问题序号后匹配
                 for ($j = 0; $j < sizeof($question_list); $j++) {
-                    $output[$one][$j]['name'] = $question_list[$i]['name'];
-                    $output[$one][$j]['num'] = (float)$result_answer[$i]['total'] / $total;
+                    $output[$one][$j]['name'] = $question_list[$j];
+                    $output[$one][$j]['num'] = (float)$result_answer[$j]['total'] / $total;
                 }
                 $one++;
             }
