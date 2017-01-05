@@ -98,23 +98,24 @@ class UserManageController extends Controller
         }
         $user = M();
         if ($stu_name != null) {
-            if($stu_pro==null&&$stu_class==null&&$stu_graclass==null){
-                $result = $user->field('stu_num,stu_name,stu_sex,stu_graclass,stu_pro,stu_class,stu_phone,stu_qq')
+            if ($stu_pro == null && $stu_class == null && $stu_graclass == null) {
+                $result = $user->field('stu_num,stu_name,stu_sex,stu_graclass,stu_pro,stu_class,stu_phone,stu_qq,is_match,openid')
                     ->where($condition)
-                    ->query("SELECT %FIELD% FROM tb_user WHERE stu_name LIKE '"."$stu_name"."%'", true);
-            }else{
-                $result = $user->field('stu_num,stu_name,stu_sex,stu_graclass,stu_pro,stu_class,stu_phone,stu_qq')
+                    ->query("SELECT %FIELD% FROM tb_user WHERE stu_name LIKE '" . "$stu_name" . "%'", true);
+            } else {
+                $result = $user->field('stu_num,stu_name,stu_sex,stu_graclass,stu_pro,stu_class,stu_phone,stu_qq,is_match,openid')
                     ->where($condition)
-                    ->query("SELECT %FIELD% FROM tb_user %WHERE% AND stu_name LIKE '".$stu_name."%'", true);
+                    ->query("SELECT %FIELD% FROM tb_user %WHERE% AND stu_name LIKE '" . $stu_name . "%'", true);
             }
         } else {
-            $result = $user->field('stu_num,stu_name,stu_sex,stu_graclass,stu_pro,stu_class,stu_phone,stu_qq')
+            $result = $user->field('stu_num,stu_name,stu_sex,stu_graclass,stu_pro,stu_class,stu_phone,stu_qq,is_match,openid')
                 ->where($condition)
                 ->query("SELECT %FIELD% FROM tb_user %WHERE%", true);
         }
 
         if ($result) {
             $pro = '';
+            $is_match = '';
             //替换字段
             foreach ($result as $k => $v) {
                 switch ($v['stu_pro']) {

@@ -432,5 +432,5 @@ function show() {
         $.scojs_message('查询内容不能为空！', $.scojs_message.TYPE_ERROR);
     }
     $('#tablelist').bootstrapTable('removeAll');
-    $('#tablelist').bootstrapTable('refresh', {url: HOST + "CESBack/index.php/Home/WeChat/searchInfo" + url});
+    $('#tablelist').bootstrapTable('refresh', {url: HOST + "CESBack/index.php/Home/UserManage/searchUser" + url});
 }
