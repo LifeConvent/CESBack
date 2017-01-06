@@ -8,7 +8,29 @@ $(function () {
     var oTable = new TableInit();
     oTable.Init();
 
+    initCharts();
+
 });
+
+function initCharts() {
+    var data = '[{"label": "Download Sales", "value": "12"},{"label": "In-Store Sales", "value": "30"},{"label": "Mail-Order Sales", "value": "20"},{"label": "Download Sales", "value": "12"},{"label": "In-Store Sales", "value": "30"},{"label": "Mail-Order Sales", "value": "20"},{"label": "Download Sales", "value": "12"},{"label": "In-Store Sales", "value": "30"},{"label": "Mail-Order Sales", "value": "20"}]';
+    var content1 = '{"element": "surveyAnswer1","data": ' + data + ',"colors": ["#1AA9B3", "#7CBCA5", "#AAD774", "#8177C5", "#E0E4CC", "#69D2E7", "#45BFBD", "#F38630"]}';
+    var content2 = '{"element": "surveyAnswer2","data": ' + data + ',"colors": ["#1AA9B3", "#7CBCA5", "#AAD774", "#8177C5", "#E0E4CC", "#69D2E7", "#45BFBD", "#F38630"]}';
+    var content3 = '{"element": "surveyAnswer3","data": ' + data + ',"colors": ["#1AA9B3", "#7CBCA5", "#AAD774", "#8177C5", "#E0E4CC", "#69D2E7", "#45BFBD", "#F38630"]}';
+    //data = JSON.parse(content);
+
+    var test = content1 + '&' + content2 + '&' + content3;
+    var name = $('#survey_name').val();
+    $('#title').text(name);
+
+    var content = $('#survey_content').val();
+    content = JSON.parse(content);
+
+    //alert(content[1]);
+    for (var i = 0; i < content.length; i++) {
+        Morris.Donut(JSON.parse(content[i]));
+    }
+}
 
 var TableInit = function () {
     var oTableInit = new Object();
@@ -113,21 +135,23 @@ function changeContainer() {
     }
     var survey_id = survey[0].survey_id;
     //请求后台统计数据，获取问卷分析结果
-    $.ajax({
-        type: "POST",
-        url: HOST + "/CESBack/index.php/Home/DataManage/getSurveyImageCount",
-        dataType: 'json',
-        data: {s_i: survey_id},
-        success: function (result) {
-            if (result.status == 'success') {
-                $('#container_select').hide();
-                $('#container_data').show();
-            } else {
-                $.scojs_message(result.message, $.scojs_message.TYPE_ERROR);
-            }
-        },
-        error: function (request) {
-            $.scojs_message('网络连接发生未知错误，请稍后再试！', $.scojs_message.TYPE_ERROR);
-        }
-    });
+    window.location.href = HOST + "/CESBack/index.php/Home/DataManage/getSurveyImageCount?s_i=" + survey_id;
+    //$.ajax({
+    //    type: "POST",
+    //    url: HOST + "/CESBack/index.php/Home/DataManage/getSurveyImageCount",
+    //    dataType: 'json',
+    //    data: {s_i: survey_id}
+    //    //success: function (result) {
+    //    //    if (result.status == 'success') {
+    //    //        $('#container_select').hide();
+    //    //        $('#container_data').show();
+    //    //    } else {
+    //    //        $.scojs_message(result.message, $.scojs_message.TYPE_ERROR);
+    //    //    }
+    //    //},
+    //    //error: function (request) {
+    //    //    $.scojs_message('网络连接发生未知错误，请稍后再试！', $.scojs_message.TYPE_ERROR);
+    //    //}
+    //});
 }
+

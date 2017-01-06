@@ -518,102 +518,30 @@
     <!-- 主窗体 -->
     <section id="main-content">
 
-        <!-- 主容器1  -->
-        <section class="wrapper" id="container_select">
-
-            <!--问卷结果统计注意事项-->
-            <div class="panel panel-danger">
-                <div class="panel-heading">
-                    <h1 class="panel-title-red">
-                        问卷结果统计注意事项：
-                    </h1>
-                </div>
-                <div class="panel-body">
-                    1、请先选择问卷后在进行问卷结果导出。<br>
-                    2、系统建议以<span class="red">单个问卷为单位</span>进行导出。<br>
-                </div>
-            </div>
+        <!-- 主容器  -->
+        <section class="wrapper" id="container_data">
 
             <!--问卷选择-->
             <div class="row">
                 <div class="panel-body" style="padding-bottom:0px;">
                     <div class="panel panel-primary">
-                        <div class="panel-heading color-hui">查询条件</div>
+
+                        <div class="panel-heading color-hui">单选多选统计分析——<span id="title"></span></div>
                         <div class="panel-body">
-                            <form id="formSearch" class="form-horizontal">
-                                <div class="form-group" style="margin-top:15px">
-                                    <!--问卷等级-->
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label pad-left">选择类型:</label>
-
-                                        <div class="col-sm-9">
-                                            <select id="survey_search_level" class="form-control">
-                                                <option value="0"> 无</option>
-                                                <option value="3"> 校级</option>
-                                                <option value="2"> 院级</option>
-                                                <option value="1"> 系级</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <!--问卷等级-->
-
-                                    <!--问卷分组-->
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label pad-left">选择分组:
-                                        </label>
-
-                                        <div class="col-sm-9">
-                                            <select id="survey_search_group" class="form-control">
-                                                <option disabled="" value="0">问卷分组</option>
-                                                {$groupSelectList}
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <!--问卷分组-->
-
-
-                                    <div class="form-group">
-                                        <label class="control-label col-sm-2 pad-left"
-                                               for="txt_search_condition_input">问卷名称：</label>
-
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="txt_search_condition_input"
-                                                   placeholder="请输入问卷名称">
-                                        </div>
-                                    </div>
-
-
-                                    <div class="form-group" style="margin-left:20%;margin-top: 20px;">
-                                        <div class="col-sm-12">
-                                            <button type="button" onclick="searchSurvey();"
-                                                    id="btn_query"
-                                                    class="btn btn-primary col-sm-8">查询
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
+                            {$html_charts}
                         </div>
-                    </div>
-
-                    <div>
-                        <div id="toolbar" class="btn-group">
-                            <div>
-                                <button onclick="changeContainer();" type="button" class="btn btn-danger">
-                                    <span class="glyphicon" aria-hidden="true"></span>查看问卷统计结果
-                                </button>
-                            </div>
-                        </div>
-                        <table class="panel" id="table_survey_count" data-page-list="[10, 25, 50, 100, ALL]"></table>
+                        <!-- 所选问卷数据图表显示模块 -->
                     </div>
                 </div>
             </div>
 
+
             <!--测试用文本框-->
-            <textarea id="list_output" rows="3" class="form-control" style="visibility:hidden"></textarea>
+            <textarea id="survey_content" rows="3" class="form-control" style="visibility:hidden">{$content}</textarea>
+            <textarea id="survey_name" rows="3" class="form-control" style="visibility:hidden">{$name}</textarea>
 
         </section>
-        <!-- 主容器1  -->
+        <!-- 主容器  -->
 
         <div class="modal fade" id="myModal">
             <div class="modal-dialog">
