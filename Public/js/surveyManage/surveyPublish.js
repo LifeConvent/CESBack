@@ -133,16 +133,17 @@ function submitAnswer() {
             return;
         }
         if (i != num) {
-            result += '{"question_id":"' + question_id + '",' + '"question_ans":"' + question_ans + '"},';
+            result += '{"question_id":"' + question_id + '",' + '"question_ans":"' + question_ans + '",' + '"type":"' + type + '"},';
         }
         else {
-            result += '{"question_id":"' + question_id + '",' + '"question_ans":"' + question_ans + '"}';
+            result += '{"question_id":"' + question_id + '",' + '"question_ans":"' + question_ans + '",' + '"type":"' + type + '"}';
         }
     }
     result += "]";
     //alert(result);
     var openid = $('#S_openid').val();
-    var id = hex_md5(result + KEY);
+    //注意md5算法加密中文字符的问题
+    var id = md5(result + KEY);
     $.ajax({
         type: "POST", //用POST方式传输
         url: HOST + "CESBack/index.php/Home/SurveyPublish/surveyAnswer", //目标地址.
@@ -163,3 +164,4 @@ function submitAnswer() {
         }
     });
 }
+

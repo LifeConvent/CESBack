@@ -9,7 +9,7 @@
     <!-- END META -->
 
     <!-- BEGIN SHORTCUT ICON -->
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="shortcut icon" href="__PUBLIC__/img/favicon.ai">
     <!-- END SHORTCUT ICON -->
     <title>
         CES - 课程评价管理系统
@@ -526,41 +526,28 @@
                 <div class="panel-body" style="padding-bottom:0px;">
                     <div class="panel panel-primary">
 
+                        <!-- 所选问卷数据图表显示模块 -->
                         <div class="panel-heading color-hui">单选多选统计分析——<span id="title"></span></div>
                         <div class="panel-body">
                             {$html_charts}
                         </div>
-                        <!-- 所选问卷数据图表显示模块 -->
+
+                        <textarea id="survey_content" rows="3" class="form-control"
+                                  style="visibility:hidden">{$content}</textarea>
+
+                        <div style="margin:0 auto;text-align:center;">
+                            <div><span>扫描下方二维码可将该问卷结果分享给指定用户</span></div>
+                            <img src="{$src_url}">
+                        </div>
+
+                        <textarea id="survey_name" rows="3" class="form-control"
+                                  style="visibility:hidden">{$name}</textarea>
                     </div>
                 </div>
             </div>
-
-
-            <!--测试用文本框-->
-            <textarea id="survey_content" rows="3" class="form-control" style="visibility:hidden">{$content}</textarea>
-            <textarea id="survey_name" rows="3" class="form-control" style="visibility:hidden">{$name}</textarea>
 
         </section>
         <!-- 主容器  -->
-
-        <div class="modal fade" id="myModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">删除自动回复提示</h4>
-                    </div>
-                    <div class="modal-body text-center">
-                        <span class="left-30 red size-16">删除后将无法恢复！确认要删除自动回复吗？</span>
-                    </div>
-                    <div class="modal-footer">
-                        <button data-dismiss="modal" class="btn btn-default" type="button">取消</button>
-                        <button class="btn btn-warning" type="button" onclick="deleteSub();">确认</button>
-                    </div>
-                </div>
-            </div>
-            <span style="display:none" id="myModalHide"></span>
-        </div>
 
     </section>
     <!-- 主窗体 -->

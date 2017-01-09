@@ -122,9 +122,9 @@ class SurveyPublishController extends Controller
         $openid = I('post.openid');
 //        $id = I('post.id');
         $id = $_POST['id'];
-        if (md5($temp . KEY) != $id) {
+        if (md5($temp . KEY) != strtolower($id)) {
             $result['status'] = 'failed';
-            $result['message'] = '非法提交！数据已被第三方修改！';
+            $result['message'] = '非法提交！数据已被第三方修改！' . $temp . '-------\n' . $id . '---' . md5($temp . KEY);
             exit(json_encode($result));
         }
         $ans = htmlspecialchars_decode($ans);
@@ -138,6 +138,7 @@ class SurveyPublishController extends Controller
             $temp = array();
             $temp['question_id'] = $obj->question_id;
             $temp['content'] = $obj->question_ans;
+            $temp['type'] = $obj->type;
             $temp['survey_id'] = $survey_id;
             $temp['openid'] = $openid;
             $condtion[] = $temp;

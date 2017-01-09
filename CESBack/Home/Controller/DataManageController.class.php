@@ -12,6 +12,7 @@ use Think\Controller;
 
 class DataManageController extends Controller
 {
+
     public function userCourse()
     {
         $username = '';
@@ -74,6 +75,20 @@ class DataManageController extends Controller
         }
     }
 
+    public function qrcode()
+    {
+        $save_path = isset($_GET['save_path']) ? $_GET['save_path'] : 'Public/qrcode/';  //图片存储的绝对路径
+        $web_path = isset($_GET['save_path']) ? $_GET['web_path'] : 'Public/qrcode/';        //图片在网页上显示的路径
+        $qr_data = isset($_GET['qr_data']) ? $_GET['qr_data'] : 'http://www.zetadata.com.cn/';
+        $qr_level = isset($_GET['qr_level']) ? $_GET['qr_level'] : 'H';
+        $qr_size = isset($_GET['qr_size']) ? $_GET['qr_size'] : '10';
+        $save_prefix = isset($_GET['save_prefix']) ? $_GET['save_prefix'] : 'ZETA';
+        if ($filename = \createQRcode($save_path, $qr_data, $qr_level, $qr_size, $save_prefix)) {
+            $pic = $web_path . $filename;
+        }
+        echo "<img src='../../../$pic'>";
+    }
+
     /**
      * 后台处理获取问卷图形显示数据
      */
@@ -84,7 +99,7 @@ class DataManageController extends Controller
         $username = '';
         $method = new MethodController();
         $result = $method->checkIn($username);
-        if ($result) {
+        if ($result || I('get.QR') == 1) {
 
 
             $survey = M('survey');
@@ -261,7 +276,44 @@ class DataManageController extends Controller
             $this->assign('content', json_encode($content));
             $this->assign('html_charts', $html_charts_temp);
             $this->assign('username', $username);
-            $this->display('surveyCharts');
+            if (I('get.QR') == 1) {
+                $this->display('surveyQRCharts');
+            } else {
+                $save_path = 'Public/qrcode/';  //图片存储的绝对路径
+                $web_path = 'Public/qrcode/';        //图片在网页上显示的路径
+                $qr_data = HOST . '/CESBack/index.php/Home/DataManage/getSurveyImageCount?QR=1&s_i=' . $survey_id;
+                $qr_level = 'L';
+                $qr_size = '5';
+                $save_prefix = 'SCCE';
+                if ($filename = \createQRcode($save_path, $qr_data, $qr_level, $qr_size, $save_prefix)) {
+//                    $pic = $web_path . $filename;
+                    $logo = 'Public/img/logo.png';//准备好的logo图片
+                    $QR = $save_path . $filename;//已经生成的原始二维码图
+
+                    if ($logo !== FALSE) {
+                        $QR = imagecreatefromstring(file_get_contents($QR));
+                        $logo = imagecreatefromstring(file_get_contents($logo));
+                        $QR_width = imagesx($QR);//二维码图片宽度
+                        $QR_height = imagesy($QR);//二维码图片高度
+                        $logo_width = imagesx($logo);//logo图片宽度
+                        $logo_height = imagesy($logo);//logo图片高度
+                        $logo_qr_width = $QR_width / 5;
+                        $scale = $logo_width / $logo_qr_width;
+                        $logo_qr_height = $logo_height / $scale;
+                        $from_width = ($QR_width - $logo_qr_width) / 2;
+                        //重新组合图片并调整大小
+                        imagecopyresampled($QR, $logo, $from_width, $from_width, 0, 0, $logo_qr_width,
+                            $logo_qr_height, $logo_width, $logo_height);
+                    }
+//输出图片
+                    unlink($save_path . $filename);
+                    $filename = $survey_id . '.png';
+                    imagepng($QR, $save_path . $filename);
+                    $pic = HOST . 'CESBack/Public/qrcode/' . $filename;
+                    $this->assign('src_url', $pic);
+                }
+                $this->display('surveyCharts');
+            }
         } else {
             $this->redirect('Index/index');
         }
