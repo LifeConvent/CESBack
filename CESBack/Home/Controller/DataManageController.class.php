@@ -121,6 +121,8 @@ class DataManageController extends Controller
             $answer = M('');
             //二维解析结果坐标
             $one = $two = 0;
+            $fill_question = null;
+            $fill_question_count = 0;
 
             for ($i = 0; $i < sizeof($result_question); $i++) {
                 $count = 0;
@@ -134,7 +136,7 @@ class DataManageController extends Controller
                 $result_answer = $answer->table('tb_survey_answer')
                     ->field('content,COUNT(*) AS total')
                     ->where($condition_answer)
-                    ->query('SELECT %FIELD% FROM %TABLE% %WHERE% GROUP BY content', true);
+                    ->query('SELECT %FIELD% FROM %TABLE% %WHERE% GROUP BY content ORDER BY question_id', true);
                 $result_total = $answer->table('tb_survey_answer')
                     ->field('COUNT(*) AS total')
                     ->where($condition_answer)
@@ -240,15 +242,44 @@ class DataManageController extends Controller
                     $one++;
 //                dump($answer_content_list);
                 } else if ($result_question[$i]['type'] == '3') {
-                    //单选题的数据统计结果
-                    $output[$one]['type'] = '3';
-                    $output[$one]['content'] = $result_answer[$i]['content'];
-
+                    //默认是按顺序排列的
+                    $fill_question[$fill_question_count]['question_id'] = $result_question[$i]['question_id'];
+                    $fill_question[$fill_question_count++]['question_name'] = $result_question[$i]['name'];
                 }
 //            dump($total);
             }
-//        dump($result_answer);
-//        dump($output);
+            //单选题的数据统计结果
+
+            //填空题统计处理（问题题号、名称、答案，相同题号归为一组）   封装处理返回数组  格式 【0】- array (ID和所有回答内容)
+            $condition_answer = null;
+            $condition_answer['survey_id'] = "$survey_id";
+            $condition_answer['type'] = "3";
+            $result_fill = $answer->table('tb_survey_answer')
+                ->field('question_id,content')
+                ->where($condition_answer)
+                ->query('SELECT %FIELD% FROM %TABLE% %WHERE% ORDER BY question_id', true);
+
+            //回答问题情况=$result_fill  问卷中填空题列表=$fill_question,都按序排列，以填空题列表顺序添加问题结果
+            $result_fill_count = 0;
+            $output_result_count = 0;
+//            dump($result_fill);
+            if ($fill_question) {
+                foreach ($result_fill AS $k => $v) {
+                    if ($v['question_id'] != $fill_question[$result_fill_count]['question_id']) {
+                        $result_fill_count++;
+                        $output_result_count++;
+                    } else {
+                        $fill_result[$output_result_count]['question_id'] = $fill_question[$result_fill_count]['question_id'];
+                        $fill_result[$output_result_count]['question_name'] = $fill_question[$result_fill_count]['question_name'];
+                        $fill_result[$output_result_count]['content'][] = $v['content'];
+                    }
+                }
+            }
+            $output['fill'] = $fill_result;
+
+//            dump($result_answer);
+//            dump($output);
+//            dump($fill_question);
 
 //        $html_charts_temp = '<div style="float: left;margin-top: 20px;text-align: center;" class="col-sm-6"><span id="surveyHint'+ +'" style="font-size:16px;">' + +'</span><div id="surveyAnswer' + +'" style="width: 300px;height: 300px;margin:0 auto;"></div></div>';
             $html_charts_temp = '';
@@ -272,6 +303,16 @@ class DataManageController extends Controller
                 }
             }
 //        echo(json_encode($content));
+            $append = '';
+            foreach ($output['fill'] AS $k => $v) {
+                $append .= '<div><li class="list-group-item color-hui text-white">' . $v['question_name'] . '</li><ul class="list-group">';
+                foreach ($v['content'] AS $key => $val) {
+                    if ($val != '')
+                        $append .= '<li class="list-group-item"> ' . $val . '</li>';
+                }
+                $append .= '</ul></div>';
+            }
+            $this->assign('append_html', $append);
             $this->assign('name', $output['name']);
             $this->assign('content', json_encode($content));
             $this->assign('html_charts', $html_charts_temp);

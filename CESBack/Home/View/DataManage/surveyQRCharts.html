@@ -47,19 +47,25 @@
         <div class="panel-body" style="padding-bottom:0px;">
             <div class="panel panel-primary">
 
-                <div class="panel-heading color-hui">单选多选统计分析——<span id="title"></span></div>
+                <div class="panel-heading color-hui">统计分析——<span id="title"></span></div>
+
                 <div class="panel-body">
                     {$html_charts}
                 </div>
-                <!-- 所选问卷数据图表显示模块 -->
+
+                <div style="margin: 0 auto;text-align:center;">
+                    <div class="col-sm-10">
+                        {$append_html}
+                    </div>
+                </div>
+
+                <!--测试用文本框-->
+                <textarea id="survey_content" rows="3" class="form-control" style="visibility:hidden">{$content}</textarea>
+                <textarea id="survey_name" rows="3" class="form-control" style="display:none">{$name}</textarea>
             </div>
         </div>
     </div>
 
-
-    <!--测试用文本框-->
-    <textarea id="survey_content" rows="3" class="form-control" style="display:none">{$content}</textarea>
-    <textarea id="survey_name" rows="3" class="form-control" style="display:none">{$name}</textarea>
 
     <!-- 尾 -->
     <footer class="site-footer">
