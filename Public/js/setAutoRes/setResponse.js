@@ -12,6 +12,10 @@ $(function () {
     var oButtonInit = new ButtonInit();
     oButtonInit.Init();
 
+    $('#weChat').attr('class', 'active');
+    $('#weChat_sub').css('display', 'block');
+    $('#weChat_autoSend').attr('class', 'active');
+
 });
 
 var TableInit = function () {

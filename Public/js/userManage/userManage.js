@@ -12,6 +12,11 @@ $(function () {
     var oButtonInit = new ButtonInit();
     oButtonInit.Init();
 
+
+    $('#user').attr('class', 'active');
+    $('#user_sub').css('display', 'block');
+    $('#user_manager').attr('class', 'active');
+
 });
 
 var TableInit = function () {

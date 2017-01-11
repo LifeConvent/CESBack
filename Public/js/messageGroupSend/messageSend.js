@@ -214,7 +214,12 @@ $(function () {
     var oButtonInit = new ButtonInit();
     oButtonInit.Init();
 
+    //群发消息模版
     $('#wechat_input').text("CES-课程评价系统通知:\n\n   您有新的课程评价问卷已经发布成功，请在规定时间内完成课程评价。\n\n   在公众平台中直接输入'课程评价'即可获取评价问卷进行评价。\n");
+
+    $('#weChat').attr('class', 'active');
+    $('#weChat_sub').css('display', 'block');
+    $('#weChat_groupSend').attr('class', 'active');
 
 });
 

@@ -6,11 +6,11 @@ $(function () {
     //1.初始化Table
     var oTable = new TableInit();
     oTable.Init();
-//        $[sessionStorage] = oTable.queryParams;
-//
-//    //2.初始化Button的点击事件
-//    var oButtonInit = new ButtonInit();
-//    oButtonInit.Init();
+
+    $('#course').attr('class', 'active');
+    $('#course_sub').css('display', 'block');
+    $('#course_survey_publish').attr('class', 'active');
+
 
 });
 

@@ -10,6 +10,7 @@ $(function () {
 
     initCharts();
 
+
 });
 
 function initCharts() {
