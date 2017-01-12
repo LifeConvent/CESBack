@@ -95,7 +95,7 @@ class DataManageController extends Controller
     public function getSurveyImageCount()
     {
         $survey_id = I('get.s_i');
-//        $survey_id = '1480946991';
+//        $survey_id = '1480748407';
         $username = '';
         $method = new MethodController();
         $result = $method->checkIn($username);
@@ -130,18 +130,24 @@ class DataManageController extends Controller
                 $question_id = $result_question[$i]['question_id'];
                 $condition_answer['survey_id'] = "$survey_id";
                 $condition_answer['question_id'] = "$question_id";
+                $condition_answer['_string'] = 'type=1 OR type=2';
                 /**
                  * result_answer查询结束后，应当补充不包含的选项比例调节为零
                  */
+                $result_answer = null;
+                $result_total = null;
                 $result_answer = $answer->table('tb_survey_answer')
                     ->field('content,COUNT(*) AS total')
                     ->where($condition_answer)
-                    ->query('SELECT %FIELD% FROM %TABLE% %WHERE% GROUP BY content ORDER BY question_id', true);
+                    ->query('SELECT %FIELD% FROM %TABLE% %WHERE% GROUP BY content ORDER BY content', true);
                 $result_total = $answer->table('tb_survey_answer')
                     ->field('COUNT(*) AS total')
                     ->where($condition_answer)
                     ->query('SELECT %FIELD% FROM %TABLE% %WHERE% GROUP BY question_id', true);
                 $total = (int)$result_total[0]['total'];
+
+//                dump($question_id);
+//                dump($result_answer);
 
                 /**
                  * 解析封装处理结果
@@ -178,7 +184,6 @@ class DataManageController extends Controller
 //                        $output[$one][$j]['num'] = (float)$result_answer[$answer_count]['total'] / $total;//百分比
                             $output[$one][$j]['num'] = $result_answer[$answer_count]['total'];//总数
                             $answer_count++;
-
                         }
                     }
                     $one++;
@@ -305,7 +310,7 @@ class DataManageController extends Controller
 //        echo(json_encode($content));
             $append = '';
             foreach ($output['fill'] AS $k => $v) {
-                $append .= '<div style="float: left" class="col-sm-6"><li class="list-group-item color-hui text-white">' . $v['question_name'] . '</li><ul class="list-group">';
+                $append .= '<div style="float: left" class="col-sm-6"><li class="list-group-item color-hui text-white" style="text-align: center">' . $v['question_name'] . '</li><ul class="list-group">';
                 foreach ($v['content'] AS $key => $val) {
                     if ($val != '')
                         $append .= '<li class="list-group-item"> ' . $val . '</li>';
@@ -355,6 +360,8 @@ class DataManageController extends Controller
                     $this->assign('pc_url', $qr_data);
                 }
                 $this->display('surveyCharts');
+//                dump($output);
+//                dump($content);
             }
         } else {
             $this->redirect('Index/index');
