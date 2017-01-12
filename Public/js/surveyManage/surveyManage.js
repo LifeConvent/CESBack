@@ -13,10 +13,6 @@ $(function () {
     oButtonInit.Init();
 
 
-    $('#course').attr('class', 'active');
-    $('#course_sub').css('display', 'block');
-    $('#course_survey').attr('class', 'active');
-
 });
 
 var TableInit = function () {

@@ -4,12 +4,13 @@
 
 $(function () {
 
-    var oTable = new TableInit();
-    oTable.Init();
-
     $('#course').attr('class', 'active');
     $('#course_sub').css('display', 'block');
     $('#course_count').attr('class', 'active');
+
+    var oTable = new TableInit();
+    oTable.Init();
+
 
 });
 

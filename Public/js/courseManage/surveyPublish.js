@@ -6,12 +6,6 @@ $(function () {
     //1.初始化Table
     var oTable = new TableInit();
     oTable.Init();
-
-    $('#course').attr('class', 'active');
-    $('#course_sub').css('display', 'block');
-    $('#course_survey_publish').attr('class', 'active');
-
-
 });
 
 var TableInit = function () {

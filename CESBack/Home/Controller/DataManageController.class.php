@@ -305,7 +305,7 @@ class DataManageController extends Controller
 //        echo(json_encode($content));
             $append = '';
             foreach ($output['fill'] AS $k => $v) {
-                $append .= '<div><li class="list-group-item color-hui text-white">' . $v['question_name'] . '</li><ul class="list-group">';
+                $append .= '<div style="float: left" class="col-sm-6"><li class="list-group-item color-hui text-white">' . $v['question_name'] . '</li><ul class="list-group">';
                 foreach ($v['content'] AS $key => $val) {
                     if ($val != '')
                         $append .= '<li class="list-group-item"> ' . $val . '</li>';
@@ -322,7 +322,7 @@ class DataManageController extends Controller
             } else {
                 $save_path = 'Public/qrcode/';  //图片存储的绝对路径
                 $web_path = 'Public/qrcode/';        //图片在网页上显示的路径
-                $qr_data = HOST . '/CESBack/index.php/Home/DataManage/getSurveyImageCount?QR=1&s_i=' . $survey_id;
+                $qr_data = HOST . 'CESBack/index.php/Home/DataManage/getSurveyImageCount?QR=1&s_i=' . $survey_id;
                 $qr_level = 'L';
                 $qr_size = '5';
                 $save_prefix = 'SCCE';
@@ -352,6 +352,7 @@ class DataManageController extends Controller
                     imagepng($QR, $save_path . $filename);
                     $pic = HOST . 'CESBack/Public/qrcode/' . $filename;
                     $this->assign('src_url', $pic);
+                    $this->assign('pc_url', $qr_data);
                 }
                 $this->display('surveyCharts');
             }

@@ -61,11 +61,8 @@
                             {$html_charts}
                         </div>
 
-                        <div style="margin-left: 15%;text-align:center;">
-                            <div class="col-sm-10">
-                                {$append_html}
-                            </div>
-                            <div></div>
+                        <div class="panel-body" style="margin: 0 auto;">
+                            {$append_html}
                         </div>
 
                         <textarea id="survey_content" rows="3" class="form-control"
@@ -74,6 +71,11 @@
                         <div style="margin:0 auto;text-align:center;">
                             <div><span>扫描下方二维码可将该问卷结果分享给指定用户</span></div>
                             <img src="{$src_url}">
+
+                            <div><span>或分享下方链接进行查看</span></div>
+                            <span>{$pc_url}</span>
+
+                            <div><span>也可通过数据管理模块导出该问卷Excel进行分享或向用户微信发送二维码</span></div>
                         </div>
 
 

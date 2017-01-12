@@ -136,7 +136,7 @@ function changeContainer() {
     }
     var survey_id = survey[0].survey_id;
     //请求后台统计数据，获取问卷分析结果
-    window.location.href = HOST + "/CESBack/index.php/Home/DataManage/getSurveyImageCount?s_i=" + survey_id;
+    window.location.href = HOST + "CESBack/index.php/Home/DataManage/getSurveyImageCount?s_i=" + survey_id;
     //$.ajax({
     //    type: "POST",
     //    url: HOST + "/CESBack/index.php/Home/DataManage/getSurveyImageCount",
