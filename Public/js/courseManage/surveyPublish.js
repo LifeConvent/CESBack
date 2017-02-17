@@ -182,17 +182,6 @@ var TableInit = function () {
     return oTableInit;
 };
 
-//var ButtonInit = function () {
-//    var oInit = new Object();
-//    var postdata = {};
-//
-//    oInit.Init = function () {
-//        //初始化页面上面的按钮事件
-//    };
-//
-//    return oInit;
-//};
-
 window.actionEvents_user = {
     'click .look': function (e, value, row, index) {
         var pro = '';

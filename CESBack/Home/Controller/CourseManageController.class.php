@@ -589,7 +589,7 @@ class CourseManageController extends Controller
         $condi = I('get.s_n');
 //        $condi = '2015-2016学年课程评价调查问卷';
         $method = new MethodController();
-        $method->write('data', $group.'---'.$condi.'为什么为空');
+        $method->write('data', $group . '---' . $condi . '为什么为空');
         $count = 0;
         $sql = '';
         if ($level != null) {
@@ -668,6 +668,29 @@ class CourseManageController extends Controller
             exit(json_encode($result));
         } else {
             exit('');
+        }
+    }
+
+    public function coursePublish()
+    {
+        $username = '';
+        $method = new MethodController();
+        $result = $method->checkIn($username);
+        if ($result) {
+            $this->assign('username', $username);
+            $group = M('survey_group');
+            $select = $group->select();
+            $content = '<option value="0">|---- 无</option>';
+            $content_search = '';
+            for ($i = 0; $i < sizeof($select); $i++) {
+                $content .= '<option value="' . $select[$i]['group_id'] . '">' . '|----' . $select[$i]['group_name'] . '</option>';
+                $content_search .= '<option value="' . $select[$i]['group_id'] . '">' . '|----' . $select[$i]['group_name'] . '</option>';
+            }
+            $this->assign('groupSelectList', $content);
+            $this->assign('groupSelectList_search', $content_search);
+            $this->display();
+        } else {
+            $this->redirect('Index/index');
         }
     }
 }
