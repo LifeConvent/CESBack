@@ -89,6 +89,84 @@ class DataManageController extends Controller
         echo "<img src='../../../$pic'>";
     }
 
+
+    public function outputResult()
+    {
+        $survey_id = I('get.s_i');
+//        $survey_id = '1480748407';
+        $username = '';
+        $method = new MethodController();
+        $result = $method->checkIn($username);
+        if ($result) {
+            $survey_answer = M('survey_answer');
+            $condition_survey['survey_id'] = "$survey_id";
+            $result_answer = $survey_answer->where($condition_survey)->order('question_id ASC')->select();
+            $temp = 1;
+
+            $survey = M('survey');
+            $condition_survey['survey_id'] = "$survey_id";
+            $result = $survey->where($condition_survey)->select();
+            $string = $result[0]['question'];
+            $survey_name = $result[0]['name'];
+            $que_list = M('survey_question');
+            /**
+             * 当前问卷的所有问题
+             */
+            $result_question = $que_list->where('question_id IN (' . $string . ')')->select();
+            $string = explode(',', $string);
+            $count = sizeof($string);
+
+            foreach ($result_question AS $k => $v) {
+                $question_name[$k + 1] = $v['name'];
+                $answer = $v['content'];
+                $answer = str_replace('[', '', $answer);
+                $answer = str_replace(']', '', $answer);
+                $answer = str_replace('"', '', $answer);
+                $string = explode(',', $answer);
+                foreach ($string AS $key => $val) {
+                    $select[$k + 1][$key + 1] = $val;
+                }
+            }
+
+            foreach ($result_answer AS $k => $v) {
+                $output[$v['openid']][0] = $v['create_time'];
+                $output[$v['openid']][$temp] = $v['content'];
+                if ($temp > 0 && $select[$temp][1] != '2') {
+                    $string_select = explode(',', $v['content']);
+                    $content = '';
+                    foreach ($string_select AS $key => $val) {
+                        $content .= $select[$temp][$val] . '    ';
+                    }
+                    $output[$v['openid']][$temp] = $content;
+                }
+                if ($v['question_id'] != $result_answer[$k + 1]['question_id']) {
+                    $temp++;
+                }
+            }
+            //去掉openid避免查看回答者
+            $c = 0;
+            foreach ($output AS $k => $v) {
+                $output_new[$c++] = $v;
+            }
+            $xlsName = "问卷结果统计";
+            $xlsTitle = $survey_name.'的回答结果统计';
+//            $title[0] = '';
+            $cell[0] = array(0, '回答时间');
+            for ($i = 1; $i <= $count; $i++) {
+                $cell[$i] = array($i, $question_name[$i]);
+            }
+            $method = new MethodController();
+            $method->exportExcel($xlsTitle, $cell, $output_new, $xlsName);
+
+//            dump($output_new);
+//            dump($xlsCell);
+//            dump($cell);
+        } else {
+            $this->redirect('Index/index');
+        }
+    }
+
+
     /**
      * 后台处理获取问卷图形显示数据
      */
@@ -360,8 +438,6 @@ class DataManageController extends Controller
                     $this->assign('pc_url', $qr_data);
                 }
                 $this->display('surveyCharts');
-//                dump($output);
-//                dump($content);
             }
         } else {
             $this->redirect('Index/index');

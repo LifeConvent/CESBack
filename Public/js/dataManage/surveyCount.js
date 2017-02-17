@@ -125,6 +125,20 @@ function searchSurvey() {
     $('#table_survey_count').bootstrapTable('refresh', {url: HOST + "CESBack/index.php/Home/CourseManage/searchSurvey" + url});
 }
 
+function outputResult() {
+    var survey = $('#table_survey_count').bootstrapTable('getAllSelections');
+    if (survey.length <= 0) {
+        $.scojs_message('请至少选择一个问卷进行结果导出！', $.scojs_message.TYPE_ERROR);
+        return;
+    } else if (survey.length > 1) {
+        $.scojs_message('请选择一个问卷进行结果导出,多个问卷暂时无法同时导出！', $.scojs_message.TYPE_ERROR);
+        return;
+    }
+    var survey_id = survey[0].survey_id;
+    //请求后台统计数据，获取问卷分析结果
+    window.location.href = HOST + "CESBack/index.php/Home/DataManage/outputResult?s_i=" + survey_id;
+}
+
 function changeContainer() {
     var survey = $('#table_survey_count').bootstrapTable('getAllSelections');
     if (survey.length <= 0) {
@@ -155,4 +169,5 @@ function changeContainer() {
     //    //}
     //});
 }
+
 

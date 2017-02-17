@@ -508,15 +508,16 @@ class MethodController extends Controller
     }
 
     //导入excel内容转换成数组
-    public function import($filePath){
+    public function import($filePath)
+    {
         $this->__construct();
         Vendor("PHPExcel.PHPExcel");
         $PHPExcel = new \PHPExcel();
         /**默认用excel2007读取excel，若格式不对，则用之前的版本进行读取*/
         $PHPReader = new \PHPExcel_Reader_Excel2007();
-        if(!$PHPReader->canRead($filePath)){
+        if (!$PHPReader->canRead($filePath)) {
             $PHPReader = new \PHPExcel_Reader_Excel5();
-            if(!$PHPReader->canRead($filePath)){
+            if (!$PHPReader->canRead($filePath)) {
                 echo 'no Excel';
                 return;
             }
@@ -529,13 +530,14 @@ class MethodController extends Controller
         $erp_orders_id = array();  //声明数组
 
         /**从第二行开始输出，因为excel表中第一行为列名*/
-        for($currentRow = 1;$currentRow <= $allRow;$currentRow++){
+        for ($currentRow = 1; $currentRow <= $allRow; $currentRow++) {
 
             /**从第A列开始输出*/
-            for($currentColumn= 'A';$currentColumn<= $allColumn; $currentColumn++){
+            for ($currentColumn = 'A'; $currentColumn <= $allColumn; $currentColumn++) {
 
-                $val = $currentSheet->getCellByColumnAndRow(ord($currentColumn) - 65,$currentRow)->getValue();/**ord()将字符转为十进制数*/
-                if($val!=''){
+                $val = $currentSheet->getCellByColumnAndRow(ord($currentColumn) - 65, $currentRow)->getValue();
+                /**ord()将字符转为十进制数*/
+                if ($val != '') {
                     $erp_orders_id[] = $val;
                 }
                 /**如果输出汉字有乱码，则需将输出内容用iconv函数进行编码转换，如下将gb2312编码转为utf-8编码输出*/
@@ -551,6 +553,21 @@ class MethodController extends Controller
     {
         $data = $this->import_excel('Public/file/admin1.xls');
         dump($data);
+    }
+
+    public function outTest()
+    {
+        $test = null;
+        $title = null;
+        $title[0] = '0';
+        $title[1] = '1';
+        $title[2] = "2";
+        $title[3] = '3';
+        $test[0][0] = 'asdf';
+        $test[0][1] = 'asdf';
+        $test[0][2] = 'asdf';
+        $test[0][3] = 'asdf';
+        $this->exportExcel('test', $title, $test, 'test');
     }
 
     public function replace($content)
