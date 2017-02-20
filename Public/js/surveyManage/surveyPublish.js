@@ -45,6 +45,11 @@ function initSurvey() {
         var content = QObject[i].content;
         addQLi(question_id, type, q_name, content, i + 1, before_des, after_des, is_must);
     }
+    $('input').iCheck({
+        checkboxClass: 'icheckbox_square-green',
+        radioClass: 'iradio_square-green',
+        increaseArea: '2%' // optional
+    });
 }
 
 function addQLi(question_id, type, q_name, content, order, before_des, after_des, is_must) {
@@ -64,17 +69,17 @@ function addQLi(question_id, type, q_name, content, order, before_des, after_des
         for (var i = 0; i < num; i++) {
             //问题选项
             //li += "<li>" + q_list[i] + "</li>";
-            li += "<div class='radio' style='margin-left: 20px;' id='" + "question_ans" + order + "'> <div><label class='" + "question_ans" + order + "'> <input type='radio' name='" + "question_ans" + order + "' value='" + (i + 1) + "'><span style='vertical-align:text-bottom;line-height:22px'>" + q_list[i] + " </span> </label></div></div>";
+            li += "<div class='radio' style='margin-left: 0px;' id='" + "question_ans" + order + "'> <div><label class='" + "question_ans" + order + "'> <input type='radio' class='type-switch' data-type='standard' name='" + "question_ans" + order + "' value='" + (i + 1) + "'><span style='margin-top:10px;margin-left:10px;line-height:25px'>" + q_list[i] + " </span> </label></div></div>";
         }
     } else if (type == '2') {
         //添加li
         q_list = JSON.parse(content);
         num = q_list.length;
-        li += "<div style='margin-left: 40px'>";
+        li += "<div style='margin-left: 20px'>";
         for (i = 0; i < num; i++) {
             //问题选项
             //li += "<li>" + q_list[i] + "</li>";
-            li += "<div class='checkbox' style='margin-left: -20px;' id='" + "question_ans" + order + "'><div> <label class='" + "question_ans" + order + "'> <input type='checkbox' value='" + (i + 1) + "' name='" + "question_ans" + order + "[]'><span style='vertical-align:text-bottom;line-height:22px'>" + q_list[i] + " </span></label><div> </div>";
+            li += "<div class='checkbox' style='margin-left: -20px;' id='" + "question_ans" + order + "'><div> <label class='" + "question_ans" + order + "'> <input type='checkbox' value='" + (i + 1) + "' name='" + "question_ans" + order + "[]'><span style='margin-top:10px;margin-left:10px;line-height:25px'>" + q_list[i] + " </span></label><div> </div>";
         }
         li += "</div>";
     } else if (type == '3') {
@@ -87,7 +92,7 @@ function addQLi(question_id, type, q_name, content, order, before_des, after_des
         } else if (content == '1') {
             row = 2;
         }
-        li += "<div class='mar-top-10' style='margin-left: 20px;margin-right: 20px;'><textarea rows='" + row + "' class='form-control' id=" + "question_ans" + order + " ></textarea></div>";
+        li += "<div class='mar-top-10' style='margin-left: 30px;margin-right: 30px;'><textarea rows='" + row + "' class='form-control' id=" + "question_ans" + order + " ></textarea></div>";
     }
     //if (after_des != '') {
     //    li += "<span style='color: #89d951;margin-left: 20px;'>" + after_des + "</span>";
