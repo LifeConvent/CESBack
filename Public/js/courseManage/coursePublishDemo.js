@@ -162,4 +162,52 @@ var TableInit = function () {
     return oTableInit;
 };
 
+function searchSurvey() {
+    var level = $('#survey_search_level').val();
+    var group = $('#survey_search_group').val();
+    var condition = $('#txt_search_condition_input').val();
+    var url = '?';
+    if (level != '0') {
+        url += ('l=' + level + '&');
+    }
+    if (condition != '' && condition != null) {
+        url += ('s_n=' + condition + '&');
+    }
+    if (group != '0') {
+        url += ('g=' + group + '&');
+    }
+    //alert(url);
+    if (url == '?') {
+        $.scojs_message('查询内容不能为空！', $.scojs_message.TYPE_ERROR);
+    }
+    $('#table_survey').bootstrapTable('removeAll');
+    $('#table_survey').bootstrapTable('refresh', {url: HOST + "CESBack/index.php/Home/CourseManage/searchSurvey" + url});
+}
+
+function course_show() {
+    var course_num = $('#search_course_num').val();
+    var teacher_name = $('#search_teacher_name').val();
+    var course_name = $('#search_course_name').val();
+    var course_semester = $('#search_course_semester').val();
+    var url = '?';
+    if (course_num != '') {
+        url += ('c_n=' + course_num + '&');
+    }
+    if (teacher_name != '') {
+        url += ('t_n=' + teacher_name + '&');
+    }
+    if (course_name != '') {
+        url += ('c_a=' + course_name + '&');
+    }
+    if (course_semester != '') {
+        url += ('c_s=' + course_semester + '&');
+    }
+    if (url == '?') {
+        $.scojs_message('查询内容不能为空！', $.scojs_message.TYPE_ERROR);
+    }
+    //alert(url);
+    $('#table_course').bootstrapTable('removeAll');
+    $('#table_course').bootstrapTable('refresh', {url: HOST + "CESBack/index.php/Home/CourseManage/searchCourse" + url});
+}
+
 

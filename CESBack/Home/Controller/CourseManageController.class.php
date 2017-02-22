@@ -107,6 +107,7 @@ class CourseManageController extends Controller
         $course_num = I('get.c_n');
         $course_name = I('get.c_a');
         $teacher_name = I('get.t_n');
+        $course_semester = I('get.c_s');
         $count = 0;
         $sql = '';
         if ($course_num != null) {
@@ -130,6 +131,15 @@ class CourseManageController extends Controller
                 $count++;
             } else {
                 $sql .= " AND teacher_name LIKE '%" . $teacher_name . "%' ";
+                $count++;
+            }
+        }
+        if ($course_semester != null) {
+            if ($count == 0) {
+                $sql .= " semester LIKE '%" . $course_semester . "%' ";
+                $count++;
+            } else {
+                $sql .= " AND semester LIKE '%" . $course_semester . "%' ";
                 $count++;
             }
         }
