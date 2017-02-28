@@ -17,7 +17,7 @@ var TableInit = function () {
     //初始化Table
     oTableInit.Init = function () {
         $('#table_survey').bootstrapTable({
-            url: HOST + "CESBack/index.php/Home/Method/getSurvey",   //请求后台的URL（*）
+            url: HOST + "CESBack/index.php/Home/Method/getSurveyDemo",   //请求后台的URL（*）
             method: 'get',      //请求方式（*）
             toolbar: '#toolbar_survey',    //工具按钮用哪个容器
             striped: true,      //是否显示行间隔色
@@ -77,7 +77,7 @@ var TableInit = function () {
             }]
         });
         $('#table_course').bootstrapTable({
-            url: HOST + "CESBack/index.php/Home/CourseManage/getCourse",   //请求后台的URL（*）
+            url: HOST + "CESBack/index.php/Home/CourseManage/getCourseNoName",   //请求后台的URL（*）
             method: 'get',      //请求方式（*）
             toolbar: '#toolbar_course',    //工具按钮用哪个容器
             striped: true,      //是否显示行间隔色
@@ -115,7 +115,7 @@ var TableInit = function () {
             columns: [{
                 checkbox: true
             }, {
-                field: 'course_id',
+                field: 'sys_course_id',
                 sortable: true,
                 align: 'center',
                 title: '课程号'
@@ -125,27 +125,15 @@ var TableInit = function () {
                 align: 'center',
                 title: '课程名'
             }, {
-                field: 'teacher_name',
-                sortable: true,
-                align: 'center',
-                title: '任课教师姓名'
-            }, {
                 field: 'semester',
                 sortable: true,
                 align: 'center',
                 title: '学年学期'
             }, {
-                field: 'take_num',
+                field: 'take_class',
                 sortable: true,
                 align: 'center',
-                title: '上课人数'
-            }, {
-                field: 'operation',
-                title: '操作',
-                align: 'center',
-                formatter: "actionFormatter",
-                events: "actionEvents",
-                clickToSelect: false
+                title: '上课班级数'
             }]
         });
     };
@@ -186,15 +174,11 @@ function searchSurvey() {
 
 function course_show() {
     var course_num = $('#search_course_num').val();
-    var teacher_name = $('#search_teacher_name').val();
     var course_name = $('#search_course_name').val();
     var course_semester = $('#search_course_semester').val();
     var url = '?';
     if (course_num != '') {
         url += ('c_n=' + course_num + '&');
-    }
-    if (teacher_name != '') {
-        url += ('t_n=' + teacher_name + '&');
     }
     if (course_name != '') {
         url += ('c_a=' + course_name + '&');
@@ -208,6 +192,49 @@ function course_show() {
     //alert(url);
     $('#table_course').bootstrapTable('removeAll');
     $('#table_course').bootstrapTable('refresh', {url: HOST + "CESBack/index.php/Home/CourseManage/searchCourse" + url});
+}
+
+function publishCourseDemoSurvey() {
+    var demo = $('#table_survey').bootstrapTable('getAllSelections');
+    if (demo.length > 1) {
+        $.scojs_message('只能选择一个模版进行发布，请勿选择多个模版！', $.scojs_message.TYPE_ERROR);
+        return;
+    } else if (demo.length < 1) {
+        $.scojs_message('请至少选择一个模版进行发布！', $.scojs_message.TYPE_ERROR);
+        return;
+    }
+    var course = $('#table_course').bootstrapTable('getAllSelections');
+    if (course.length < 1) {
+        $.scojs_message('请至少选择一个课程进行发布！', $.scojs_message.TYPE_ERROR);
+        return;
+    }
+    var survey_id = demo[0].survey_id;
+    //获取到模版问卷id
+    var course_id = course[0].sys_course_id;
+    for (var i = 1; i < course.length; i++) {
+        course_id += '-' + course[i].sys_course_id;
+    }
+    //alert(course_id);
+    $('#loading').modal('show');
+    $.ajax({
+        type: "POST", //用POST方式传输
+        url: HOST + "CESBack/index.php/Home/CourseManage/publishCourseDemo", //目标地址.
+        dataType: "json", //数据格式:JSON
+        data: {
+            survey_id: survey_id,
+            course_id: course_id
+        },
+        success: function (result) {
+            if (result.status == 'success') {
+                $('#loading').modal('hide');
+            } else if (result.status == 'failed') {
+                $.scojs_message('问卷发布失败，请稍后再试！' + result.message, $.scojs_message.TYPE_ERROR);
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            $.scojs_message('网络连接发生未知错误，请稍后再试！' + errorThrown, $.scojs_message.TYPE_ERROR);
+        }
+    });
 }
 
 

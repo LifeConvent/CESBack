@@ -12,6 +12,11 @@ $(function () {
     var oButtonInit = new ButtonInit();
     oButtonInit.Init();
 
+    $('input').iCheck({
+        checkboxClass: 'icheckbox_square-green',
+        radioClass: 'iradio_square-green',
+        increaseArea: '2%' // optional
+    });
 
 });
 
@@ -586,7 +591,11 @@ function submitQuestion() {
 
 function submitSurvey() {
     var num = $('#q_count').val();//问卷当中的问题总数
-
+    if (($("#is_demo").is(':checked'))) {
+        var is_demo = 1;//是否为问卷课程模版
+    } else {
+        is_demo = 0;//是否为问卷课程模版
+    }
     var name = $('#new_survey_name').val();
     var group = $('#survey_sub_group').val();
     var level = $('#survey_level input[name="survey_type"]:checked ').val();
@@ -626,6 +635,7 @@ function submitSurvey() {
         url: HOST + "CESBack/index.php/Home/CourseManage/addNewSurvey", //目标地址.
         dataType: "json", //数据格式:JSON
         data: {
+            is_demo: is_demo,
             count: count.length,
             name: name,
             group: group,
@@ -652,7 +662,11 @@ function submitSurvey() {
 
 function submitModifySurvey() {
     var num = $('#q_count').val();//问卷当中的问题总数
-
+    if ($("#is_demo").is(':checked')) {
+        var is_demo = 1;//是否为问卷课程模版
+    } else {
+        is_demo = 0;//是否为问卷课程模版
+    }
     var name = $('#new_survey_name').val();
     var group = $('#survey_sub_group').val();
     var level = $('#survey_level input[name="survey_type"]:checked ').val();
@@ -693,6 +707,7 @@ function submitModifySurvey() {
         url: HOST + "CESBack/index.php/Home/CourseManage/modifySurvey", //目标地址.
         dataType: "json", //数据格式:JSON
         data: {
+            is_demo: is_demo,
             id: id,
             count: count.length,
             name: name,

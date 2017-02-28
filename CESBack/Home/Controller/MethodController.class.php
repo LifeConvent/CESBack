@@ -150,6 +150,33 @@ class MethodController extends Controller
         }
     }
 
+    public function getSurveyDemo()
+    {
+        $survey = M('survey');
+        $result = $survey->field('g.group_name,name,survey_id,level,owner')
+            ->table('tb_survey_group')
+            ->where('g.group_id=s.survey_group AND is_demo=1')
+            ->query("SELECT %FIELD% FROM tb_survey AS s, %TABLE% AS g %WHERE% ", true);
+        for ($i = 0; $i < sizeof($result); $i++) {
+            switch ($result[$i]['level']) {
+                case '1':
+                    $result[$i]['level'] = '系级';
+                    break;
+                case '2':
+                    $result[$i]['level'] = '院级';
+                    break;
+                case '3':
+                    $result[$i]['level'] = '校级';
+                    break;
+            }
+        }
+        if ($result) {
+            exit(json_encode($result));
+        } else {
+            exit(json_encode(''));
+        }
+    }
+
     public function searchSurvey()
     {
         $name = I('get.name');

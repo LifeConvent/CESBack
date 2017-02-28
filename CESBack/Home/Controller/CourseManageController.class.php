@@ -102,11 +102,23 @@ class CourseManageController extends Controller
         }
     }
 
+    public function getCourseNoName()
+    {
+        $course = M('course_list');
+        $result = $course->field('sys_course_id,name,semester,take_num,COUNT(*) AS take_class')
+            ->table('tb_course_list')
+            ->query("SELECT %FIELD% FROM %TABLE% GROUP BY sys_course_id,semester", true);
+        if ($result) {
+            exit(json_encode($result));
+        } else {
+            exit(json_encode(''));
+        }
+    }
+
     public function searchCourse()
     {
         $course_num = I('get.c_n');
         $course_name = I('get.c_a');
-        $teacher_name = I('get.t_n');
         $course_semester = I('get.c_s');
         $count = 0;
         $sql = '';
@@ -125,15 +137,6 @@ class CourseManageController extends Controller
                 $count++;
             }
         }
-        if ($teacher_name != null) {
-            if ($count == 0) {
-                $sql .= " teacher_name LIKE '%" . $teacher_name . "%' ";
-                $count++;
-            } else {
-                $sql .= " AND teacher_name LIKE '%" . $teacher_name . "%' ";
-                $count++;
-            }
-        }
         if ($course_semester != null) {
             if ($count == 0) {
                 $sql .= " semester LIKE '%" . $course_semester . "%' ";
@@ -144,10 +147,10 @@ class CourseManageController extends Controller
             }
         }
         $course = M();
-        $result = $course->field('course_id,name,teacher_name,semester,take_num')
+        $result = $course->field('sys_course_id,name,semester,take_num,COUNT(*) AS take_class')
             ->table('tb_course_list')
             ->where($sql)
-            ->query("SELECT %FIELD% FROM %TABLE% %WHERE% ", true);
+            ->query("SELECT %FIELD% FROM %TABLE% %WHERE% GROUP BY sys_course_id,semester", true);
         if ($result) {
             exit(json_encode($result));
         } else {
@@ -218,6 +221,7 @@ class CourseManageController extends Controller
         $survey_group = I('post.group');
         $level = I('post.level');
         $question = I('post.question');
+        $is_demo = I('post.is_demo');
 
 //        选填项
         $description = I('post.detail');
@@ -234,6 +238,11 @@ class CourseManageController extends Controller
         $condition['survey_group'] = $survey_group;
         $condition['survey_id'] = $survey_id;
         $condition['owner'] = $username;
+        if ($is_demo == 1) {
+            $condition['is_demo'] = 1;
+        } else {
+            $condition['is_demo'] = 0;
+        }
 
         $survey = M('survey');
         $res = $survey->add($condition);
@@ -255,6 +264,7 @@ class CourseManageController extends Controller
         $level = I('post.level');
         $question = I('post.question');
         $survey_id = I('post.id');
+        $is_demo = I('post.is_demo');
 
 //        选填项
         $description = I('post.detail');
@@ -272,6 +282,11 @@ class CourseManageController extends Controller
         $condition['name'] = $name;
         $condition['survey_group'] = $survey_group;
         $condition['owner'] = $username;
+        if ($is_demo == 1) {
+            $condition['is_demo'] = 1;
+        } else {
+            $condition['is_demo'] = 0;
+        }
 
         $survey = M('survey');
         $res = $survey->where($temp)->save($condition);
@@ -701,6 +716,89 @@ class CourseManageController extends Controller
             $this->display();
         } else {
             $this->redirect('Index/index');
+        }
+    }
+
+    public function publishCourseDemo()
+    {
+        $survey_id = I('post.survey_id');
+        $course_id = I('post.course_id');
+        $method = new MethodController();
+        $res = $method->checkIn($username);
+        if ($res) {
+            $survey = M('survey');
+            $con['survey_id'] = $survey_id;
+            $survey_content = $survey->where($con)->select();
+            $survey_name = $survey_content[0]['name'];
+            //拆分course_id
+            $course_array = explode('-', $course_id);
+            foreach ($course_array AS $key => $value) {
+                //补充模版的唯一标识
+                $condition_survey['name'] = $survey_content[0]['name'];
+                $condition_survey['title'] = $survey_content[0]['title'];
+                $condition_survey['level'] = $survey_content[0]['level'];
+                $condition_survey['description'] = $survey_content[0]['description'];
+                $condition_survey['question'] = $survey_content[0]['question'];
+                $condition_survey['owner'] = $survey_content[0]['owner'];
+                $condition_survey['survey_group'] = $survey_content[0]['survey_group'];
+                $condition_survey['count'] = $survey_content[0]['count'];
+                $condition_survey['course_demo_id'] = time() . "$value";
+                $survey_demo_id = $condition_survey['course_demo_id'];
+                $condition_survey['course_id'] = "$value";
+                $course_list = M('course_list');
+                $con_course['sys_course_id'] = "$value";
+                $course_content = $course_list->where($con_course)->select();
+                $course_name = $course_content[0]['name'];
+                str_replace('【课程名】', $course_name, $survey_name);
+                //问卷名称
+                $condition_survey['name'] = "$survey_name";
+                $condition_survey['survey_id'] = "$survey_demo_id";
+                $survey_new = M('survey');
+                $result_survey = $survey_new->add($condition_survey);
+                if ($result_survey) {
+                    $course_take = M('course_take');
+                    $con_c_t['course_id'] = $value;
+                    $course_per = $course_take->field('stu_num')->where($con_c_t)->select();
+                    $con_s['course_demo_id'] = $survey_demo_id;
+                    if (!$course_per) {
+                        $result['status'] = 'failed';
+                        $result['message'] = '包含无人上课课程，按序至该课程发布失败' . $course_name;
+                        exit(json_encode($result));
+                    }
+                    foreach ($course_per AS $k => $v) {
+                        $condition_plan['stu_num'] = $v['stu_num'];
+                        //openid不确定是否需要填写
+                        $user = M('user');
+                        $stu_num = $v['stu_num'];
+                        $con_user['stu_num'] = "$stu_num";
+                        $openid = $user->field('openid')->where($con_user)->select();
+                        $condition_plan['survey_id'] = "$survey_demo_id";
+                        if ($openid[0]['openid'] == '' || $openid[0]['openid'] == null) {
+                            $openid_stu = '';
+                        } else {
+                            $openid_stu = $openid[0]['openid'];
+                        }
+                        $condition_plan['openid'] = $openid_stu;
+                        $survey_plan = M('survey_plan');
+                        $add_plan = $survey_plan->add($condition_plan);
+                        if (!$add_plan) {
+                            $result['status'] = 'failed';
+                            $result['message'] = '问卷计划添加失败';
+                            exit(json_encode($result));
+                        }
+                    }
+                } else {
+                    $result['status'] = 'failed';
+                    $result['message'] = '问卷创建失败';
+                    exit(json_encode($result));
+                }
+            }
+            $result['status'] = 'success';
+            exit(json_encode($result));
+        } else {
+            $result['status'] = 'failed';
+            $result['message'] = '权限错误';
+            exit(json_encode($result));
         }
     }
 }

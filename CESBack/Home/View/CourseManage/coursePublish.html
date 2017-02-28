@@ -149,28 +149,21 @@
                                     <label class="control-label left-f" for="search_course_num"
                                            style="margin-left:30px;">课程号：</label>
 
-                                    <div class="col-sm-2">
+                                    <div class="col-sm-3">
                                         <input type="text" class="form-control" id="search_course_num">
-                                    </div>
-
-                                    <label class="control-label left-f" for="search_teacher_name"
-                                           style="margin-left:10px;">教师名：</label>
-
-                                    <div class="col-sm-2">
-                                        <input type="text" class="form-control" id="search_teacher_name">
                                     </div>
 
                                     <label class="control-label left-f" for="search_course_name"
                                            style="margin-left:10px;">课程名：</label>
 
-                                    <div class="col-sm-2">
+                                    <div class="col-sm-3">
                                         <input type="text" class="form-control" id="search_course_name">
                                     </div>
 
                                     <label class="control-label left-f" for="search_course_semester"
                                            style="margin-left:10px;">学期：</label>
 
-                                    <div class="col-sm-2">
+                                    <div class="col-sm-3">
                                         <input type="text" class="form-control" id="search_course_semester">
                                     </div>
 
@@ -193,6 +186,16 @@
                         </div>
                         <table class="panel" id="table_course" data-page-list="[10, 25, 50, 100, ALL]"></table>
                     </div>
+
+                    <!--提交-->
+                    <div class="form-group" id="submit_new" style="margin-top: 20px;">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="button" class="btn btn-success col-sm-10"
+                                    onclick="publishCourseDemoSurvey();">发布模版问卷
+                            </button>
+                        </div>
+                    </div>
+                    <!--提交-->
                 </div>
             </div>
 
@@ -305,7 +308,15 @@
                 </div>
             </div>
         </div>
-
+        <div class="modal fade" id="loading">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="panel-body" style="margin-top:20px;">
+                        正在处理请稍后...
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <!-- 主窗体 -->
 
