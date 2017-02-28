@@ -749,7 +749,7 @@ class CourseManageController extends Controller
                 $con_course['sys_course_id'] = "$value";
                 $course_content = $course_list->where($con_course)->select();
                 $course_name = $course_content[0]['name'];
-                str_replace('【课程名】', $course_name, $survey_name);
+                $survey_name = str_replace('【课程名】', $course_name, $survey_name);
                 //问卷名称
                 $condition_survey['name'] = "$survey_name";
                 $condition_survey['survey_id'] = "$survey_demo_id";
