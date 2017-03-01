@@ -723,6 +723,7 @@ class CourseManageController extends Controller
     {
         $survey_id = I('post.survey_id');
         $course_id = I('post.course_id');
+        $semester = I('post.semester');
         $method = new MethodController();
         $res = $method->checkIn($username);
         if ($res) {
@@ -730,8 +731,10 @@ class CourseManageController extends Controller
             $con['survey_id'] = $survey_id;
             $survey_content = $survey->where($con)->select();
             $survey_name = $survey_content[0]['name'];
+            $survey_name_demo = $survey_name;
             //拆分course_id
             $course_array = explode('-', $course_id);
+            $course_name_list = $survey_id_list = '';
             foreach ($course_array AS $key => $value) {
                 //补充模版的唯一标识
                 $condition_survey['name'] = $survey_content[0]['name'];
@@ -744,11 +747,13 @@ class CourseManageController extends Controller
                 $condition_survey['count'] = $survey_content[0]['count'];
                 $condition_survey['course_demo_id'] = time() . "$value";
                 $survey_demo_id = $condition_survey['course_demo_id'];
+                $survey_id_list .= $survey_demo_id . '-';
                 $condition_survey['course_id'] = "$value";
                 $course_list = M('course_list');
                 $con_course['sys_course_id'] = "$value";
                 $course_content = $course_list->where($con_course)->select();
                 $course_name = $course_content[0]['name'];
+                $course_name_list .= $course_name . '-';
                 $survey_name = str_replace('【课程名】', $course_name, $survey_name);
                 //问卷名称
                 $condition_survey['name'] = "$survey_name";
@@ -758,11 +763,12 @@ class CourseManageController extends Controller
                 if ($result_survey) {
                     $course_take = M('course_take');
                     $con_c_t['course_id'] = $value;
+                    $con_c_t['stu_semester'] = $semester;
                     $course_per = $course_take->field('stu_num')->where($con_c_t)->select();
                     $con_s['course_demo_id'] = $survey_demo_id;
                     if (!$course_per) {
                         $result['status'] = 'failed';
-                        $result['message'] = '包含无人上课课程，按序至该课程发布失败' . $course_name;
+                        $result['message'] = '包含无人上课课程，按序发布至该课程时失败，课程名称是' . $course_name;
                         exit(json_encode($result));
                     }
                     foreach ($course_per AS $k => $v) {
@@ -793,6 +799,17 @@ class CourseManageController extends Controller
                     exit(json_encode($result));
                 }
             }
+            //将发布记录保存至数据库
+            $record['survey_id_demo'] = $survey_id;
+            $record['survey_name_demo'] = $survey_name_demo;
+            $survey_id_list = substr($survey_id_list, 0, strlen($survey_id_list) - 1);
+            $record['survey_id'] = $survey_id_list;
+            $record['course_id_list'] = $course_id;
+            $course_name_list = substr($course_name_list, 0, strlen($course_name_list) - 1);
+            $record['course_name_list'] = $course_name_list;
+            $demo_record = M('demo_record');
+            $demo_record->add($record);
+            //记录可能添加失败
             $result['status'] = 'success';
             exit(json_encode($result));
         } else {
@@ -800,5 +817,76 @@ class CourseManageController extends Controller
             $result['message'] = '权限错误';
             exit(json_encode($result));
         }
+    }
+
+    public function getRecord()
+    {
+        $record = M('demo_record');
+        $result = $record->select();
+        if ($result) {
+            exit(json_encode($result));
+        } else {
+            exit(json_encode(''));
+        }
+    }
+
+    public function searchRecord()
+    {
+        $record_survey = I('get.r_s');
+        $record_course = I('get.r_c');
+        $count = 0;
+        $sql = '';
+        if ($record_survey != null) {
+            if ($count == 0) {
+                $sql .= " survey_name_demo LIKE '%" . $record_survey . "%' ";
+                $count++;
+            }
+        }
+        if ($record_course != null) {
+            if ($count == 0) {
+                $sql .= " course_name_list LIKE '%" . $record_course . "%' ";
+                $count++;
+            } else {
+                $sql .= " AND course_name_list LIKE '%" . $record_course . "%' ";
+                $count++;
+            }
+        }
+        $record = M();
+        $result = $record->table('tb_demo_record')
+            ->where($sql)
+            ->query("SELECT * FROM %TABLE% %WHERE%", true);
+        if ($result) {
+            exit(json_encode($result));
+        } else {
+            exit(json_encode(''));
+        }
+    }
+
+    public function deleteRecord()
+    {
+        $id = I('post.id');
+        $survey_list = I('post.s_l');
+        $survey_list = explode('-', $survey_list);
+        $plan = M('survey_plan');
+        $res = '';
+        foreach ($survey_list AS $key => $value) {
+            $con = null;
+            $con['survey_id'] = "$value";
+            $result = $plan->where($con)->delete();
+            if (!$result) {
+                $res .= $value;
+            }
+        }
+        if ($res == '') {
+            $record = M('demo_record');
+            $condi['id'] = "$id";
+            $record->where($condi)->delete();
+            $status['status'] = 'success';
+            $status['message'] = '删除成功！';
+        } else {
+            $status['status'] = 'failed';
+            $status['message'] = '删除失败！';
+        }
+        exit(json_encode($status));
     }
 }

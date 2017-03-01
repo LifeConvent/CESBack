@@ -46,8 +46,8 @@
     <!-- 主窗体 -->
     <section id="main-content">
 
-        <!-- 主容器  -->
-        <section class="wrapper">
+        <!-- 主容器1  -->
+        <section class="wrapper" id="section_demo">
 
             <!--微信菜单设置注意事项-->
             <div class="panel panel-warning">
@@ -130,6 +130,9 @@
                                 <button type="button" class="btn btn-danger">
                                     <span class="glyphicon" aria-hidden="true"></span>单击选择问卷模版
                                 </button>
+                                <button type="button" class="btn btn-info" onclick="publishRecord();">
+                                    <span class="glyphicon" aria-hidden="true"></span>发布记录管理
+                                </button>
                             </div>
                         </div>
                         <table class="panel" id="table_survey" data-page-list="[10, 25, 50, 100, ALL]"></table>
@@ -203,7 +206,81 @@
             <textarea id="list_output" rows="3" class="form-control" style="visibility:hidden"></textarea>
 
         </section>
-        <!-- 主容器  -->
+        <!-- 主容器1 -->
+
+        <!-- 主容器2  -->
+        <section class="wrapper" id="section_record" style="display:none">
+
+            <!--查询条件设置-->
+            <div class="row">
+                <div class="panel-body" style="padding-bottom:0px;">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading color-hui">查询条件</div>
+                        <div class="panel-body">
+                            <form class="form-horizontal">
+                                <div class="form-group" style="margin-top:15px">
+
+                                    <label class="control-label left-f" for="search_survey_name"
+                                           style="margin-left:30px;">问卷名称：</label>
+
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control" id="search_survey_name">
+                                    </div>
+
+                                    <label class="control-label left-f" for="search_record_course_name"
+                                           style="margin-left:10px;">课程名：</label>
+
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="search_record_course_name">
+                                    </div>
+
+                                        <button type="button" onclick="record_show();"
+                                                class="btn btn-primary col-sm-2">查询
+                                        </button>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div id="toolbar_record" class="btn-group">
+                            <button type="button" class="btn btn-primary">
+                                <span class="glyphicon" aria-hidden="true"></span>课程问卷发布记录
+                            </button>
+                        </div>
+                        <table class="panel" id="table_record" data-page-list="[10, 25, 50, 100, ALL]"></table>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--测试用文本框-->
+            <textarea id="list_output2" rows="5" class="form-control" style="visibility:hidden"></textarea>
+
+        </section>
+        <!-- 主容器2  -->
+
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">删除记录提示</h4>
+                    </div>
+                    <div class="modal-body text-center">
+                        <span class="left-30 red size-16">删除后将撤回发布的问卷！确认要删除发布记录吗？</span>
+                    </div>
+                    <div class="modal-footer">
+                        <button data-dismiss="modal" class="btn btn-default" type="button">取消</button>
+                        <button class="btn btn-warning" type="button" onclick="deleteRecord();">确认</button>
+                    </div>
+                </div>
+            </div>
+            <span style="display:none" id="survey_id_list"></span>
+            <span style="display:none" id="course_id_list"></span>
+            <span style="display:none" id="id"></span>
+        </div>
 
         <div class="modal fade" id="lookCourse">
             <div class="modal-dialog">
@@ -312,7 +389,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="panel-body" style="margin-top:20px;">
-                        正在处理请稍后...
+                        <span id="hint">正在处理请稍后...</span>
                     </div>
                 </div>
             </div>
