@@ -736,6 +736,7 @@ class CourseManageController extends Controller
             $course_array = explode('-', $course_id);
             $course_name_list = $survey_id_list = '';
             foreach ($course_array AS $key => $value) {
+                $survey_name_use = $survey_name;
                 //补充模版的唯一标识
                 $condition_survey['name'] = $survey_content[0]['name'];
                 $condition_survey['title'] = $survey_content[0]['title'];
@@ -754,9 +755,9 @@ class CourseManageController extends Controller
                 $course_content = $course_list->where($con_course)->select();
                 $course_name = $course_content[0]['name'];
                 $course_name_list .= $course_name . '-';
-                $survey_name = str_replace('【课程名】', $course_name, $survey_name);
+                $survey_name_use = str_replace('【课程名】', $course_name, $survey_name_use);
                 //问卷名称
-                $condition_survey['name'] = "$survey_name";
+                $condition_survey['name'] = "$survey_name_use";
                 $condition_survey['survey_id'] = "$survey_demo_id";
                 $survey_new = M('survey');
                 $result_survey = $survey_new->add($condition_survey);
