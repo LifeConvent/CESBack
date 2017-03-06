@@ -575,47 +575,11 @@ class MethodController extends Controller
         return $erp_orders_id;
     }
 
-    public function upload()
-    {
-        if (!empty($_FILES)) {
-            $tempFile = $_FILES['file']['tmp_name'];
-            $targetFile = "Public/uploads/" . $_FILES['file']['name'];
-            if (move_uploaded_file($tempFile, $targetFile)) {
-                //上传成功后直接输出新页面进行数据库导入
-//                $this->redirect('DataManage/sysCourse');
-//                ----------
-            }
-        }
-    }
 
     public function importTest()
     {
         $data = $this->import_excel('Public/file/admin1.xls');
-        $res = $this->getTableStruct();
-        dump($res);
-        dump($this->getTableFiled($res[1]));
-    }
-
-    //获取数据库数据表结构
-    public function getTableStruct()
-    {
-        $db = M();
-        $res = $db->query($sql = 'show tables');
-        $col = null;
-        foreach ($res AS $key => $val) {
-            $field = $val['tables_in_ces'];
-            $field = substr($field, 3, strlen($field) - 3);
-            $col[$key] = $field;
-        }
-        return $col;
-    }
-
-    //获取数据库数据表字段
-    public function getTableFiled($field)
-    {
-//        $col = substr($field, 3, strlen($field) - 3);
-        //获取到数据表的四个字端
-        return M($field)->getDbFields();
+        dump($data);
     }
 
     public function outTest()
