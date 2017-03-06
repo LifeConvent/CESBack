@@ -1,0 +1,1159 @@
+[ 2017-03-02T09:35:44+08:00 ] ::1 /CESBack/index.php/Home/Home/home?n=admin&p=21232f297a57a5a743894a0e4a801fc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000563s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000460s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000513s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+NOTIC: [8] Undefined index: token /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 48 行.
+NOTIC: [8] Uninitialized string offset: 1 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 42 行.
+NOTIC: [8] Undefined offset: 2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 51 行.
+
+[ 2017-03-02T09:35:44+08:00 ] ::1 /CESBack/index.php/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000196s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000214s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000059s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000088s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006550s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006587s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000418s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000441s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000684s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000708s ]
+
+[ 2017-03-02T09:35:51+08:00 ] ::1 /CESBack/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000218s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000230s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000251s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_admin` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `tb_admin` WHERE `user` = 'admin' AND `password` = '21232f297a57a5a743894a0e4a801fc3'  [ RunTime:0.0012s ]
+
+[ 2017-03-02T09:35:51+08:00 ] ::1 /CESBack/index.php/Home/Home/home
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000174s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000208s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000227s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_home_count` [ RunTime:0.0026s ]
+SQL: SELECT `time`,`new`,`all_user`,`survey`,`is_match` FROM `tb_home_count`  WHERE ( time >='2016-12-16' AND time <='2016-12-22' ) ORDER BY time ASC [ RunTime:0.0016s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000167s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000193s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015189s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015234s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000237s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000269s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000701s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000742s ]
+
+[ 2017-03-02T09:35:57+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/surveyPublish
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000277s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000274s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000310s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `tb_survey_group`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000268s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000299s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010636s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010669s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000136s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000154s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000335s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000363s ]
+
+[ 2017-03-02T09:35:57+08:00 ] ::1 /CESBack/index.php/Home/Method/getSurvey?limit=10&offset=0&_=1488418557109
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000183s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000213s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000233s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0012s ]
+SQL: SELECT g.group_name,`name`,`survey_id`,`level`,`owner` FROM tb_survey AS s, `tb_survey_group` AS g  WHERE ( g.group_id=s.survey_group )  [ RunTime:0.0004s ]
+
+[ 2017-03-02T09:35:57+08:00 ] ::1 /CESBack/index.php/Home/WeChat/getInfo?limit=10&offset=0&_=1488418557110
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000410s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000795s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000851s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SELECT u.stu_name,u.stu_num,u.stu_class,stu_graclass,openid,stu_sex,is_match,p.stu_pro FROM tb_user AS u,tb_proclass_list AS p WHERE p.pro_id=u.stu_pro [ RunTime:0.0141s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000481s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000542s ]
+
+[ 2017-03-02T09:36:03+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/surveyCondition
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000212s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000216s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000235s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `tb_survey_group`  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000310s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000340s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010706s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010734s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000146s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000583s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000641s ]
+
+[ 2017-03-02T09:36:04+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getSurveyPlan?limit=10&offset=0&_=1488418564045
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000234s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000539s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_plan` [ RunTime:0.0022s ]
+SQL: SELECT p.id,p.survey_id,p.stu_num,p.openid,p.is_finish,s.name FROM `tb_survey_plan` AS p,tb_survey AS s  WHERE ( s.survey_id=p.survey_id ) [ RunTime:0.0028s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000706s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000773s ]
+
+[ 2017-03-02T09:36:16+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/searchCondition?s_name=2016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B7&&limit=10&offset=0&_=1488418564046
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000388s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000425s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey` [ RunTime:0.0024s ]
+SQL: SELECT p.id,p.survey_id,p.stu_num,p.openid,p.is_finish,s.name FROM `tb_survey` AS s,tb_survey_plan AS p  WHERE ( s.survey_id=p.survey_id AND s.name LIKE '%2016-2017学年课程评价调查问卷%'  )  [ RunTime:0.0004s ]
+
+[ 2017-03-02T09:43:58+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/coursePublish
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000176s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000236s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000268s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `tb_survey_group`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000253s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000283s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010727s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010759s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000116s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000372s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000402s ]
+
+[ 2017-03-02T09:43:59+08:00 ] ::1 /CESBack/index.php/Home/Method/getSurveyDemo?limit=10&offset=0&_=1488419038919
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000403s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000271s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey` [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0009s ]
+SQL: SELECT g.group_name,`name`,`survey_id`,`level`,`owner` FROM tb_survey AS s, `tb_survey_group` AS g  WHERE ( g.group_id=s.survey_group AND is_demo=1 )  [ RunTime:0.0003s ]
+
+[ 2017-03-02T09:43:59+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getCourseNoName?limit=10&offset=0&_=1488419038920
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000295s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001143s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001187s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_course_list` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `tb_course_list` [ RunTime:0.0011s ]
+SQL: SELECT `sys_course_id`,`name`,`semester`,`take_num`,COUNT(*) AS take_class FROM `tb_course_list` GROUP BY sys_course_id,semester [ RunTime:0.0016s ]
+
+[ 2017-03-02T09:43:59+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getRecord?limit=10&offset=0&_=1488419038921
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000243s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000292s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000323s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_demo_record` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `tb_demo_record`  [ RunTime:0.0010s ]
+
+[ 2017-03-02T09:47:09+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/coursePublish
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000172s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000214s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000233s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `tb_survey_group`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000211s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000240s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008113s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008133s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000105s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000119s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000512s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000548s ]
+
+[ 2017-03-02T09:47:09+08:00 ] ::1 /CESBack/index.php/Home/Method/getSurveyDemo?limit=10&offset=0&_=1488419229228
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000265s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000246s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000275s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0009s ]
+SQL: SELECT g.group_name,`name`,`survey_id`,`level`,`owner` FROM tb_survey AS s, `tb_survey_group` AS g  WHERE ( g.group_id=s.survey_group AND is_demo=1 )  [ RunTime:0.0003s ]
+
+[ 2017-03-02T09:47:09+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getCourseNoName?limit=10&offset=0&_=1488419229229
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000192s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000387s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000426s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_course_list` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `tb_course_list` [ RunTime:0.0019s ]
+SQL: SELECT `sys_course_id`,`name`,`semester`,`take_num`,COUNT(*) AS take_class FROM `tb_course_list` GROUP BY sys_course_id,semester [ RunTime:0.0024s ]
+
+[ 2017-03-02T09:47:09+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getRecord?limit=10&offset=0&_=1488419229230
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000303s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000376s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000421s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_demo_record` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `tb_demo_record`  [ RunTime:0.0002s ]
+
+[ 2017-03-02T09:48:47+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/searchCourse?c_s=2016-2017-1&&limit=10&offset=0&search=%E7%A7%BB%E5%8A%A8%E9%80%9A%E4%BF%A1&_=1488419229231
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000341s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000274s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000306s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_course_list` [ RunTime:0.0021s ]
+SQL: SELECT `sys_course_id`,`name`,`semester`,`take_num`,COUNT(*) AS take_class FROM `tb_course_list`  WHERE (  semester LIKE '%2016-2017-1%'  ) GROUP BY sys_course_id,semester [ RunTime:0.0029s ]
+
+[ 2017-03-02T09:48:58+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/searchCourse?&limit=10&offset=0&search=%E7%A7%BB%E5%8A%A8%E9%80%9A%E4%BF%A1&_=1488419229232
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000302s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000580s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000640s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_course_list` [ RunTime:0.0040s ]
+SQL: SELECT `sys_course_id`,`name`,`semester`,`take_num`,COUNT(*) AS take_class FROM `tb_course_list`  GROUP BY sys_course_id,semester [ RunTime:0.0017s ]
+
+[ 2017-03-02T09:49:00+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getCourseNoName?limit=10&offset=0&search=%E7%A7%BB%E5%8A%A8%E9%80%9A%E4%BF%A1&_=1488419229233
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000240s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000240s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000263s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_course_list` [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `tb_course_list` [ RunTime:0.0013s ]
+SQL: SELECT `sys_course_id`,`name`,`semester`,`take_num`,COUNT(*) AS take_class FROM `tb_course_list` GROUP BY sys_course_id,semester [ RunTime:0.0014s ]
+
+[ 2017-03-02T09:49:09+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/searchCourse?c_s=2016-2017-1&&limit=10&offset=0&search=&_=1488419229234
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000317s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000358s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000397s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_course_list` [ RunTime:0.0019s ]
+SQL: SELECT `sys_course_id`,`name`,`semester`,`take_num`,COUNT(*) AS take_class FROM `tb_course_list`  WHERE (  semester LIKE '%2016-2017-1%'  ) GROUP BY sys_course_id,semester [ RunTime:0.0011s ]
+
+[ 2017-03-02T09:51:27+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/searchCourse?&limit=10&offset=0&search=%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86&_=1488419229235
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000429s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000431s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000479s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_course_list` [ RunTime:0.0025s ]
+SQL: SELECT `sys_course_id`,`name`,`semester`,`take_num`,COUNT(*) AS take_class FROM `tb_course_list`  GROUP BY sys_course_id,semester [ RunTime:0.0023s ]
+
+[ 2017-03-02T09:51:40+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/publishCourseDemo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000275s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000247s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000274s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `tb_survey` WHERE `survey_id` = '1480748407'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `tb_course_list` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `tb_course_list` WHERE `sys_course_id` = '0661163'  [ RunTime:0.0006s ]
+SQL: INSERT INTO `tb_survey` (`name`,`title`,`level`,`description`,`question`,`owner`,`survey_group`,`count`,`course_demo_id`,`course_id`,`survey_id`) VALUES ('数字逻辑的测试问卷',NULL,'3','测试问卷简介1','1480748343,1480748356,1480748364,1480748372,1480748377,1480748382,1480748400','admin','2','7','14884195000661163','0661163','14884195000661163') [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `tb_course_take` [ RunTime:0.0015s ]
+SQL: SELECT `stu_num` FROM `tb_course_take` WHERE `course_id` = '0661163' AND `stu_semester` = '2016-2017-1'  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.0014s ]
+SQL: SELECT `openid` FROM `tb_user` WHERE `stu_num` = '20135579'  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `tb_survey_plan` [ RunTime:0.0011s ]
+SQL: INSERT INTO `tb_survey_plan` (`stu_num`,`survey_id`,`openid`) VALUES ('20135579','14884195000661163','') [ RunTime:0.0004s ]
+SQL: SELECT * FROM `tb_course_list` WHERE `sys_course_id` = '0668056'  [ RunTime:0.0003s ]
+SQL: INSERT INTO `tb_survey` (`name`,`title`,`level`,`description`,`question`,`owner`,`survey_group`,`count`,`course_demo_id`,`course_id`,`survey_id`) VALUES ('数字逻辑的测试问卷',NULL,'3','测试问卷简介1','1480748343,1480748356,1480748364,1480748372,1480748377,1480748382,1480748400','admin','2','7','14884195000668056','0668056','14884195000668056') [ RunTime:0.0004s ]
+SQL: SELECT `stu_num` FROM `tb_course_take` WHERE `course_id` = '0668056' AND `stu_semester` = '2016-2017-1'  [ RunTime:0.0004s ]
+SQL: SELECT `openid` FROM `tb_user` WHERE `stu_num` = '20135578'  [ RunTime:0.0002s ]
+SQL: INSERT INTO `tb_survey_plan` (`stu_num`,`survey_id`,`openid`) VALUES ('20135578','14884195000668056','') [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `tb_demo_record` [ RunTime:0.0008s ]
+SQL: INSERT INTO `tb_demo_record` (`survey_id_demo`,`survey_name_demo`,`survey_id`,`course_id_list`,`course_name_list`) VALUES ('1480748407','【课程名】的测试问卷','14884195000661163-14884195000668056','0661163-0668056','数字逻辑-编译原理') [ RunTime:0.0004s ]
+
+[ 2017-03-02T09:51:47+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/surveyCondition
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000203s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000222s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `tb_survey_group`  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000270s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000299s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008740s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008769s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000090s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000104s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000319s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000344s ]
+
+[ 2017-03-02T09:51:47+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getSurveyPlan?limit=10&offset=0&_=1488419507655
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000355s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000375s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000418s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_plan` [ RunTime:0.0018s ]
+SQL: SELECT p.id,p.survey_id,p.stu_num,p.openid,p.is_finish,s.name FROM `tb_survey_plan` AS p,tb_survey AS s  WHERE ( s.survey_id=p.survey_id ) [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000294s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000314s ]
+
+[ 2017-03-02T09:51:50+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/coursePublish
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000155s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000195s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000213s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `tb_survey_group`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000207s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000233s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007170s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007191s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000087s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000099s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000323s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000346s ]
+
+[ 2017-03-02T09:51:50+08:00 ] ::1 /CESBack/index.php/Home/Method/getSurveyDemo?limit=10&offset=0&_=1488419510074
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000199s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000239s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000264s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0013s ]
+SQL: SELECT g.group_name,`name`,`survey_id`,`level`,`owner` FROM tb_survey AS s, `tb_survey_group` AS g  WHERE ( g.group_id=s.survey_group AND is_demo=1 )  [ RunTime:0.0003s ]
+
+[ 2017-03-02T09:51:50+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getCourseNoName?limit=10&offset=0&_=1488419510075
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000248s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000355s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000389s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_course_list` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `tb_course_list` [ RunTime:0.0020s ]
+SQL: SELECT `sys_course_id`,`name`,`semester`,`take_num`,COUNT(*) AS take_class FROM `tb_course_list` GROUP BY sys_course_id,semester [ RunTime:0.0026s ]
+
+[ 2017-03-02T09:51:50+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getRecord?limit=10&offset=0&_=1488419510076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000301s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000334s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_demo_record` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `tb_demo_record`  [ RunTime:0.0012s ]
+
+[ 2017-03-02T09:51:59+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getRecord?limit=10&offset=0&_=1488419510077
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000230s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000352s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000424s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_demo_record` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `tb_demo_record`  [ RunTime:0.0003s ]
+
+[ 2017-03-02T09:51:59+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getRecord?limit=10&offset=0&_=1488419510078
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000217s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000236s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_demo_record` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `tb_demo_record`  [ RunTime:0.0003s ]
+
+[ 2017-03-02T09:52:00+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/searchRecord?&limit=10&offset=0&_=1488419510079
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000333s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000402s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000451s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_demo_record` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `tb_demo_record`  [ RunTime:0.0005s ]
+
+[ 2017-03-02T09:52:04+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/coursePublish
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000759s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000850s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `tb_survey_group`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000235s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000291s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009166s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009203s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000123s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000139s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000355s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000384s ]
+
+[ 2017-03-02T09:52:04+08:00 ] ::1 /CESBack/index.php/Home/Method/getSurveyDemo?limit=10&offset=0&_=1488419524763
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000183s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000409s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000450s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0010s ]
+SQL: SELECT g.group_name,`name`,`survey_id`,`level`,`owner` FROM tb_survey AS s, `tb_survey_group` AS g  WHERE ( g.group_id=s.survey_group AND is_demo=1 )  [ RunTime:0.0003s ]
+
+[ 2017-03-02T09:52:04+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getCourseNoName?limit=10&offset=0&_=1488419524764
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000184s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000219s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000239s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_course_list` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `tb_course_list` [ RunTime:0.0019s ]
+SQL: SELECT `sys_course_id`,`name`,`semester`,`take_num`,COUNT(*) AS take_class FROM `tb_course_list` GROUP BY sys_course_id,semester [ RunTime:0.0026s ]
+
+[ 2017-03-02T09:52:04+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getRecord?limit=10&offset=0&_=1488419524765
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000237s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000265s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_demo_record` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `tb_demo_record`  [ RunTime:0.0002s ]
+
+[ 2017-03-02T09:55:15+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/coursePublish
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000218s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000250s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000269s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `tb_survey_group`  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000287s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000322s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008606s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008649s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000231s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000266s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000409s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000457s ]
+
+[ 2017-03-02T09:55:16+08:00 ] ::1 /CESBack/index.php/Home/Method/getSurveyDemo?limit=10&offset=0&_=1488419715834
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000176s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000212s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000233s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey` [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0011s ]
+SQL: SELECT g.group_name,`name`,`survey_id`,`level`,`owner` FROM tb_survey AS s, `tb_survey_group` AS g  WHERE ( g.group_id=s.survey_group AND is_demo=1 )  [ RunTime:0.0003s ]
+
+[ 2017-03-02T09:55:16+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getCourseNoName?limit=10&offset=0&_=1488419715835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000181s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000243s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000268s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_course_list` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `tb_course_list` [ RunTime:0.0010s ]
+SQL: SELECT `sys_course_id`,`name`,`semester`,`take_num`,COUNT(*) AS take_class FROM `tb_course_list` GROUP BY sys_course_id,semester [ RunTime:0.0014s ]
+
+[ 2017-03-02T09:55:16+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getRecord?limit=10&offset=0&_=1488419715836
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000286s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000526s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_demo_record` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `tb_demo_record`  [ RunTime:0.0008s ]
+
+[ 2017-03-02T09:55:41+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/publishCourseDemo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000185s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000317s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `tb_survey` WHERE `survey_id` = '1480748407'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `tb_course_list` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `tb_course_list` WHERE `sys_course_id` = '0661163'  [ RunTime:0.0005s ]
+SQL: INSERT INTO `tb_survey` (`name`,`title`,`level`,`description`,`question`,`owner`,`survey_group`,`count`,`course_demo_id`,`course_id`,`survey_id`) VALUES ('数字逻辑的测试问卷',NULL,'3','测试问卷简介1','1480748343,1480748356,1480748364,1480748372,1480748377,1480748382,1480748400','admin','2','7','14884197410661163','0661163','14884197410661163') [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `tb_course_take` [ RunTime:0.0011s ]
+SQL: SELECT `stu_num` FROM `tb_course_take` WHERE `course_id` = '0661163' AND `stu_semester` = '2016-2017-1'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.0013s ]
+SQL: SELECT `openid` FROM `tb_user` WHERE `stu_num` = '20135579'  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `tb_survey_plan` [ RunTime:0.0010s ]
+SQL: INSERT INTO `tb_survey_plan` (`stu_num`,`survey_id`,`openid`) VALUES ('20135579','14884197410661163','') [ RunTime:0.0005s ]
+SQL: SELECT * FROM `tb_course_list` WHERE `sys_course_id` = '0668056'  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined offset: 1 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/CourseManageController.class.php 第 755 行.
+SQL: INSERT INTO `tb_survey` (`name`,`title`,`level`,`description`,`question`,`owner`,`survey_group`,`count`,`course_demo_id`,`course_id`,`survey_id`) VALUES ('数字逻辑的测试问卷',NULL,'3','测试问卷简介1','1480748343,1480748356,1480748364,1480748372,1480748377,1480748382,1480748400','admin','2','7','14884197410668056','0668056','14884197410668056') [ RunTime:0.0005s ]
+SQL: SELECT `stu_num` FROM `tb_course_take` WHERE `course_id` = '0668056' AND `stu_semester` = '2016-2017-1'  [ RunTime:0.0006s ]
+SQL: SELECT `openid` FROM `tb_user` WHERE `stu_num` = '20135578'  [ RunTime:0.0001s ]
+SQL: INSERT INTO `tb_survey_plan` (`stu_num`,`survey_id`,`openid`) VALUES ('20135578','14884197410668056','') [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `tb_demo_record` [ RunTime:0.0009s ]
+SQL: INSERT INTO `tb_demo_record` (`survey_id_demo`,`survey_name_demo`,`survey_id`,`course_id_list`,`course_name_list`) VALUES ('1480748407','【课程名】的测试问卷','14884197410661163-14884197410668056','0661163-0668056','数字逻辑-') [ RunTime:0.0006s ]
+
+[ 2017-03-02T09:58:38+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/publishCourseDemo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000337s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000326s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000365s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `tb_survey` WHERE `survey_id` = '1480748407'  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `tb_course_list` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `tb_course_list` WHERE `sys_course_id` = '0661163'  [ RunTime:0.0004s ]
+SQL: INSERT INTO `tb_survey` (`name`,`title`,`level`,`description`,`question`,`owner`,`survey_group`,`count`,`course_demo_id`,`course_id`,`survey_id`) VALUES ('数字逻辑的测试问卷',NULL,'3','测试问卷简介1','1480748343,1480748356,1480748364,1480748372,1480748377,1480748382,1480748400','admin','2','7','14884199180661163','0661163','14884199180661163') [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `tb_course_take` [ RunTime:0.0009s ]
+SQL: SELECT `stu_num` FROM `tb_course_take` WHERE `course_id` = '0661163' AND `stu_semester` = '2016-2017-1'  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.0009s ]
+SQL: SELECT `openid` FROM `tb_user` WHERE `stu_num` = '20135579'  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `tb_survey_plan` [ RunTime:0.0007s ]
+SQL: INSERT INTO `tb_survey_plan` (`stu_num`,`survey_id`,`openid`) VALUES ('20135579','14884199180661163','') [ RunTime:0.0004s ]
+SQL: SELECT * FROM `tb_course_list` WHERE `sys_course_id` = '0668056'  [ RunTime:0.0004s ]
+SQL: INSERT INTO `tb_survey` (`name`,`title`,`level`,`description`,`question`,`owner`,`survey_group`,`count`,`course_demo_id`,`course_id`,`survey_id`) VALUES ('编译原理的测试问卷',NULL,'3','测试问卷简介1','1480748343,1480748356,1480748364,1480748372,1480748377,1480748382,1480748400','admin','2','7','14884199180668056','0668056','14884199180668056') [ RunTime:0.0003s ]
+SQL: SELECT `stu_num` FROM `tb_course_take` WHERE `course_id` = '0668056' AND `stu_semester` = '2016-2017-1'  [ RunTime:0.0004s ]
+SQL: SELECT `openid` FROM `tb_user` WHERE `stu_num` = '20135578'  [ RunTime:0.0002s ]
+SQL: INSERT INTO `tb_survey_plan` (`stu_num`,`survey_id`,`openid`) VALUES ('20135578','14884199180668056','') [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `tb_demo_record` [ RunTime:0.0008s ]
+SQL: INSERT INTO `tb_demo_record` (`survey_id_demo`,`survey_name_demo`,`survey_id`,`course_id_list`,`course_name_list`) VALUES ('1480748407','【课程名】的测试问卷','14884199180661163-14884199180668056','0661163-0668056','数字逻辑-编译原理') [ RunTime:0.0004s ]
+
+[ 2017-03-02T09:59:37+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/coursePublish
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000287s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000380s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000426s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `tb_survey_group`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000210s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000238s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007496s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007521s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000098s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000112s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000514s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000555s ]
+
+[ 2017-03-02T09:59:38+08:00 ] ::1 /CESBack/index.php/Home/Method/getSurveyDemo?limit=10&offset=0&_=1488419977958
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000182s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000301s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000338s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0010s ]
+SQL: SELECT g.group_name,`name`,`survey_id`,`level`,`owner` FROM tb_survey AS s, `tb_survey_group` AS g  WHERE ( g.group_id=s.survey_group AND is_demo=1 )  [ RunTime:0.0004s ]
+
+[ 2017-03-02T09:59:38+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getCourseNoName?limit=10&offset=0&_=1488419977959
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000205s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000234s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000257s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_course_list` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `tb_course_list` [ RunTime:0.0010s ]
+SQL: SELECT `sys_course_id`,`name`,`semester`,`take_num`,COUNT(*) AS take_class FROM `tb_course_list` GROUP BY sys_course_id,semester [ RunTime:0.0013s ]
+
+[ 2017-03-02T09:59:38+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getRecord?limit=10&offset=0&_=1488419977960
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000248s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000278s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_demo_record` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `tb_demo_record`  [ RunTime:0.0006s ]
+
+[ 2017-03-02T09:59:41+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/deleteRecord
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000169s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000245s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_plan` [ RunTime:0.0020s ]
+SQL: DELETE FROM `tb_survey_plan` WHERE `survey_id` = '14883443350664216' [ RunTime:0.0002s ]
+SQL: DELETE FROM `tb_survey_plan` WHERE `survey_id` = '14883443350665213' [ RunTime:0.0001s ]
+SQL: DELETE FROM `tb_survey_plan` WHERE `survey_id` = '14883443350668056' [ RunTime:0.0001s ]
+SQL: DELETE FROM `tb_survey_plan` WHERE `survey_id` = '14883443350669083' [ RunTime:0.0001s ]
+
+[ 2017-03-02T09:59:45+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/deleteRecord
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000198s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000400s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_plan` [ RunTime:0.0020s ]
+SQL: DELETE FROM `tb_survey_plan` WHERE `survey_id` = '14884195000661163' [ RunTime:0.0005s ]
+SQL: DELETE FROM `tb_survey_plan` WHERE `survey_id` = '14884195000668056' [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `tb_demo_record` [ RunTime:0.0008s ]
+SQL: DELETE FROM `tb_demo_record` WHERE `id` = 6 [ RunTime:0.0004s ]
+
+[ 2017-03-02T09:59:45+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getRecord?limit=10&offset=0&_=1488419977961
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000164s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000199s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000218s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_demo_record` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `tb_demo_record`  [ RunTime:0.0002s ]
+
+[ 2017-03-02T09:59:47+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/deleteRecord
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000257s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000219s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000241s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_plan` [ RunTime:0.0020s ]
+SQL: DELETE FROM `tb_survey_plan` WHERE `survey_id` = '14884197410661163' [ RunTime:0.0006s ]
+SQL: DELETE FROM `tb_survey_plan` WHERE `survey_id` = '14884197410668056' [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `tb_demo_record` [ RunTime:0.0027s ]
+SQL: DELETE FROM `tb_demo_record` WHERE `id` = 7 [ RunTime:0.0013s ]
+
+[ 2017-03-02T09:59:47+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getRecord?limit=10&offset=0&_=1488419977962
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000723s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000774s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_demo_record` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `tb_demo_record`  [ RunTime:0.0006s ]
+
+[ 2017-03-02T10:00:01+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/coursePublish
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000196s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000214s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `tb_survey_group`  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000210s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000242s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006955s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006974s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000094s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000106s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000337s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000362s ]
+
+[ 2017-03-02T10:00:01+08:00 ] ::1 /CESBack/index.php/Home/Method/getSurveyDemo?limit=10&offset=0&_=1488420001633
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000185s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000224s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000249s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0009s ]
+SQL: SELECT g.group_name,`name`,`survey_id`,`level`,`owner` FROM tb_survey AS s, `tb_survey_group` AS g  WHERE ( g.group_id=s.survey_group AND is_demo=1 )  [ RunTime:0.0006s ]
+
+[ 2017-03-02T10:00:01+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getCourseNoName?limit=10&offset=0&_=1488420001634
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000226s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000248s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_course_list` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `tb_course_list` [ RunTime:0.0032s ]
+SQL: SELECT `sys_course_id`,`name`,`semester`,`take_num`,COUNT(*) AS take_class FROM `tb_course_list` GROUP BY sys_course_id,semester [ RunTime:0.0028s ]
+
+[ 2017-03-02T10:00:01+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getRecord?limit=10&offset=0&_=1488420001635
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000534s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000453s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000505s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_demo_record` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `tb_demo_record`  [ RunTime:0.0002s ]
+
+[ 2017-03-02T10:00:39+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/surveyManage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000800s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000466s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000522s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `tb_survey_group`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000353s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000427s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011163s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011197s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000121s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000140s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000417s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000445s ]
+
+[ 2017-03-02T10:00:39+08:00 ] ::1 /CESBack/index.php/Home/Method/getSurvey?limit=10&offset=0&_=1488420039128
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000504s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000566s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey` [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0012s ]
+SQL: SELECT g.group_name,`name`,`survey_id`,`level`,`owner` FROM tb_survey AS s, `tb_survey_group` AS g  WHERE ( g.group_id=s.survey_group )  [ RunTime:0.0003s ]
+
+[ 2017-03-02T10:00:39+08:00 ] ::1 /CESBack/index.php/Home/Method/getSurvey?limit=5&offset=0&_=1488420039129
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000759s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000246s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000273s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0010s ]
+SQL: SELECT g.group_name,`name`,`survey_id`,`level`,`owner` FROM tb_survey AS s, `tb_survey_group` AS g  WHERE ( g.group_id=s.survey_group )  [ RunTime:0.0003s ]
+
+[ 2017-03-02T10:00:39+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getSurveyGroup?limit=5&offset=0&_=1488420039130
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000471s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000308s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000343s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `tb_survey_group`  [ RunTime:0.0002s ]
+
+[ 2017-03-02T10:02:28+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/surveyPublish
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000209s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000228s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `tb_survey_group`  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000254s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000288s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007546s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007593s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000265s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000300s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000587s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000723s ]
+
+[ 2017-03-02T10:02:28+08:00 ] ::1 /CESBack/index.php/Home/Method/getSurvey?limit=10&offset=0&_=1488420148768
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000232s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000216s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000239s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey` [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0013s ]
+SQL: SELECT g.group_name,`name`,`survey_id`,`level`,`owner` FROM tb_survey AS s, `tb_survey_group` AS g  WHERE ( g.group_id=s.survey_group )  [ RunTime:0.0003s ]
+
+[ 2017-03-02T10:02:28+08:00 ] ::1 /CESBack/index.php/Home/WeChat/getInfo?limit=10&offset=0&_=1488420148769
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000293s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000248s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000277s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SELECT u.stu_name,u.stu_num,u.stu_class,stu_graclass,openid,stu_sex,is_match,p.stu_pro FROM tb_user AS u,tb_proclass_list AS p WHERE p.pro_id=u.stu_pro [ RunTime:0.0084s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000420s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000481s ]
+
+[ 2017-03-02T10:02:51+08:00 ] ::1 /CESBack/index.php/Home/WeChat/searchInfo?pro=1&class=1&gra=2013&s_l=[{%220%22:true,%22group_name%22:%222014%E7%BA%A7%22,%22name%22:%22%E3%80%90%E8%AF%BE%E7%A8%8B%E5%90%8D%E3%80%91%E7%9A%84%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22survey_id%22:%221480748407%22,%22level%22:%22%E6%A0%A1%E7%BA%A7%22,%22owner%22:%22admin%22}]&limit=10&offset=0&_=1488420148770
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000254s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000315s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000341s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SELECT * FROM (SELECT u.stu_name,u.stu_num,u.stu_class,openid,stu_graclass,stu_sex,is_match,p.stu_pro FROM tb_user AS u,tb_proclass_list AS p WHERE p.pro_id=u.stu_pro) AS a  WHERE `stu_class` = '1' AND `stu_pro` = '计算机科学与技术' AND `stu_graclass` = '2013' AND (  a.stu_num NOT IN (SELECT stu_num FROM tb_survey_plan WHERE survey_id = 1480748407) ) [ RunTime:0.0056s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000547s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000601s ]
+
+[ 2017-03-02T10:03:28+08:00 ] ::1 /CESBack/index.php/Home/WeChat/messageGroupSend
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000243s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000265s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000178s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000202s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007746s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007773s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000107s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000120s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000316s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000344s ]
+
+[ 2017-03-02T10:03:28+08:00 ] ::1 /CESBack/index.php/Home/WeChat/getInfo?limit=10&offset=0&_=1488420208659
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000193s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000252s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SELECT u.stu_name,u.stu_num,u.stu_class,stu_graclass,openid,stu_sex,is_match,p.stu_pro FROM tb_user AS u,tb_proclass_list AS p WHERE p.pro_id=u.stu_pro [ RunTime:0.0061s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000440s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000503s ]
+
+[ 2017-03-02T10:03:41+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/surveyPublish
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000260s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000282s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `tb_survey_group`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000316s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000438s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008810s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008832s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000099s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000113s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000364s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000392s ]
+
+[ 2017-03-02T10:03:42+08:00 ] ::1 /CESBack/index.php/Home/Method/getSurvey?limit=10&offset=0&_=1488420221991
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000194s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000244s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000269s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey` [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0010s ]
+SQL: SELECT g.group_name,`name`,`survey_id`,`level`,`owner` FROM tb_survey AS s, `tb_survey_group` AS g  WHERE ( g.group_id=s.survey_group )  [ RunTime:0.0004s ]
+
+[ 2017-03-02T10:03:42+08:00 ] ::1 /CESBack/index.php/Home/WeChat/getInfo?limit=10&offset=0&_=1488420221992
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000363s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000424s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000470s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SELECT u.stu_name,u.stu_num,u.stu_class,stu_graclass,openid,stu_sex,is_match,p.stu_pro FROM tb_user AS u,tb_proclass_list AS p WHERE p.pro_id=u.stu_pro [ RunTime:0.0078s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000476s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000536s ]
+
+[ 2017-03-02T10:05:19+08:00 ] ::1 /CESBack/index.php/Home/UserManage/userManage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000174s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000219s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000238s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000187s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000213s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007144s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007181s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000269s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000343s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000564s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000608s ]
+
+[ 2017-03-02T10:05:19+08:00 ] ::1 /CESBack/index.php/Home/UserManage/getUser?limit=10&offset=0&_=1488420319689
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000281s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000375s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000417s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.0055s ]
+SQL: SELECT `stu_num`,`stu_name`,`stu_sex`,`stu_graclass`,`stu_pro`,`stu_class`,`stu_phone`,`stu_qq` FROM `tb_user`  [ RunTime:0.0106s ]
+
+[ 2017-03-02T10:05:25+08:00 ] ::1 /CESBack/index.php/Home/UserManage/searchUser?gra=2016&&limit=10&offset=0&_=1488420319690
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000317s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000368s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SELECT `stu_num`,`stu_name`,`stu_sex`,`stu_graclass`,`stu_pro`,`stu_class`,`stu_phone`,`stu_qq`,`is_match`,`openid` FROM tb_user  WHERE `stu_graclass` = '2016' [ RunTime:0.0039s ]
+
+[ 2017-03-02T10:05:31+08:00 ] ::1 /CESBack/index.php/Home/UserManage/searchUser?gra=2011&&limit=10&offset=0&_=1488420319691
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000243s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000294s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000327s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SELECT `stu_num`,`stu_name`,`stu_sex`,`stu_graclass`,`stu_pro`,`stu_class`,`stu_phone`,`stu_qq`,`is_match`,`openid` FROM tb_user  WHERE `stu_graclass` = '2011' [ RunTime:0.0025s ]
+
+[ 2017-03-02T10:32:49+08:00 ] ::1 /CESBack/index.php/Home/UserManage/searchUser?pro=4&gra=2013&&limit=10&offset=0&_=1488420319692
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000216s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000327s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000359s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SELECT `stu_num`,`stu_name`,`stu_sex`,`stu_graclass`,`stu_pro`,`stu_class`,`stu_phone`,`stu_qq`,`is_match`,`openid` FROM tb_user  WHERE `stu_pro` = '4' AND `stu_graclass` = '2013' [ RunTime:0.0018s ]
+
+[ 2017-03-02T10:33:04+08:00 ] ::1 /CESBack/index.php/Home/UserManage/searchUser?pro=4&gra=2013&name=%E7%AE%80&&limit=10&offset=0&_=1488420319693
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000186s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000234s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000258s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SELECT `stu_num`,`stu_name`,`stu_sex`,`stu_graclass`,`stu_pro`,`stu_class`,`stu_phone`,`stu_qq`,`is_match`,`openid` FROM tb_user  WHERE `stu_pro` = '4' AND `stu_graclass` = '2013' AND stu_name LIKE '简%' [ RunTime:0.0027s ]
+
+[ 2017-03-02T10:33:11+08:00 ] ::1 /CESBack/index.php/Home/UserManage/searchUser?pro=4&gra=2013&&limit=10&offset=0&_=1488420319694
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000210s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000332s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000365s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SELECT `stu_num`,`stu_name`,`stu_sex`,`stu_graclass`,`stu_pro`,`stu_class`,`stu_phone`,`stu_qq`,`is_match`,`openid` FROM tb_user  WHERE `stu_pro` = '4' AND `stu_graclass` = '2013' [ RunTime:0.0023s ]
+
+[ 2017-03-02T15:30:46+08:00 ] ::1 /CESBack/index.php/Home/DataManage/surveyCount
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000242s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `tb_survey_group`  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000159s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000185s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011861s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011930s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000397s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000381s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000415s ]
+
+[ 2017-03-02T15:30:46+08:00 ] ::1 /CESBack/index.php/Home/Method/getSurvey?sort=group_name&order=asc&offset=0&limit=10&_=1488439846844
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000178s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000289s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000321s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey` [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0008s ]
+SQL: SELECT g.group_name,`name`,`survey_id`,`level`,`owner` FROM tb_survey AS s, `tb_survey_group` AS g  WHERE ( g.group_id=s.survey_group )  [ RunTime:0.0003s ]
+
