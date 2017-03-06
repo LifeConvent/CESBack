@@ -13,6 +13,6 @@ define('APP_PATH', './CESBack/');
 define('APP_NAME', './CESBack');
 define('KEY', 'Ia0CtpywryfU5VGNAlk23s8ctM-99v7we2HZmkVuh_szDz3dinL9aQ9gqslBTZk2');
 //define('HOST', 'http://ces.s1.natapp.cc/');
-define('HOST', 'http://x9v8ac.natappfree.cc/');
+define('HOST', 'http://localhost/');
 //引入ThinkPHP入口文件
 require './ThinkPHP/ThinkPHP.php';
