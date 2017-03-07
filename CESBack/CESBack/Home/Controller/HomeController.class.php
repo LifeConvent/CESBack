@@ -15,11 +15,11 @@ class HomeController extends Controller
     public function home()
     {
 
-        $username = '';
-        $method = new MethodController();
-        $result = $method->checkIn($username);
-
-        if ($result) {
+//        $username = '';
+//        $method = new MethodController();
+//        $result = $method->checkIn($username);
+//
+//        if ($result) {
             $time = time() - 60 * 60 * 24;
             $t_s = date("Y-m-d", $time);
             $time = time() - 60 * 60 * 24 * 6;
@@ -49,11 +49,11 @@ class HomeController extends Controller
             $this->assign('weChatSub', json_encode($new));
             $this->assign('weChatNum', json_encode($all_user));
             $this->assign('weCESNum', json_encode($survey));
-            $this->assign('username', $username);
+//            $this->assign('username', $username);
             $this->display();
-        } else {
-            $this->redirect('Index/index');
-        }
+//        } else {
+//            $this->redirect('Index/index');
+//        }
     }
 
     public function login($user, $pass)
