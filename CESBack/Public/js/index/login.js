@@ -24,6 +24,11 @@ function login() {
                 } else {
                     $.scojs_message(result.hint, $.scojs_message.TYPE_ERROR);
                 }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(XMLHttpRequest);
+                alert(textStatus);
+                alert(errorThrown);
             }
         });
     }
