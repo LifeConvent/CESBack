@@ -635,10 +635,10 @@ class MethodController extends Controller
 
     public function replace($content)
     {
-        $content = str_replace(" & gt;", " > ", $content);
-        $content = str_replace(" & lt;", " < ", $content);
-        $content = str_replace(" & nbsp;", " ", $content);
-        $content = str_replace(" & quot;", "\"", $content);
+        $content = str_replace("&gt;", ">", $content);
+        $content = str_replace("&lt;", "<", $content);
+        $content = str_replace("&nbsp;", " ", $content);
+        $content = str_replace("&quot;", "\"", $content);
         $content = str_replace("&#39;", "'", $content);
         $content = str_replace("\\\\", "\\", $content);
         $content = str_replace("\\n", "\n", $content);
