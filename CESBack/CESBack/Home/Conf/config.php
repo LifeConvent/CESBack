@@ -2,9 +2,9 @@
 return array(
 	//'配置项'=>'配置值'
     'DB_TYPE'=>'mysql',
-    'DB_HOST'=>'tcp:tvusl4wxps.database.chinacloudapi.cn',
-    'DB_NAME'=>'scceA4FoxI8lRc2P',
-    'DB_USER'=>'scce@tvusl4wxps',
+    'DB_HOST'=>'http://scce.mysqldb.chinacloudapi.cn',
+    'DB_NAME'=>'ces',
+    'DB_USER'=>'scce%ces',
     'DB_PWD'=>'CES317back',
     // 'DB_PORT'=>,
     'DB_PREFIX'=>'tb_',
