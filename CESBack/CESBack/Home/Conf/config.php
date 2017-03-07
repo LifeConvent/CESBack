@@ -2,7 +2,7 @@
 return array(
 	//'配置项'=>'配置值'
     'DB_TYPE'=>'mysqli',
-    'DB_HOST'=>'http://scce.mysqldb.chinacloudapi.cn',
+    'DB_HOST'=>'scce.mysqldb.chinacloudapi.cn',
     'DB_NAME'=>'ces',
     'DB_USER'=>'scce%ces',
     'DB_PWD'=>'CES317back',
