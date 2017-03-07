@@ -1,7 +1,7 @@
 <?php
 return array(
 	//'配置项'=>'配置值'
-    'DB_TYPE'=>'mysql',
+    'DB_TYPE'=>'mysqli',
     'DB_HOST'=>'http://scce.mysqldb.chinacloudapi.cn',
     'DB_NAME'=>'ces',
     'DB_USER'=>'scce%ces',
