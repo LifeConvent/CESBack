@@ -1,0 +1,1335 @@
+[ 2016-12-26T09:58:38+08:00 ] ::1 /CESBack/index.php/Home/Home/home
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000468s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000453s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000483s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+NOTIC: [8] Undefined index: token /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 48 行.
+NOTIC: [8] Uninitialized string offset: 1 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 42 行.
+NOTIC: [8] Undefined offset: 2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 51 行.
+
+[ 2016-12-26T09:58:38+08:00 ] ::1 /CESBack/index.php/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000151s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000195s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000212s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000104s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006452s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006489s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000293s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000579s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000618s ]
+
+[ 2016-12-26T09:58:45+08:00 ] ::1 /CESBack/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000193s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000328s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000362s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_admin` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `tb_admin` WHERE `user` = 'admin' AND `password` = '21232f297a57a5a743894a0e4a801fc3'  [ RunTime:0.0005s ]
+
+[ 2016-12-26T09:58:46+08:00 ] ::1 /CESBack/index.php/Home/Home/home
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000361s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000348s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000383s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_home_count` [ RunTime:0.0011s ]
+SQL: SELECT `time`,`new`,`all_user`,`survey`,`is_match` FROM `tb_home_count`  WHERE ( time >='2016-12-16' AND time <='2016-12-22' ) ORDER BY time ASC [ RunTime:0.0022s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000203s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000231s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009834s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009871s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000186s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000214s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001301s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001366s ]
+
+[ 2016-12-26T09:58:47+08:00 ] ::1 /CESBack/index.php/Home/Home/img/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+
+[ 2016-12-26T10:00:05+08:00 ] ::1 /CESBack/index.php/Home/Home/home
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000209s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000232s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_home_count` [ RunTime:0.0030s ]
+SQL: SELECT `time`,`new`,`all_user`,`survey`,`is_match` FROM `tb_home_count`  WHERE ( time >='2016-12-16' AND time <='2016-12-22' ) ORDER BY time ASC [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000179s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000200s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005933s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005953s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000112s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000125s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000375s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000410s ]
+
+[ 2016-12-26T10:01:41+08:00 ] ::1 /CESBack/index.php/Home/Home/home
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000169s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000380s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000420s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_home_count` [ RunTime:0.0019s ]
+SQL: SELECT `time`,`new`,`all_user`,`survey`,`is_match` FROM `tb_home_count`  WHERE ( time >='2016-12-16' AND time <='2016-12-22' ) ORDER BY time ASC [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000282s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000328s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007610s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007634s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000107s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000124s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001078s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001199s ]
+
+[ 2016-12-26T10:01:57+08:00 ] ::1 /CESBack/index.php/Home/Home/home
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000232s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000256s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_home_count` [ RunTime:0.0019s ]
+SQL: SELECT `time`,`new`,`all_user`,`survey`,`is_match` FROM `tb_home_count`  WHERE ( time >='2016-12-16' AND time <='2016-12-22' ) ORDER BY time ASC [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000160s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000186s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006257s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006278s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000090s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000103s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000352s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000381s ]
+
+[ 2016-12-26T10:02:02+08:00 ] ::1 /CESBack/index.php/Home/Home/home
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000228s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000245s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000267s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_home_count` [ RunTime:0.0028s ]
+SQL: SELECT `time`,`new`,`all_user`,`survey`,`is_match` FROM `tb_home_count`  WHERE ( time >='2016-12-16' AND time <='2016-12-22' ) ORDER BY time ASC [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000184s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000214s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008494s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008533s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000096s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000110s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000441s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000469s ]
+
+[ 2016-12-26T10:02:09+08:00 ] ::1 /CESBack/index.php/Home/Home/home
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000766s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000827s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000923s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_home_count` [ RunTime:0.0020s ]
+SQL: SELECT `time`,`new`,`all_user`,`survey`,`is_match` FROM `tb_home_count`  WHERE ( time >='2016-12-16' AND time <='2016-12-22' ) ORDER BY time ASC [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000292s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000370s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007503s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007545s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000297s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000339s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000557s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000612s ]
+
+[ 2016-12-26T10:05:21+08:00 ] ::1 /CESBack/index.php/Home/Home/home
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000293s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000403s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_home_count` [ RunTime:0.0018s ]
+SQL: SELECT `time`,`new`,`all_user`,`survey`,`is_match` FROM `tb_home_count`  WHERE ( time >='2016-12-16' AND time <='2016-12-22' ) ORDER BY time ASC [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000182s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000211s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006333s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006355s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000097s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000112s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000363s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000390s ]
+
+[ 2016-12-26T10:05:32+08:00 ] ::1 /CESBack/index.php/Home/Home/home
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000260s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000488s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000567s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_home_count` [ RunTime:0.0009s ]
+SQL: SELECT `time`,`new`,`all_user`,`survey`,`is_match` FROM `tb_home_count`  WHERE ( time >='2016-12-16' AND time <='2016-12-22' ) ORDER BY time ASC [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000189s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000221s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006784s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006806s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000100s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000113s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000435s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000464s ]
+
+[ 2016-12-26T13:19:27+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/surveyPublish
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000235s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `tb_survey_group`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000283s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000310s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011141s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011178s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000145s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000163s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000418s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000456s ]
+
+[ 2016-12-26T13:19:28+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/img/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000306s ]
+
+[ 2016-12-26T13:19:28+08:00 ] ::1 /CESBack/index.php/Home/Method/getSurvey?limit=10&offset=0&_=1482729568031
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000168s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000465s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000496s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0008s ]
+SQL: SELECT g.group_name,`name`,`survey_id`,`level`,`owner` FROM tb_survey AS s, `tb_survey_group` AS g  WHERE ( g.group_id=s.survey_group )  [ RunTime:0.0017s ]
+
+[ 2016-12-26T13:19:28+08:00 ] ::1 /CESBack/index.php/Home/WeChat/getInfo?limit=10&offset=0&_=1482729568032
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000286s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000487s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000539s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SELECT u.stu_name,u.stu_num,u.stu_class,stu_graclass,openid,stu_sex,is_match,p.stu_pro FROM tb_user AS u,tb_proclass_list AS p WHERE p.pro_id=u.stu_pro [ RunTime:0.0109s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000468s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000520s ]
+
+[ 2016-12-26T13:19:29+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/surveyCondition
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000155s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000195s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000213s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `tb_survey_group`  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000283s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000315s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010578s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010666s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000109s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000122s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000316s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000342s ]
+
+[ 2016-12-26T13:19:29+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getSurveyPlan?limit=10&offset=0&_=1482729569198
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000520s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000687s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000722s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_plan` [ RunTime:0.0013s ]
+SQL: SELECT p.id,p.survey_id,p.stu_num,p.openid,p.is_finish,s.name FROM `tb_survey_plan` AS p,tb_survey AS s  WHERE ( s.survey_id=p.survey_id ) [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000559s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000596s ]
+
+[ 2016-12-26T13:19:35+08:00 ] ::1 /CESBack/index.php/Home/Method/expSurveyCondition?content=[{%220%22:true,%22id%22:%222%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220135580%22,%22openid%22:%22ocoIvxLTumwc3gpi6SPvKWrzYlt0%22,%22is_finish%22:%22%E6%98%AF%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2214%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135576%22,%22openid%22:%22ocoIvxPdNfIYRYGvbhPwaOIq1Sfw%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2216%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135578%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2217%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135579%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2218%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135580%22,%22openid%22:%22ocoIvxLTumwc3gpi6SPvKWrzYlt0%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2219%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135581%22,%22openid%22:%22ocoIvxFWEKQVMV0XhvAXvnAerIdI%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2220%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135582%22,%22openid%22:%22ocoIvxAJGfLYacgJ1KA1rqr2GqNM%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2221%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220095634%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2222%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220095650%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2223%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220102179%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E5%90%A6%22}]
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000235s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000251s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135580'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135576'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135578'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135579'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135580'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135581'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135582'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20095634'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20095650'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20102179'  [ RunTime:0.0001s ]
+ERR: Class 'PHPExcel' not found
+
+[ 2016-12-26T13:21:45+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getSurveyPlan?limit=10&offset=0&_=1482729705541
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000335s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000456s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_plan` [ RunTime:0.0022s ]
+SQL: SELECT p.id,p.survey_id,p.stu_num,p.openid,p.is_finish,s.name FROM `tb_survey_plan` AS p,tb_survey AS s  WHERE ( s.survey_id=p.survey_id ) [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000501s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000541s ]
+
+[ 2016-12-26T13:21:46+08:00 ] ::1 /CESBack/index.php/Home/Method/expSurveyCondition?content=[]
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000169s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000268s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+ERR: Class 'PHPExcel' not found
+
+[ 2016-12-26T13:21:49+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getSurveyPlan?limit=10&offset=0&_=1482729709042
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000188s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000238s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_plan` [ RunTime:0.0052s ]
+SQL: SELECT p.id,p.survey_id,p.stu_num,p.openid,p.is_finish,s.name FROM `tb_survey_plan` AS p,tb_survey AS s  WHERE ( s.survey_id=p.survey_id ) [ RunTime:0.0008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000467s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000512s ]
+
+[ 2016-12-26T13:21:53+08:00 ] ::1 /CESBack/index.php/Home/Method/expSurveyCondition?content=[{%220%22:true,%22id%22:%222%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220135580%22,%22openid%22:%22ocoIvxLTumwc3gpi6SPvKWrzYlt0%22,%22is_finish%22:%22%E6%98%AF%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2214%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135576%22,%22openid%22:%22ocoIvxPdNfIYRYGvbhPwaOIq1Sfw%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2216%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135578%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2217%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135579%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2218%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135580%22,%22openid%22:%22ocoIvxLTumwc3gpi6SPvKWrzYlt0%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2219%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135581%22,%22openid%22:%22ocoIvxFWEKQVMV0XhvAXvnAerIdI%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2220%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135582%22,%22openid%22:%22ocoIvxAJGfLYacgJ1KA1rqr2GqNM%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2221%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220095634%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2222%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220095650%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2223%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220102179%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E5%90%A6%22}]
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000408s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000227s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000249s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135580'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135576'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135578'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135579'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135580'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135581'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135582'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20095634'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20095650'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20102179'  [ RunTime:0.0002s ]
+ERR: Class 'PHPExcel' not found
+
+[ 2016-12-26T13:22:19+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getSurveyPlan?limit=10&offset=0&_=1482729739566
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000188s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000250s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000275s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_plan` [ RunTime:0.0031s ]
+SQL: SELECT p.id,p.survey_id,p.stu_num,p.openid,p.is_finish,s.name FROM `tb_survey_plan` AS p,tb_survey AS s  WHERE ( s.survey_id=p.survey_id ) [ RunTime:0.0007s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000327s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000350s ]
+
+[ 2016-12-26T13:22:23+08:00 ] ::1 /CESBack/index.php/Home/Method/expSurveyCondition?content=[{%220%22:true,%22id%22:%222%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220135580%22,%22openid%22:%22ocoIvxLTumwc3gpi6SPvKWrzYlt0%22,%22is_finish%22:%22%E6%98%AF%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2214%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135576%22,%22openid%22:%22ocoIvxPdNfIYRYGvbhPwaOIq1Sfw%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2216%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135578%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2217%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135579%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2218%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135580%22,%22openid%22:%22ocoIvxLTumwc3gpi6SPvKWrzYlt0%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2219%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135581%22,%22openid%22:%22ocoIvxFWEKQVMV0XhvAXvnAerIdI%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2220%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135582%22,%22openid%22:%22ocoIvxAJGfLYacgJ1KA1rqr2GqNM%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2221%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220095634%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2222%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220095650%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2223%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220102179%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E5%90%A6%22}]
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000211s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000221s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000241s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135580'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135576'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135578'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135579'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135580'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135581'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135582'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20095634'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20095650'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20102179'  [ RunTime:0.0001s ]
+ERR: Class 'PHPExcel' not found
+
+[ 2016-12-26T13:22:55+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getSurveyPlan?limit=10&offset=0&_=1482729774863
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000196s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000397s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_plan` [ RunTime:0.0017s ]
+SQL: SELECT p.id,p.survey_id,p.stu_num,p.openid,p.is_finish,s.name FROM `tb_survey_plan` AS p,tb_survey AS s  WHERE ( s.survey_id=p.survey_id ) [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000406s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000432s ]
+
+[ 2016-12-26T13:22:58+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/surveyCondition
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000234s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `tb_survey_group`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000376s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000450s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008707s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008736s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000106s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000121s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000341s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000364s ]
+
+[ 2016-12-26T13:22:58+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getSurveyPlan?limit=10&offset=0&_=1482729778076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000329s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000263s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000296s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_plan` [ RunTime:0.0012s ]
+SQL: SELECT p.id,p.survey_id,p.stu_num,p.openid,p.is_finish,s.name FROM `tb_survey_plan` AS p,tb_survey AS s  WHERE ( s.survey_id=p.survey_id ) [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000324s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000349s ]
+
+[ 2016-12-26T13:23:00+08:00 ] ::1 /CESBack/index.php/Home/Method/expSurveyCondition?content=[{%220%22:true,%22id%22:%222%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220135580%22,%22openid%22:%22ocoIvxLTumwc3gpi6SPvKWrzYlt0%22,%22is_finish%22:%22%E6%98%AF%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2214%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135576%22,%22openid%22:%22ocoIvxPdNfIYRYGvbhPwaOIq1Sfw%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2216%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135578%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2217%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135579%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2218%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135580%22,%22openid%22:%22ocoIvxLTumwc3gpi6SPvKWrzYlt0%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2219%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135581%22,%22openid%22:%22ocoIvxFWEKQVMV0XhvAXvnAerIdI%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2220%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135582%22,%22openid%22:%22ocoIvxAJGfLYacgJ1KA1rqr2GqNM%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2221%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220095634%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2222%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220095650%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2223%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220102179%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E5%90%A6%22}]
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000208s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000226s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135580'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135576'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135578'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135579'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135580'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135581'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135582'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20095634'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20095650'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20102179'  [ RunTime:0.0002s ]
+ERR: Class 'PHPExcel' not found
+
+[ 2016-12-26T13:28:40+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getSurveyPlan?limit=10&offset=0&_=1482730120330
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000398s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000366s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000402s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_plan` [ RunTime:0.0025s ]
+SQL: SELECT p.id,p.survey_id,p.stu_num,p.openid,p.is_finish,s.name FROM `tb_survey_plan` AS p,tb_survey AS s  WHERE ( s.survey_id=p.survey_id ) [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000472s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000510s ]
+
+[ 2016-12-26T13:28:41+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/surveyCondition
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000166s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000197s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000214s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `tb_survey_group`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000380s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000448s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011873s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011968s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000332s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000364s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000489s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000534s ]
+
+[ 2016-12-26T13:28:41+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getSurveyPlan?limit=10&offset=0&_=1482730121132
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000247s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000275s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000303s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_plan` [ RunTime:0.0027s ]
+SQL: SELECT p.id,p.survey_id,p.stu_num,p.openid,p.is_finish,s.name FROM `tb_survey_plan` AS p,tb_survey AS s  WHERE ( s.survey_id=p.survey_id ) [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000464s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000502s ]
+
+[ 2016-12-26T13:28:43+08:00 ] ::1 /CESBack/index.php/Home/Method/expSurveyCondition?content=[{%220%22:true,%22id%22:%222%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220135580%22,%22openid%22:%22ocoIvxLTumwc3gpi6SPvKWrzYlt0%22,%22is_finish%22:%22%E6%98%AF%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2214%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135576%22,%22openid%22:%22ocoIvxPdNfIYRYGvbhPwaOIq1Sfw%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2216%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135578%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2217%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135579%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2218%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135580%22,%22openid%22:%22ocoIvxLTumwc3gpi6SPvKWrzYlt0%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2219%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135581%22,%22openid%22:%22ocoIvxFWEKQVMV0XhvAXvnAerIdI%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2220%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135582%22,%22openid%22:%22ocoIvxAJGfLYacgJ1KA1rqr2GqNM%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2221%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220095634%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2222%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220095650%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2223%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220102179%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E5%90%A6%22}]
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000158s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000196s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000214s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135580'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135576'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135578'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135579'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135580'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135581'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135582'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20095634'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20095650'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20102179'  [ RunTime:0.0001s ]
+
+[ 2016-12-26T13:30:13+08:00 ] ::1 /CESBack/index.php/Home/Method/getSurvey?limit=10&offset=0&_=1482730213648
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000172s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000222s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000243s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0015s ]
+SQL: SELECT g.group_name,`name`,`survey_id`,`level`,`owner` FROM tb_survey AS s, `tb_survey_group` AS g  WHERE ( g.group_id=s.survey_group )  [ RunTime:0.0003s ]
+
+[ 2016-12-26T13:30:13+08:00 ] ::1 /CESBack/index.php/Home/WeChat/getInfo?limit=10&offset=0&_=1482730213649
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000382s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000596s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000659s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SELECT u.stu_name,u.stu_num,u.stu_class,stu_graclass,openid,stu_sex,is_match,p.stu_pro FROM tb_user AS u,tb_proclass_list AS p WHERE p.pro_id=u.stu_pro [ RunTime:0.0066s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000922s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001046s ]
+
+[ 2016-12-26T13:30:23+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/surveyPublish
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000158s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000376s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000403s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `tb_survey_group`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000288s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000316s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008960s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008982s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000094s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000108s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000310s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000333s ]
+
+[ 2016-12-26T13:30:23+08:00 ] ::1 /CESBack/index.php/Home/Method/getSurvey?limit=10&offset=0&_=1482730223824
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000196s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000250s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000275s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey` [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0014s ]
+SQL: SELECT g.group_name,`name`,`survey_id`,`level`,`owner` FROM tb_survey AS s, `tb_survey_group` AS g  WHERE ( g.group_id=s.survey_group )  [ RunTime:0.0003s ]
+
+[ 2016-12-26T13:30:24+08:00 ] ::1 /CESBack/index.php/Home/WeChat/getInfo?limit=10&offset=0&_=1482730223825
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000302s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000542s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000617s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SELECT u.stu_name,u.stu_num,u.stu_class,stu_graclass,openid,stu_sex,is_match,p.stu_pro FROM tb_user AS u,tb_proclass_list AS p WHERE p.pro_id=u.stu_pro [ RunTime:0.0092s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000452s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000519s ]
+
+[ 2016-12-26T13:30:24+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/surveyCondition
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000153s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000195s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000213s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `tb_survey_group`  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000275s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000310s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008538s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008576s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000176s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000199s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000353s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000387s ]
+
+[ 2016-12-26T13:30:25+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getSurveyPlan?limit=10&offset=0&_=1482730224910
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000200s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000236s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000259s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_plan` [ RunTime:0.0029s ]
+SQL: SELECT p.id,p.survey_id,p.stu_num,p.openid,p.is_finish,s.name FROM `tb_survey_plan` AS p,tb_survey AS s  WHERE ( s.survey_id=p.survey_id ) [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000586s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000623s ]
+
+[ 2016-12-26T13:30:31+08:00 ] ::1 /CESBack/index.php/Home/Method/expSurveyCondition?content=[{%220%22:true,%22id%22:%222%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220135580%22,%22openid%22:%22ocoIvxLTumwc3gpi6SPvKWrzYlt0%22,%22is_finish%22:%22%E6%98%AF%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2214%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135576%22,%22openid%22:%22ocoIvxPdNfIYRYGvbhPwaOIq1Sfw%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2216%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135578%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2217%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135579%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2218%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135580%22,%22openid%22:%22ocoIvxLTumwc3gpi6SPvKWrzYlt0%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2219%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135581%22,%22openid%22:%22ocoIvxFWEKQVMV0XhvAXvnAerIdI%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2220%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135582%22,%22openid%22:%22ocoIvxAJGfLYacgJ1KA1rqr2GqNM%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2221%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220095634%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2222%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220095650%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2223%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220102179%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E5%90%A6%22}]
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000243s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135580'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135576'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135578'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135579'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135580'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135581'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135582'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20095634'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20095650'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20102179'  [ RunTime:0.0001s ]
+
+[ 2016-12-26T13:32:23+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/surveyCondition
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000212s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000231s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `tb_survey_group`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000271s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000298s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009674s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009723s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000308s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000309s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000332s ]
+
+[ 2016-12-26T13:32:24+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getSurveyPlan?limit=10&offset=0&_=1482730343903
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000655s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000402s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000445s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_plan` [ RunTime:0.0019s ]
+SQL: SELECT p.id,p.survey_id,p.stu_num,p.openid,p.is_finish,s.name FROM `tb_survey_plan` AS p,tb_survey AS s  WHERE ( s.survey_id=p.survey_id ) [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000451s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000487s ]
+
+[ 2016-12-26T13:32:26+08:00 ] ::1 /CESBack/index.php/Home/Method/expSurveyCondition?content=[{%220%22:true,%22id%22:%222%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220135580%22,%22openid%22:%22ocoIvxLTumwc3gpi6SPvKWrzYlt0%22,%22is_finish%22:%22%E6%98%AF%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2214%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135576%22,%22openid%22:%22ocoIvxPdNfIYRYGvbhPwaOIq1Sfw%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2216%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135578%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2217%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135579%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2218%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135580%22,%22openid%22:%22ocoIvxLTumwc3gpi6SPvKWrzYlt0%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2219%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135581%22,%22openid%22:%22ocoIvxFWEKQVMV0XhvAXvnAerIdI%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2220%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135582%22,%22openid%22:%22ocoIvxAJGfLYacgJ1KA1rqr2GqNM%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2221%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220095634%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2222%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220095650%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2223%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220102179%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E5%90%A6%22}]
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000198s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000216s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135580'  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135576'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135578'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135579'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135580'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135581'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135582'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20095634'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20095650'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20102179'  [ RunTime:0.0001s ]
+
+[ 2016-12-26T13:33:14+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/surveyCondition
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000191s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000222s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000240s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_group` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `tb_survey_group`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000301s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000332s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007371s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007396s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000154s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000176s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000569s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000616s ]
+
+[ 2016-12-26T13:33:15+08:00 ] ::1 /CESBack/index.php/Home/CourseManage/getSurveyPlan?limit=10&offset=0&_=1482730394980
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000273s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000391s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000438s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_survey_plan` [ RunTime:0.0014s ]
+SQL: SELECT p.id,p.survey_id,p.stu_num,p.openid,p.is_finish,s.name FROM `tb_survey_plan` AS p,tb_survey AS s  WHERE ( s.survey_id=p.survey_id ) [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000440s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000475s ]
+
+[ 2016-12-26T13:33:17+08:00 ] ::1 /CESBack/index.php/Home/Method/expSurveyCondition?content=[{%220%22:true,%22id%22:%222%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220135580%22,%22openid%22:%22ocoIvxLTumwc3gpi6SPvKWrzYlt0%22,%22is_finish%22:%22%E6%98%AF%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2214%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135576%22,%22openid%22:%22ocoIvxPdNfIYRYGvbhPwaOIq1Sfw%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2216%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135578%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2217%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135579%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2218%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135580%22,%22openid%22:%22ocoIvxLTumwc3gpi6SPvKWrzYlt0%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2219%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135581%22,%22openid%22:%22ocoIvxFWEKQVMV0XhvAXvnAerIdI%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2220%22,%22survey_id%22:%221480946991%22,%22stu_num%22:%2220135582%22,%22openid%22:%22ocoIvxAJGfLYacgJ1KA1rqr2GqNM%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%222016-2017%E5%AD%A6%E5%B9%B4%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B71%22,%22is_match%22:%22%E6%98%AF%22},{%220%22:true,%22id%22:%2221%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220095634%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2222%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220095650%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E5%90%A6%22},{%220%22:true,%22id%22:%2223%22,%22survey_id%22:%221480748407%22,%22stu_num%22:%2220102179%22,%22openid%22:%22%22,%22is_finish%22:%22%E5%90%A6%22,%22name%22:%22%E6%B5%8B%E8%AF%95%E9%97%AE%E5%8D%B7%22,%22is_match%22:%22%E5%90%A6%22}]
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000344s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000377s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135580'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135576'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135578'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135579'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135580'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135581'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20135582'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20095634'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20095650'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `tb_user` WHERE `stu_num` = '20102179'  [ RunTime:0.0001s ]
+
+[ 2016-12-26T13:37:01+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000196s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000215s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+ERR: Could not open /Users/lawrance/Downloads/admin_20161226133317.xls for reading! File does not exist, or it is not readable.
+
+[ 2016-12-26T13:38:13+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000183s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000240s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000261s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+ERR: Could not open /Users/lawrance/Downloads/admin_20161226133317.xls for reading! File does not exist, or it is not readable.
+
+[ 2016-12-26T13:38:16+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000168s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000198s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000216s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+ERR: Could not open /Users/lawrance/Downloads/admin_20161226133317.xls for reading! File does not exist, or it is not readable.
+
+[ 2016-12-26T13:39:45+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000242s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000263s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+ERR: Could not open /Users/lawrance/Downloads/admin_20161226133317.xls for reading! File does not exist, or it is not readable.
+
+[ 2016-12-26T13:39:58+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000727s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000384s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000446s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+NOTIC: [8] Undefined index: extension /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 409 行.
+ERR: Could not open /Users/lawrance/Downloads/admin_20161226133317 for reading! File does not exist, or it is not readable.
+
+[ 2016-12-26T13:41:24+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000297s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000242s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000265s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+ERR: Could not open /Users/Lawrance/Downloads/admin_20161226133317.xls for reading! File does not exist, or it is not readable.
+
+[ 2016-12-26T13:42:46+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000294s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000394s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000430s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+ERR: Could not open /Users/Lawrance/Downloads/admin_20161226133317.xls for reading! File does not exist, or it is not readable.
+
+[ 2016-12-26T13:42:49+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000182s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000232s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000262s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+ERR: Could not open /Users/Lawrance/Downloads/admin_20161226133317.xls for reading! File does not exist, or it is not readable.
+
+[ 2016-12-26T13:42:52+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000226s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000221s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000241s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+ERR: Could not open /Users/Lawrance/Downloads/admin_20161226133317.xls for reading! File does not exist, or it is not readable.
+
+[ 2016-12-26T13:44:20+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000230s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000231s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000251s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+ERR: Could not open /Users/Lawrance/Downloads/admin_20161226133317.csv for reading! File does not exist.
+
+[ 2016-12-26T13:44:25+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000153s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000194s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000212s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+ERR: Could not open /Users/Lawrance/Downloads/admin_20161226133317.csv for reading! File does not exist.
+
+[ 2016-12-26T13:45:22+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000155s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000198s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000215s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+ERR: Could not open /Users/Lawrance/Downloads/admin_20161226133317.csv for reading! File does not exist.
+
+[ 2016-12-26T13:45:25+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000295s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000279s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000320s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+ERR: Could not open /Users/Lawrance/Downloads/admin_20161226133317.csv for reading! File does not exist.
+
+[ 2016-12-26T13:45:55+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000318s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000395s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000432s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+ERR: Could not open /Users/lawrance/Downloads/admin_20161226133317.csv for reading! File does not exist.
+
+[ 2016-12-26T13:46:33+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000181s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000218s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+ERR: Could not open /Users/lawrance/Downloads/admin.csv for reading! File does not exist.
+
+[ 2016-12-26T13:46:37+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000280s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000306s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+ERR: Could not open /Users/lawrance/Downloads/admin.csv for reading! File does not exist.
+
+[ 2016-12-26T13:46:58+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000171s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000210s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000229s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+NOTIC: [8] Undefined index: extension /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 409 行.
+ERR: Could not open /Users/lawrance/Downloads/admin for reading! File does not exist, or it is not readable.
+
+[ 2016-12-26T13:51:08+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000411s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000491s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+NOTIC: [8] Undefined index: extension /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 409 行.
+ERR: Could not open ./Users/lawrance/Downloads/admin for reading! File does not exist, or it is not readable.
+
+[ 2016-12-26T13:53:18+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000392s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000457s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000489s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+ERR: Could not open ./Users/lawrance/Downloads/admin.xls for reading! File does not exist, or it is not readable.
+
+[ 2016-12-26T13:57:47+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000186s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000358s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000392s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+ERR: Could not open ./Users/lawrance/Downloads/admin1.xls for reading! File does not exist, or it is not readable.
+
+[ 2016-12-26T13:57:49+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000196s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000214s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+ERR: Could not open ./Users/lawrance/Downloads/admin1.xls for reading! File does not exist, or it is not readable.
+
+[ 2016-12-26T13:57:56+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000158s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000198s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000216s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+NOTIC: [8] Undefined index: extension /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 409 行.
+ERR: Could not open ./Users/lawrance/Downloads/admin1 for reading! File does not exist, or it is not readable.
+
+[ 2016-12-26T13:59:50+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000198s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000201s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000218s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+NOTIC: [8] Undefined index: extension /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 409 行.
+ERR: Could not open ./Users/lawrance/Downloads/admin1 for reading! File does not exist, or it is not readable.
+
+[ 2016-12-26T14:12:49+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000203s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000221s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000768s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000818s ]
+
+[ 2016-12-26T14:13:05+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000318s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000271s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000294s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000280s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000302s ]
+
+[ 2016-12-26T14:13:07+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000169s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000196s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000214s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000215s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000234s ]
+
+[ 2016-12-26T14:13:08+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000152s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000195s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000213s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000256s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000281s ]
+
+[ 2016-12-26T14:14:40+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000516s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000551s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000438s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000477s ]
+
+[ 2016-12-26T14:15:13+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000300s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000331s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000310s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000340s ]
+
+[ 2016-12-26T14:15:33+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000191s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000323s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000344s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000238s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000263s ]
+
+[ 2016-12-26T14:15:36+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000195s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000204s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000221s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000254s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000282s ]
+
+[ 2016-12-26T14:17:56+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000157s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000198s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000215s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000244s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000270s ]
+
+[ 2016-12-26T14:17:58+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000257s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000354s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000385s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000232s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000259s ]
+
+[ 2016-12-26T14:18:00+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000172s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000213s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000233s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000234s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000263s ]
+
+[ 2016-12-26T14:32:23+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000348s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000415s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000438s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+ERR: Class 'PHPExcel_Reader_Excel7' not found
+
+[ 2016-12-26T14:35:02+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000155s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000231s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000258s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+ERR: Class 'PHPExcel' not found
+
+[ 2016-12-26T14:35:33+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000251s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000224s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000245s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000474s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000507s ]
+
+[ 2016-12-26T14:35:38+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000436s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000499s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000338s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000386s ]
+
+[ 2016-12-26T14:36:15+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000199s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000216s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000417s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000463s ]
+
+[ 2016-12-26T14:36:44+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000166s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000217s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000237s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+ERR: Could not open /Users/lawrance/Downloads/admin1.xls for reading! File does not exist.
+
+[ 2016-12-26T14:38:04+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000197s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000219s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000270s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000295s ]
+
+[ 2016-12-26T14:38:38+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000157s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000198s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000217s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+NOTIC: [8] Undefined index: B0 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 489 行.
+NOTIC: [8] Undefined index: C0 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 489 行.
+NOTIC: [8] Undefined index: D0 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 489 行.
+NOTIC: [8] Undefined index: E0 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 489 行.
+NOTIC: [8] Undefined index: F0 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 489 行.
+NOTIC: [8] Undefined index: G0 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 489 行.
+NOTIC: [8] Undefined index: H0 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 489 行.
+NOTIC: [8] Undefined index: I0 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 489 行.
+NOTIC: [8] Undefined index: K1 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 487 行.
+NOTIC: [8] Undefined index: J0 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 489 行.
+NOTIC: [8] Undefined index: A2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 487 行.
+NOTIC: [8] Undefined index: A2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 489 行.
+NOTIC: [8] Undefined index: A2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 491 行.
+NOTIC: [8] Undefined index: B2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 487 行.
+NOTIC: [8] Undefined index: B2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 489 行.
+NOTIC: [8] Undefined index: B2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 491 行.
+NOTIC: [8] Undefined index: C2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 487 行.
+NOTIC: [8] Undefined index: C2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 489 行.
+NOTIC: [8] Undefined index: C2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 491 行.
+NOTIC: [8] Undefined index: D2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 487 行.
+NOTIC: [8] Undefined index: D2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 489 行.
+NOTIC: [8] Undefined index: D2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 491 行.
+NOTIC: [8] Undefined index: E2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 487 行.
+NOTIC: [8] Undefined index: E2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 489 行.
+NOTIC: [8] Undefined index: E2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 491 行.
+NOTIC: [8] Undefined index: F2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 487 行.
+NOTIC: [8] Undefined index: F2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 489 行.
+NOTIC: [8] Undefined index: F2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 491 行.
+NOTIC: [8] Undefined index: G2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 487 行.
+NOTIC: [8] Undefined index: G2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 489 行.
+NOTIC: [8] Undefined index: G2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 491 行.
+NOTIC: [8] Undefined index: H2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 487 行.
+NOTIC: [8] Undefined index: H2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 489 行.
+NOTIC: [8] Undefined index: H2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 491 行.
+NOTIC: [8] Undefined index: I2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 487 行.
+NOTIC: [8] Undefined index: I2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 489 行.
+NOTIC: [8] Undefined index: I2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 491 行.
+NOTIC: [8] Undefined index: J2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 487 行.
+NOTIC: [8] Undefined index: J2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 489 行.
+NOTIC: [8] Undefined index: J2 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 491 行.
+NOTIC: [8] Undefined index: A3 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 487 行.
+NOTIC: [8] Undefined index: A3 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 489 行.
+NOTIC: [8] Undefined index: A3 /Users/lawrance/Data/CESBack/CESBack/Home/Controller/MethodController.class.php 第 491 行.
+ERR: Call to undefined method PHPExcel_CachedObjectStorage_Memory::getStyle()
+
+[ 2016-12-26T14:39:21+08:00 ] ::1 /CESBack/index.php/Home/Method/importTest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000232s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000345s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000374s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Users/lawrance/Data/CESBack/ThinkPHP/Common/functions.php 第 1263 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000287s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000315s ]
+
