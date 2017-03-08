@@ -93,7 +93,7 @@ function addQLi(question_id, type, q_name, content, order, before_des, after_des
         } else if (content == '1') {
             row = 2;
         }
-        li += "<div class='mar-top-10' style='margin-left: 30px;margin-right: 30px;'><textarea rows='" + row + "' class='form-control' id=" + "question_ans" + order + " maxlength='400' placeholder='请输入200字以内文字信息...'></textarea></div>";
+        li += "<div class='mar-top-10' style='margin-left: 30px;margin-right: 30px;'><textarea rows='" + row + "' class='form-control' id=" + "question_ans" + order + " maxlength='200' placeholder='请输入200字以内文字信息...'></textarea></div>";
     }
     //if (after_des != '') {
     //    li += "<span style='color: #89d951;margin-left: 20px;'>" + after_des + "</span>";
