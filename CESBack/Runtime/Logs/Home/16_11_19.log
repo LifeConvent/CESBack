@@ -1,0 +1,107 @@
+[ 2016-11-19T16:12:20+08:00 ] ::1 /CESBack/index.php/Home/Home/home?n=admin&p=21232f297a57a5a743894a0e4a801fc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000739s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000608s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000641s ]
+SQL: SHOW COLUMNS FROM `tb_admin` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `tb_admin` WHERE `user` = 'admin' AND `password` = '21232f297a57a5a743894a0e4a801fc'  [ RunTime:0.0002s ]
+
+[ 2016-11-19T16:12:20+08:00 ] ::1 /CESBack/index.php/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000204s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000230s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000250s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000085s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009230s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009264s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000423s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000463s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000712s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000749s ]
+
+[ 2016-11-19T16:12:28+08:00 ] ::1 /CESBack/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000401s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000246s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000284s ]
+SQL: SHOW COLUMNS FROM `tb_admin` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `tb_admin` WHERE `user` = 'admin' AND `password` = '21232f297a57a5a743894a0e4a801fc3'  [ RunTime:0.0003s ]
+
+[ 2016-11-19T16:12:28+08:00 ] ::1 /CESBack/index.php/Home/Home/home?n=admin&p=21232f297a57a5a743894a0e4a801fc3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000373s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000867s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000938s ]
+SQL: SHOW COLUMNS FROM `tb_admin` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `tb_admin` WHERE `user` = 'admin' AND `password` = '21232f297a57a5a743894a0e4a801fc3'  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000137s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000166s ]
+NOTIC: [8] Undefined variable: weChatMatch /Users/lawrance/Data/CESBack/CESBack/Runtime/Cache/Home/a6d249f0cce0a592f6432f4291a590e1.php 第 731 行.
+NOTIC: [8] Undefined variable: weChatSub /Users/lawrance/Data/CESBack/CESBack/Runtime/Cache/Home/a6d249f0cce0a592f6432f4291a590e1.php 第 732 行.
+NOTIC: [8] Undefined variable: weChatNum /Users/lawrance/Data/CESBack/CESBack/Runtime/Cache/Home/a6d249f0cce0a592f6432f4291a590e1.php 第 733 行.
+NOTIC: [8] Undefined variable: weCESNum /Users/lawrance/Data/CESBack/CESBack/Runtime/Cache/Home/a6d249f0cce0a592f6432f4291a590e1.php 第 734 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014078s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014112s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000122s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000139s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000615s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000668s ]
+
+[ 2016-11-19T16:12:29+08:00 ] ::1 /CESBack/index.php/Home/Home/img/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000542s ]
+
+[ 2016-11-19T17:42:28+08:00 ] ::1 /CESBack/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001058s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000511s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000540s ]
+SQL: SHOW COLUMNS FROM `tb_admin` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `tb_admin` WHERE `user` = 'admin' AND `password` = '21232f297a57a5a743894a0e4a801fc3'  [ RunTime:0.0002s ]
+
+[ 2016-11-19T17:42:28+08:00 ] ::1 /CESBack/index.php/Home/Home/home?n=admin&p=21232f297a57a5a743894a0e4a801fc3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000228s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000253s ]
+SQL: SHOW COLUMNS FROM `tb_admin` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `tb_admin` WHERE `user` = 'admin' AND `password` = '21232f297a57a5a743894a0e4a801fc3'  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000125s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000153s ]
+NOTIC: [8] Undefined variable: weChatMatch /Users/lawrance/Data/CESBack/CESBack/Runtime/Cache/Home/a6d249f0cce0a592f6432f4291a590e1.php 第 731 行.
+NOTIC: [8] Undefined variable: weChatSub /Users/lawrance/Data/CESBack/CESBack/Runtime/Cache/Home/a6d249f0cce0a592f6432f4291a590e1.php 第 732 行.
+NOTIC: [8] Undefined variable: weChatNum /Users/lawrance/Data/CESBack/CESBack/Runtime/Cache/Home/a6d249f0cce0a592f6432f4291a590e1.php 第 733 行.
+NOTIC: [8] Undefined variable: weCESNum /Users/lawrance/Data/CESBack/CESBack/Runtime/Cache/Home/a6d249f0cce0a592f6432f4291a590e1.php 第 734 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010228s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010255s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000394s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000653s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000682s ]
+

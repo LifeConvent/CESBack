@@ -59,9 +59,10 @@ function addQLi(question_id, type, q_name, content, order, before_des, after_des
         li += "<span style='color: #89d951;margin-left: 20px;'>" + before_des + "<br></span>";
     }
     if (is_must == '1') {
-        li += "<span style='color: red;'>*</span>";
+        li += "<button id=" + "sur_question" + order + " value='" + question_id + '-' + type + '-' + is_must + "' style='background:none;border:0;text-align: left;'>" + "<span><span style='color: red;margin-right: 10px;'>*</span>" + q_name + "</span></button>";
+    } else {
+        li += "<button id=" + "sur_question" + order + " value='" + question_id + '-' + type + '-' + is_must + "' style='background:none;border:0;text-align: left;'>" + q_name + "</button>";
     }
-    li += "<button id=" + "sur_question" + order + " value='" + question_id + '-' + type + '-' + is_must + "' style='background:none;border:0;'>" + q_name + "</button>";
     if (type == '1') {
         //添加li
         var q_list = JSON.parse(content);
@@ -92,7 +93,7 @@ function addQLi(question_id, type, q_name, content, order, before_des, after_des
         } else if (content == '1') {
             row = 2;
         }
-        li += "<div class='mar-top-10' style='margin-left: 30px;margin-right: 30px;'><textarea rows='" + row + "' class='form-control' id=" + "question_ans" + order + " ></textarea></div>";
+        li += "<div class='mar-top-10' style='margin-left: 30px;margin-right: 30px;'><textarea rows='" + row + "' class='form-control' id=" + "question_ans" + order + " maxlength='200' placeholder='请输入200字以内文字信息...'></textarea></div>";
     }
     //if (after_des != '') {
     //    li += "<span style='color: #89d951;margin-left: 20px;'>" + after_des + "</span>";
