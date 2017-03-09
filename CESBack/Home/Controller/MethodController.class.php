@@ -569,7 +569,6 @@ class MethodController extends Controller
                 }
                 /**如果输出汉字有乱码，则需将输出内容用iconv函数进行编码转换，如下将gb2312编码转为utf-8编码输出*/
                 //echo iconv('utf-8','gb2312', $val)."\t";
-
             }
         }
         return $erp_orders_id;
@@ -579,7 +578,31 @@ class MethodController extends Controller
     public function importTest()
     {
         $data = $this->import_excel('Public/file/admin1.xls');
-        dump($data);
+        $res = $this->getTableStruct();
+        dump($res);
+        dump($this->getTableFiled($res[1]));
+    }
+
+    //获取数据库数据表结构
+    public function getTableStruct()
+    {
+        $db = M();
+        $res = $db->query($sql = 'show tables');
+        $col = null;
+        foreach ($res AS $key => $val) {
+            $field = $val['tables_in_ces'];
+            $field = substr($field, 3, strlen($field) - 3);
+            $col[$key] = $field;
+        }
+        return $col;
+    }
+
+    //获取数据库数据表字段
+    public function getTableFiled($field)
+    {
+//        $col = substr($field, 3, strlen($field) - 3);
+        //获取到数据表的四个字端
+        return M($field)->getDbFields();
     }
 
     public function outTest()
