@@ -574,6 +574,18 @@ class MethodController extends Controller
         return $erp_orders_id;
     }
 
+    public function upload()
+    {
+        if (!empty($_FILES)) {
+            $tempFile = $_FILES['file']['tmp_name'];
+            $targetFile = "Public/uploads/" . $_FILES['file']['name'];
+            if (move_uploaded_file($tempFile, $targetFile)) {
+                //上传成功后直接输出新页面进行数据库导入
+//                $this->redirect('DataManage/sysCourse');
+//                ----------
+            }
+        }
+    }
 
     public function importTest()
     {
