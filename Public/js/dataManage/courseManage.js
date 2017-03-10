@@ -129,12 +129,46 @@ function upload_back(id) {
     }
 }
 
+//function startMatch() {
+//    //表格对应关系,先拆,号再拆-
+//    var match_relation = $('#match_relation').val();
+//    //文件名称
+//    var file_name = $('#list_output').val();
+//    var table_name = $('#table_name').val();
+//    //alert(match_relation);
+//    //alert(file_name);
+//    //alert(table_name);
+//    $.ajax({
+//        type: "POST", //用POST方式传输
+//        url: HOST + "CESBack/index.php/Home/Method/startUploads", //目标地址.
+//        dataType: "JSON", //数据格式:JSON
+//        data: {m_r: match_relation, f_n: file_name, t_n: table_name},
+//        success: function (result) {
+//            if (result.status == 'success') {
+//                $.scojs_message('正在上传', $.scojs_message.TYPE_OK);
+//                $('#uploadStep').modal('hide');
+//            } else {
+//                $.scojs_message(result.message, $.scojs_message.TYPE_ERROR);
+//            }
+//        },
+//        error: function (XMLHttpRequest, textStatus, errorThrown) {
+//            alert(XMLHttpRequest);
+//            alert(textStatus);
+//            alert(errorThrown);
+//            $.scojs_message('网络连接发生未知错误，请稍后再试！', $.scojs_message.TYPE_ERROR);
+//        }
+//    });
+//    //$.scojs_message('正在上传', $.scojs_message.TYPE_OK);
+//    //$('#uploadStep').modal('hide');
+//}
+
 function startMatch() {
     //表格对应关系,先拆,号再拆-
     var match_relation = $('#match_relation').val();
     //文件名称
     var file_name = $('#list_output').val();
     var table_name = $('#table_name').val();
+    var time = (new Date()).valueOf();
     //alert(match_relation);
     //alert(file_name);
     //alert(table_name);
@@ -142,22 +176,40 @@ function startMatch() {
         type: "POST", //用POST方式传输
         url: HOST + "CESBack/index.php/Home/Method/startUploads", //目标地址.
         dataType: "JSON", //数据格式:JSON
-        data: {m_r: match_relation, f_n: file_name, t_n: table_name},
+        data: {
+            m_r: match_relation, f_n: file_name, t_n: table_name, time: time
+        }
+    });
+    var ajaxData = {
+        type: "POST",
+        url: HOST + "CESBack/index.php/Home/Method/getFile",
+        dataType: "JSON",
+        data: {time: time},
         success: function (result) {
-            if (result.status == 'success') {
-                $.scojs_message('正在上传', $.scojs_message.TYPE_OK);
+            if (result.status == "success") {
                 $('#uploadStep').modal('hide');
+                var num = parseInt(result.percent.substring(0, result.percent.length - 1));
+                if (num >= 99) {
+                    $("#progress").css('width', '100%');
+                    $('#show_progress').text(100);
+                } else if (result.percent != "100%") {
+                    $("#progress").css('width', result.percent);
+                    $('#show_progress').text(num);
+                    $.ajax(ajaxData);
+                } else if (result.percent == "100%") {
+                    $("#progress").css('width', result.percent);
+                    $('#show_progress').text(num);
+                }
             } else {
-                $.scojs_message(result.message, $.scojs_message.TYPE_ERROR);
+                scojs_message(result.message, $.scojs_message.TYPE_ERROR);
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
-            alert(XMLHttpRequest);
-            alert(textStatus);
-            alert(errorThrown);
-            $.scojs_message('网络连接发生未知错误，请稍后再试！', $.scojs_message.TYPE_ERROR);
+            alert(XMLHttpRequest + textStatus + errorThrown);
+            $.scojs_message("网络连接发生未知错误，请稍后再试！", $.scojs_message.TYPE_ERROR);
         }
-    });
+    };
+    $.ajax(ajaxData);
     //$.scojs_message('正在上传', $.scojs_message.TYPE_OK);
     //$('#uploadStep').modal('hide');
 }

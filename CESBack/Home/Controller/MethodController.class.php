@@ -588,15 +588,79 @@ class MethodController extends Controller
     }
 
     //第一种方案
+//    public function startUploads()
+//    {
+//        $match_relation = I('post.m_r');
+//        $file_name = I('post.f_n');
+//        $table_name = I('post.t_n');
+//
+////        $match_relation = 'tag_id-学号,tag_name-姓名';
+////        $file_name = 'test.XLS';
+////        $table_name = 'user_tag';
+//        //解析匹配关系
+//        $match_relation = explode(',', $match_relation);
+//        $data = $this->import_excel('Public/uploads/' . $file_name);
+////        dump($data);
+//        $match = $field = $count = null;
+//        foreach ($match_relation AS $key => $val) {
+//            $match[$key] = explode('-', $val);
+//        }
+//        $num = 0;
+//        foreach ($data[1] AS $key => $val) {
+//            foreach ($match AS $k => $v) {
+//                if ($v[1] == $val) {
+//                    $data[1][$key] = $val[0];
+//                    $field[$num] = $v[0];
+//                    $count[$num++] = $key;
+//                }
+//            }
+//        }
+//        $table = M($table_name);
+//
+////        $result['status'] = 'success';
+////        echo json_encode($result);
+//        for ($j = 2; $j < sizeof($data); $j++) {
+//            $condition = null;
+//            for ($i = 0; $i < sizeof($field); $i++) {
+//                $condition[$field[$i]] = $data[$j][$count[$i]];
+//            }
+//            $res = $table->where($condition)->select();
+//            if (!$res) {
+////                dump($condition);
+//                $res = $table->add($condition);
+//                if ($res) {
+//                    $result['status'] = 'success';
+//                } else {
+//                    $result['status'] = 'failed';
+//                    $result['message'] = $res;
+//                }
+//            }
+//        }
+//        if ($result['status'] == null) {
+//            $result['status'] = 'failed';
+//            $result['message'] = '无数据更新!';
+//        }
+//        exit(json_encode($result));
+//    }
+
+    //第二种方案.发过来数据(新增临时文件夹名称-时间戳)后断开连接,之后开始轮询请求查询取得文件中的数据解析,JOSN包含处理进度
     public function startUploads()
     {
-        $match_relation = I('post.m_r');
-        $file_name = I('post.f_n');
-        $table_name = I('post.t_n');
 
 //        $match_relation = 'tag_id-学号,tag_name-姓名';
 //        $file_name = 'test.XLS';
 //        $table_name = 'user_tag';
+//        $time = 'user_tag';
+
+        $time = I('post.time');
+        $file_name = I('post.f_n');
+        $table_name = I('post.t_n');
+        $match_relation = I('post.m_r');
+
+        $result['status'] = 'success';
+        $result['percent'] = '0%';
+        $this->write($time, json_encode($result));
+
         //解析匹配关系
         $match_relation = explode(',', $match_relation);
         $data = $this->import_excel('Public/uploads/' . $file_name);
@@ -619,31 +683,41 @@ class MethodController extends Controller
 
 //        $result['status'] = 'success';
 //        echo json_encode($result);
+        $result = null;
         for ($j = 2; $j < sizeof($data); $j++) {
             $condition = null;
             for ($i = 0; $i < sizeof($field); $i++) {
                 $condition[$field[$i]] = $data[$j][$count[$i]];
             }
+            $percent = (float)$j / (sizeof($data) - 1);
             $res = $table->where($condition)->select();
             if (!$res) {
 //                dump($condition);
                 $res = $table->add($condition);
                 if ($res) {
                     $result['status'] = 'success';
+                    $result['percent'] = ($percent * 100) . '%';
                 } else {
                     $result['status'] = 'failed';
                     $result['message'] = $res;
                 }
+                $this->write($time, json_encode($result));
             }
         }
-        if ($result['status'] == null) {
-            $result['status'] = 'failed';
+        if ($result == null) {
+            $result['status'] = 'success';
             $result['message'] = '无数据更新!';
+            $result['percent'] = '100%';
+            $this->write($time, json_encode($result));
         }
         exit(json_encode($result));
     }
 
-    //第二种方案.发过来数据(新增临时文件夹名称-时间戳)后断开连接,之后开始轮询请求查询取得文件中的数据解析,JOSN包含处理进度
+    public function getFile()
+    {
+        $time = I('post.time');
+        exit($this->read($time));
+    }
 
     public function importTest()
     {
@@ -707,15 +781,15 @@ class MethodController extends Controller
 
     public function write($userid = null, $content = null)
     {
-        $myfile = fopen("Public/file / " . $userid . " . txt", "wb") or die("Unable to open file!");
-        file_put_contents("Public/file / " . $userid . " . txt", $content);
+        $myfile = fopen("Public/file/" . $userid . ".txt", "wb") or die("Unable to open file!");
+        file_put_contents("Public/file/" . $userid . ".txt", $content);
         fclose($myfile);
     }
 
     public function read($userid = null)
     {
-        $userid = 'test';
-        $result = file_get_contents("Public/file / " . $userid . " . txt");
+//        $userid = 'test';
+        $result = file_get_contents("Public/file/" . $userid . ".txt");
         return $result;
     }
 
