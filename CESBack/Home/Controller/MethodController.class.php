@@ -587,6 +587,7 @@ class MethodController extends Controller
         }
     }
 
+    //第一种方案
     public function startUploads()
     {
         $match_relation = I('post.m_r');
@@ -599,6 +600,7 @@ class MethodController extends Controller
         //解析匹配关系
         $match_relation = explode(',', $match_relation);
         $data = $this->import_excel('Public/uploads/' . $file_name);
+//        dump($data);
         $match = $field = $count = null;
         foreach ($match_relation AS $key => $val) {
             $match[$key] = explode('-', $val);
@@ -615,7 +617,9 @@ class MethodController extends Controller
         }
         $table = M($table_name);
 
-        for ($j = 1; $j < sizeof($data); $j++) {
+//        $result['status'] = 'success';
+//        echo json_encode($result);
+        for ($j = 2; $j < sizeof($data); $j++) {
             $condition = null;
             for ($i = 0; $i < sizeof($field); $i++) {
                 $condition[$field[$i]] = $data[$j][$count[$i]];
@@ -632,8 +636,14 @@ class MethodController extends Controller
                 }
             }
         }
+        if ($result['status'] == null) {
+            $result['status'] = 'failed';
+            $result['message'] = '无数据更新!';
+        }
         exit(json_encode($result));
     }
+
+    //第二种方案.发过来数据(新增临时文件夹名称-时间戳)后断开连接,之后开始轮询请求查询取得文件中的数据解析,JOSN包含处理进度
 
     public function importTest()
     {
