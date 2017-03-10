@@ -19,7 +19,14 @@ class DataManageController extends Controller
         $method = new MethodController();
         $result = $method->checkIn($username);
         if ($result) {
+            $method = new MethodController();
+            $table = $method->getTableStruct();
+            $DBtable = '<option value="0">|----     无</option>';
+            foreach ($table AS $key => $val) {
+                $DBtable .= '<option value="'.$val.'">'. '|----    ' .$val.'</option>';
+            }
             $this->assign('username', $username);
+            $this->assign('DBtable', $DBtable);
             $this->display();
         } else {
             $this->redirect('Index/index');
@@ -149,7 +156,7 @@ class DataManageController extends Controller
                 $output_new[$c++] = $v;
             }
             $xlsName = "问卷结果统计";
-            $xlsTitle = $survey_name.'的回答结果统计';
+            $xlsTitle = $survey_name . '的回答结果统计';
 //            $title[0] = '';
             $cell[0] = array(0, '回答时间');
             for ($i = 1; $i <= $count; $i++) {

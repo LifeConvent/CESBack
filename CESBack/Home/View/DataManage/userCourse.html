@@ -150,83 +150,81 @@
         </div>
 
         <div class="modal fade" id="uploadStep" data-backdrop="static">
-            <div class="modal-dialog">
+            <div class="modal-dialog" style="width:630px;">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         <h5 class="modal-title">请按步骤选择要维护的数据表</h5>
                     </div>
                     <div class="modal-body text-center">
-                            <div class="box-widget">
+                        <div class="panel-body">
+                            <div class="box-widget" style="margin: 0 auto;text-align: center;">
                                 <div class="widget-head clearfix">
                                     <div id="top_tabby" class="block-tabby ">
+                                        <ul id="stepy_form-titles" class="stepy-titles clearfix">
+                                            <li id="stepy_form-title-1" class="current-step"
+                                                style="cursor: default;">
+                                                <div>第一步</div>
+                                                <span>选择表格</span></li>
+                                            <li id="stepy_form-title-2" style="cursor: default;" class="">
+                                                <div>第二步</div>
+                                                <span>匹配字段</span></li>
+                                            <li id="stepy_form-title-3" style="cursor: default;" class="">
+                                                <div>第三步</div>
+                                                <span>开始导入</span></li>
+                                        </ul>
                                     </div>
                                 </div>
                                 <div class="widget-container">
-                                    <div class="widget-block">
-                                        <div class="widget-content box-padding">
-                                            <form id="stepy_form" class="form-horizontal form-well" style="text-align:center;margin: 0 auto;">
-                                                <fieldset title="第一步">
-                                                    <legend></legend>
-                                                    <div class="form-group">
-                                                        <label class="col-md-2 col-sm-2 control-label">Username</label>
-                                                        <div class="col-md-6 col-sm-6">
-                                                            <input class="form-control" name="name" type="text">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="col-md-2 col-sm-2 control-label">Email Address</label>
-                                                        <div class="col-md-6 col-sm-6">
-                                                            <input class="form-control" name="email" type="email">
-                                                        </div>
-                                                    </div>
-                                                </fieldset>
-                                                <fieldset title="第二步">
-                                                    <legend></legend>
-                                                    <div class="form-group">
-                                                        <label class="col-md-2 col-sm-2 control-label">First Name</label>
-                                                        <div class="col-md-6 col-sm-6">
-                                                            <input type="text" placeholder="First Name" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="col-md-2 col-sm-2 control-label">Last Name</label>
-                                                        <div class="col-md-6 col-sm-6">
-                                                            <input type="text" placeholder="Last Name" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                </fieldset>
-                                                <fieldset title="第三步">
-                                                    <legend></legend>
-                                                    <div class="form-group">
-                                                        <label class="col-md-2 col-sm-2 control-label">Text Input</label>
-                                                        <div class="col-md-6 col-sm-6">
-                                                            <input type="text" placeholder="Text Input" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="col-md-2 col-sm-2 control-label">Checkbox</label>
-                                                        <div class="col-md-6 col-sm-6">
-                                                            <label class="checkbox">
-                                                                <input type="checkbox" value="">
-                                                                Option one is this and that—be sure to include why it's great </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="col-md-2 col-sm-2 control-label">Radio</label>
-                                                        <div class="col-md-6 col-sm-6">
-                                                            <label class="radio">
-                                                                <input type="radio" name="optionsRadios" value="option1" checked>
-                                                                Option one is this and that—be sure to include why it's great </label>
-                                                        </div>
-                                                    </div>
-                                                </fieldset>
-                                                <button type="submit" class="finish btn btn-info btn-extend">开始导入</button>
-                                            </form>
+                                    <div class="widget-content box-padding" style="text-align:center;margin: 0 auto;">
+                                        <div id="field1">
+                                            <textarea id="table_name" rows="1" style="visibility:hidden"></textarea>
+
+                                            <div class="col-sm-10" style="margin-left:10%">
+                                                <select id="db_table" class="form-control">
+                                                    <option disabled="" value="0">数据库表格选项</option>
+                                                    {$DBtable}
+                                                </select>
+                                            </div>
+                                                <textarea rows="2" class="col-sm-12"
+                                                          style="visibility:hidden"></textarea>
+                                            <button id="stepy_form-next-1" onclick="upload_next('1');"
+                                                    class="button-next btn btn-info pull_right">下一步
+                                            </button>
+                                        </div>
+                                        <div id="field2" style="display: none;">
+                                            <textarea id="select_amount" rows="1" style="visibility:hidden"></textarea>
+
+                                            <div class="col-sm-10" style="margin-left:10%" id="match_field">
+                                            </div>
+                                                <textarea rows="2" class="col-sm-12"
+                                                          style="visibility:hidden"></textarea>
+                                            <button id="stepy_form-back-2" onclick="upload_back('2');"
+                                                    class="button-back btn btn-info">上一步
+                                            </button>
+                                            <button id="stepy_form-next-2" onclick="upload_next('2');"
+                                                    class="button-next btn btn-info pull_right">下一步
+                                            </button>
+                                        </div>
+                                        <div id="field3" style="display: none;">
+                                            <textarea id="match_relation" rows="1" style="visibility:hidden"></textarea>
+
+                                            <div class="col-sm-10" style="margin-left:10%">
+                                                {$match_field}
+                                            </div>
+                                                <textarea rows="2" class="col-sm-12"
+                                                          style="visibility:hidden"></textarea>
+                                            <button id="stepy_form-back-3" onclick="upload_back('3');"
+                                                    class="button-back btn btn-info">上一步
+                                            </button>
+                                            <button id="stepy_form-next-3" onclick="startMatch();"
+                                                    class="button-next btn btn-info pull_right">开始导入
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -328,37 +326,7 @@
             });
         }
     });
-    /*=====STEPY WIZARD WITH VALIDATION====*/
-    $(function() {
-        $('#stepy_form').stepy({
-            backLabel: '上一步',
-            nextLabel: '下一步',
-            errorImage: true,
-            block: true,
-            description: true,
-            legend: false,
-            titleClick: true,
-            titleTarget: '#top_tabby',
-            validate: true
-        });
-//        $('#stepy_form').validate({
-//            errorPlacement: function(error, element) {
-//                $('#stepy_form div.stepy-error').append(error);
-//            },
-//            rules: {
-//                'name': 'required',
-//                'email': 'required'
-//            },
-//            messages: {
-//                'name': {
-//                    required: 'Name field is required!'
-//                },
-//                'email': {
-//                    required: 'Email field is requerid!'
-//                }
-//            }
-//        });
-    });
+
 </script>
 <!-- JS -->
 

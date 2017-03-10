@@ -587,12 +587,58 @@ class MethodController extends Controller
         }
     }
 
+    public function startUploads()
+    {
+        $match_relation = I('post.m_r');
+        $file_name = I('post.f_n');
+        $table_name = I('post.t_n');
+
+//        $match_relation = 'tag_id-学号,tag_name-姓名';
+//        $file_name = 'test.XLS';
+//        $table_name = 'user_tag';
+        //解析匹配关系
+        $match_relation = explode(',', $match_relation);
+        $data = $this->import_excel('Public/uploads/' . $file_name);
+        $match = $field = $count = null;
+        foreach ($match_relation AS $key => $val) {
+            $match[$key] = explode('-', $val);
+        }
+        $num = 0;
+        foreach ($data[1] AS $key => $val) {
+            foreach ($match AS $k => $v) {
+                if ($v[1] == $val) {
+                    $data[1][$key] = $val[0];
+                    $field[$num] = $v[0];
+                    $count[$num++] = $key;
+                }
+            }
+        }
+        $table = M($table_name);
+
+        for ($j = 1; $j < sizeof($data); $j++) {
+            $condition = null;
+            for ($i = 0; $i < sizeof($field); $i++) {
+                $condition[$field[$i]] = $data[$j][$count[$i]];
+            }
+            $res = $table->where($condition)->select();
+            if (!$res) {
+//                dump($condition);
+                $res = $table->add($condition);
+                if ($res) {
+                    $result['status'] = 'success';
+                } else {
+                    $result['status'] = 'failed';
+                    $result['message'] = $res;
+                }
+            }
+        }
+        exit(json_encode($result));
+    }
+
     public function importTest()
     {
-        $data = $this->import_excel('Public/file/admin1.xls');
-        $res = $this->getTableStruct();
-        dump($res);
-        dump($this->getTableFiled($res[1]));
+        $data = $this->import_excel('Public/uploads/13级成绩.xls');
+        dump($data);
     }
 
     //获取数据库数据表结构
@@ -610,11 +656,15 @@ class MethodController extends Controller
     }
 
     //获取数据库数据表字段
-    public function getTableFiled($field)
+    public function getTableFiled()
     {
-//        $col = substr($field, 3, strlen($field) - 3);
-        //获取到数据表的四个字端
-        return M($field)->getDbFields();
+        $field = I('post.table_name');
+        $file_name = I('post.file_name');
+        $data = $this->import_excel('Public/uploads/' . $file_name);
+        $result['status'] = 'success';
+        $result['file_field'] = $data[1];
+        $result['data'] = M($field)->getDbFields();
+        exit(json_encode($result));
     }
 
     public function outTest()
@@ -647,15 +697,15 @@ class MethodController extends Controller
 
     public function write($userid = null, $content = null)
     {
-        $myfile = fopen("Public/file/" . $userid . ".txt", "wb") or die("Unable to open file!");
-        file_put_contents("Public/file/" . $userid . ".txt", $content);
+        $myfile = fopen("Public/file / " . $userid . " . txt", "wb") or die("Unable to open file!");
+        file_put_contents("Public/file / " . $userid . " . txt", $content);
         fclose($myfile);
     }
 
     public function read($userid = null)
     {
         $userid = 'test';
-        $result = file_get_contents("Public/file/" . $userid . ".txt");
+        $result = file_get_contents("Public/file / " . $userid . " . txt");
         return $result;
     }
 
