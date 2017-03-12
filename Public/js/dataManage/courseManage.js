@@ -187,11 +187,19 @@ function startMatch() {
         data: {time: time},
         success: function (result) {
             if (result.status == "success") {
-                $('#uploadStep').modal('hide');
                 var num = parseInt(result.percent.substring(0, result.percent.length - 1));
                 if (num >= 99) {
                     $("#progress").css('width', '100%');
                     $('#show_progress').text(100);
+                    $.ajax({
+                        type: "POST", //用POST方式传输
+                        url: HOST + "CESBack/index.php/Home/Method/deleteFile", //目标地址.
+                        dataType: "JSON", //数据格式:JSON
+                        data: {
+                            f_n: file_name, time: time
+                        }
+                    });
+                    //setTimeout($('#uploadStep').modal('hide'),3000);
                 } else if (result.percent != "100%") {
                     $("#progress").css('width', result.percent);
                     $('#show_progress').text(num);
@@ -199,6 +207,15 @@ function startMatch() {
                 } else if (result.percent == "100%") {
                     $("#progress").css('width', result.percent);
                     $('#show_progress').text(num);
+                    $.ajax({
+                        type: "POST", //用POST方式传输
+                        url: HOST + "CESBack/index.php/Home/Method/deleteFile", //目标地址.
+                        dataType: "JSON", //数据格式:JSON
+                        data: {
+                            f_n: file_name, time: time
+                        }
+                    });
+                    //setTimeout($('#uploadStep').modal('hide'),3000);
                 }
             } else {
                 scojs_message(result.message, $.scojs_message.TYPE_ERROR);

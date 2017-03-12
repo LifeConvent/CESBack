@@ -713,6 +713,14 @@ class MethodController extends Controller
         exit(json_encode($result));
     }
 
+    public function deleteFile()
+    {
+        $time = I('post.time');
+        $file_name = I('post.f_n');
+        unlink("Public/file/" . $time . ".txt");
+        unlink("Public/uploads/" . $file_name);
+    }
+
     public function getFile()
     {
         $time = I('post.time');
